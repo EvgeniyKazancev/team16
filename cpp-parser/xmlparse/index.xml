@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rambler="http://news.rambler.ru" xmlns:mailru="http://news.mail.ru/" version="2.0">
+  <channel>
+    <title>РИА Новости</title>
+    <link>https://ria.ru</link>
+    <language>ru</language>
+    <copyright>RIA Novosti</copyright>
+    <item>
+      <title>В Афинах прошел многотысячный митинг в поддержку Палестины</title>
+      <link>https://ria.ru/20231029/miting-1905995547.html</link>
+      <guid>https://ria.ru/20231029/miting-1905995547.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:18:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e4/04/0b/1569903401_0:160:3072:1888_600x0_80_0_0_cc53e99b5f501fe783cdd78688e94148.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Число погибших при аварии на шахте в Казахстане увеличилось до 45 человек</title>
+      <link>https://ria.ru/20231029/shakhta-1905995418.html</link>
+      <guid>https://ria.ru/20231029/shakhta-1905995418.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:18:08 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Полицию Мэна предупредили о возможной стрельбе еще в сентябре, пишут СМИ</title>
+      <link>https://ria.ru/20231029/smi-1905995277.html</link>
+      <guid>https://ria.ru/20231029/smi-1905995277.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:17:10 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Медик батальона "Скиф" рассказала, как выжила при атаке дрона</title>
+      <link>https://ria.ru/20231029/skif-1905994297.html</link>
+      <guid>https://ria.ru/20231029/skif-1905994297.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:09:36 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/10/1902991034_0:0:3072:1728_600x0_80_0_0_c9176968a0e17cb5a625c8cb795a670c.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Амстердаме началась демонстрация  против поставок оружия Украине</title>
+      <link>https://ria.ru/20231029/ukraina-1905993344.html</link>
+      <guid>https://ria.ru/20231029/ukraina-1905993344.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:03:03 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В сектор Газа через КПП "Рафах" прибыли десять грузовиков с гумпомощью</title>
+      <link>https://ria.ru/20231029/gaza-1905993006.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905993006.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 17:01:41 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Молдавии объяснили причину приземления самолета НАТО</title>
+      <link>https://ria.ru/20231029/nato-1905992818.html</link>
+      <guid>https://ria.ru/20231029/nato-1905992818.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:59:46 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e4/05/15/1571802537_0:160:3072:1888_600x0_80_0_0_93dd4864de852c09aaccd89089736d6d.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>США потребовали от Израиля применять передаваемое оружие по законам войны</title>
+      <link>https://ria.ru/20231029/izrail-1905991937.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905991937.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:53:03 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Израиль несет ответственность за защиту населения в Газе, заявил Белый дом</title>
+      <link>https://ria.ru/20231029/gaza-1905991717.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905991717.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:52:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Движение ХАМАС мешает выходу иностранцев из Газы в Египет, заявил Белый дом</title>
+      <link>https://ria.ru/20231029/gaza-1905991110.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905991110.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:47:42 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Храм канонической УПЦ под Киевом закрыли после перевода к раскольникам</title>
+      <link>https://ria.ru/20231029/khram-1905990954.html</link>
+      <guid>https://ria.ru/20231029/khram-1905990954.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:47:02 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/06/07/1876764170_0:0:2855:1606_600x0_80_0_0_d16adda4c70cbf1580ad4d02f294183f.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Премьер Чехии не поддержал предложение главы Минобороны о выходе из ООН</title>
+      <link>https://ria.ru/20231029/chekhiya-1905990615.html</link>
+      <guid>https://ria.ru/20231029/chekhiya-1905990615.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:44:52 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/148468/56/1484685698_0:315:5436:3373_600x0_80_0_0_6fd90adf581d537b8426502f140ac38e.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>США в ООН хотели закрепить право Израиля на самооборону, заявил МИД России</title>
+      <link>https://ria.ru/20231029/izrail-1905990446.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905990446.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:43:48 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Украинские войска выпустили более 40 снарядов по ДНР</title>
+      <link>https://ria.ru/20231029/obstrel-1905990192.html</link>
+      <guid>https://ria.ru/20231029/obstrel-1905990192.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:43:06 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/04/1e/1868815958_0:257:2730:1793_600x0_80_0_0_6f0e12329ac1de88584e5740ba36ac5d.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>МИД Ирана заявил о попытке втянуть страну в израильский конфликт</title>
+      <link>https://ria.ru/20231029/iran-1905989668.html</link>
+      <guid>https://ria.ru/20231029/iran-1905989668.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:39:34 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/1b/1905725679_0:0:2925:1645_600x0_80_0_0_1d3951cff4117650c9188d31e48bbadb.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Медведев назвал отменяющих русскую культуру деятелей Запада рептилоидами</title>
+      <link>https://ria.ru/20231029/medvedev-1905988931.html</link>
+      <guid>https://ria.ru/20231029/medvedev-1905988931.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:31:12 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/0c/1d/1842203039_0:292:2667:1792_600x0_80_0_0_952cda2e91c249af2aa2ae6ae55f588a.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>МИД заявил об усилиях России по деэскалации ближневосточного конфликта</title>
+      <link>https://ria.ru/20231029/konflikt-1905988320.html</link>
+      <guid>https://ria.ru/20231029/konflikt-1905988320.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:27:21 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>ЦАХАЛ заявил, что нанес удары по террористам в Ливане</title>
+      <link>https://ria.ru/20231029/izrail-1905988025.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905988025.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:25:43 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Медведев усомнился в возможности возвращения европейских компаний в Россию</title>
+      <link>https://ria.ru/20231029/medvedev-1905987773.html</link>
+      <guid>https://ria.ru/20231029/medvedev-1905987773.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:23:49 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/03/19/1860572357_0:0:2680:1508_600x0_80_0_0_f7a23bf506d763c3825920833ef07290.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В трех европейских городах прошли акции в поддержку Палестины</title>
+      <link>https://ria.ru/20231029/aktsiya-1905987368.html</link>
+      <guid>https://ria.ru/20231029/aktsiya-1905987368.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:22:28 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Президент Чехии обрушил тяжелое знамя на голову военного</title>
+      <link>https://ria.ru/20231029/chekhiya-1905986487.html</link>
+      <guid>https://ria.ru/20231029/chekhiya-1905986487.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:18:20 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Медведев заявил о потере Евросоюзом самостоятельности</title>
+      <link>https://ria.ru/20231029/es-1905986270.html</link>
+      <guid>https://ria.ru/20231029/es-1905986270.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:14:30 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/0c/0e/1838518800_0:147:3103:1892_600x0_80_0_0_4f85e243e25bb860044c4ad954c31102.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ВОЗ назвала требования об эвакуации больницы Аль-Кудс в Газе невыполнимыми</title>
+      <link>https://ria.ru/20231029/gaza-1905986054.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905986054.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:13:19 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Киевской области объявили воздушную тревогу</title>
+      <link>https://ria.ru/20231029/trevoga-1905985219.html</link>
+      <guid>https://ria.ru/20231029/trevoga-1905985219.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:04:55 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>На юге Москвы столкнулись два автомобиля</title>
+      <link>https://ria.ru/20231029/avariya-1905984813.html</link>
+      <guid>https://ria.ru/20231029/avariya-1905984813.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 16:03:59 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/08/16/1811259523_0:103:3457:2048_600x0_80_0_0_4cc21ef0bdb8a50de3d1f228d593c4dc.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Медведев рассказал о ждущей Европу зиме</title>
+      <link>https://ria.ru/20231029/zima-1905984413.html</link>
+      <guid>https://ria.ru/20231029/zima-1905984413.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:59:37 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/08/1895019841_0:148:2942:1803_600x0_80_0_0_748a2fa24d6c7c68472a006b90d380d4.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ЕС растратил авторитет посредника в конфликтах, заявил Медведев</title>
+      <link>https://ria.ru/20231029/es-1905984084.html</link>
+      <guid>https://ria.ru/20231029/es-1905984084.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:58:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/03/1e/1861913252_0:53:2898:1683_600x0_80_0_0_c051e748994758c627f191db5da76f09.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Названы последствия разрыва договора России и Украины о транзите газа</title>
+      <link>https://ria.ru/20231029/gaz-1905983204.html</link>
+      <guid>https://ria.ru/20231029/gaz-1905983204.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:53:27 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/151277/28/1512772899_0:103:2000:1228_600x0_80_0_0_d801685607568de8910075681172e39a.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Во Владивостоке потушили два лесных возгорания</title>
+      <link>https://ria.ru/20231029/mchs-1905983081.html</link>
+      <guid>https://ria.ru/20231029/mchs-1905983081.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:53:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Медведев назвал Евросоюз врагом России </title>
+      <link>https://ria.ru/20231029/evropa-1905982976.html</link>
+      <guid>https://ria.ru/20231029/evropa-1905982976.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:52:53 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/154884/60/1548846090_0:22:3058:1742_600x0_80_0_0_31688fcf4f3b50dffceee7f060c409a9.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Черкесске на участников пропалестинской акции составили протоколы</title>
+      <link>https://ria.ru/20231029/aktsiya-1905982846.html</link>
+      <guid>https://ria.ru/20231029/aktsiya-1905982846.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:51:35 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Мадриде проходит акция в поддержку Палестины</title>
+      <link>https://ria.ru/20231029/demonstratsiya-1905982628.html</link>
+      <guid>https://ria.ru/20231029/demonstratsiya-1905982628.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:49:32 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Пушков вынес приговор главной американской мечте</title>
+      <link>https://ria.ru/20231029/pushkov-1905982118.html</link>
+      <guid>https://ria.ru/20231029/pushkov-1905982118.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:44:42 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e5/02/04/1595997907_0:0:3072:1728_600x0_80_0_0_42f9ff812299a6b32687e95071d92498.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Украина готовит введение штрафов за нарушение комендантского часа</title>
+      <link>https://ria.ru/20231029/ukraina-1905981720.html</link>
+      <guid>https://ria.ru/20231029/ukraina-1905981720.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:42:39 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/05/03/1786689705_0:313:3000:2001_600x0_80_0_0_7e033a89c5e1a81fa04c5abcbe0f414e.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Литовские силовики избили и вытеснили в Белоруссию двух мигрантов</title>
+      <link>https://ria.ru/20231029/granitsa-1905981390.html</link>
+      <guid>https://ria.ru/20231029/granitsa-1905981390.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:38:45 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Уволенный за разговор на русском  таксист из Киева обратился к украинцам</title>
+      <link>https://ria.ru/20231029/taksist-1905979752.html</link>
+      <guid>https://ria.ru/20231029/taksist-1905979752.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:26:12 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Финские ученые назвали причину обострения бессонницы и депрессии в обществе</title>
+      <link>https://ria.ru/20231029/uchenye-1905979576.html</link>
+      <guid>https://ria.ru/20231029/uchenye-1905979576.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:25:38 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Ростове-на-Дону рассказали о последствиях атаки беспилотника</title>
+      <link>https://ria.ru/20231029/bespilotnik-1905979345.html</link>
+      <guid>https://ria.ru/20231029/bespilotnik-1905979345.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:24:47 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/08/15/1891221203_0:0:3506:1972_600x0_80_0_0_5714c5fa55dd018dfcd02d0b25771d5f.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>При попадании снарядов по базе сил ООН в Ливане пострадал миротворец</title>
+      <link>https://ria.ru/20231029/snaryad-1905979245.html</link>
+      <guid>https://ria.ru/20231029/snaryad-1905979245.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:24:27 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/155802/99/1558029949_0:189:2016:1323_600x0_80_0_0_e52606881b09f5c48bc666984eb9fae4.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ЦАХАЛ заявил, что нанес удары по объектам ХАМАС</title>
+      <link>https://ria.ru/20231029/khamas-1905979152.html</link>
+      <guid>https://ria.ru/20231029/khamas-1905979152.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:24:02 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>После возгорания нефтяного резервуара в Коми проведут проверку</title>
+      <link>https://ria.ru/20231029/pozhar-1905978968.html</link>
+      <guid>https://ria.ru/20231029/pozhar-1905978968.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:22:00 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Британии заявили о разногласиях Зеленского и Залужного</title>
+      <link>https://ria.ru/20231029/ukraina-1905978423.html</link>
+      <guid>https://ria.ru/20231029/ukraina-1905978423.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:16:33 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>При стрельбе на вечеринке в США погиб один человек, восемь пострадали</title>
+      <link>https://ria.ru/20231029/ssha-1905978251.html</link>
+      <guid>https://ria.ru/20231029/ssha-1905978251.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:14:12 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Израиль возобновил подачу воды в Газу по второму водопроводу, пишут СМИ</title>
+      <link>https://ria.ru/20231029/gaza-1905977453.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905977453.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:08:40 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/1a/1905488023_23:0:848:464_600x0_80_0_0_c5b046cd74cb3a01405aaf77420327c8.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В ООН заявили о проблемах с гумпомощью для Газы из-за отключения света</title>
+      <link>https://ria.ru/20231029/gumpomosch-1905977282.html</link>
+      <guid>https://ria.ru/20231029/gumpomosch-1905977282.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:08:21 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/1a/1905488023_23:0:848:464_600x0_80_0_0_c5b046cd74cb3a01405aaf77420327c8.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Стала известна судьба пострадавшего при пожаре нефтяного резервуара в Коми</title>
+      <link>https://ria.ru/20231029/pozhar-1905977064.html</link>
+      <guid>https://ria.ru/20231029/pozhar-1905977064.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:07:02 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Путин встретится с новым составом Общественной палаты</title>
+      <link>https://ria.ru/20231029/putin-1905976949.html</link>
+      <guid>https://ria.ru/20231029/putin-1905976949.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:06:37 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/0d/1902503559_0:0:3070:1728_600x0_80_0_0_bf3664cc79680613d9eef08261cbb2d7.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Приморье автомобилиста, задержанного с погоней и стрельбой, арестовали</title>
+      <link>https://ria.ru/20231029/arest-1905976511.html</link>
+      <guid>https://ria.ru/20231029/arest-1905976511.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 15:05:36 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>"До самого Харькова". Поведение Зеленского привело в шок генерала ВСУ</title>
+      <link>https://ria.ru/20231029/zelenskiy-1905975506.html</link>
+      <guid>https://ria.ru/20231029/zelenskiy-1905975506.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:58:08 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>На прилегающей к сектору Газа территории прозвучала воздушная тревога</title>
+      <link>https://ria.ru/20231029/trevoga-1905974779.html</link>
+      <guid>https://ria.ru/20231029/trevoga-1905974779.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:52:47 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Германия захотела покупать природный газ у Нигерии</title>
+      <link>https://ria.ru/20231029/gaz-1905974173.html</link>
+      <guid>https://ria.ru/20231029/gaz-1905974173.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:49:57 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e5/0b/18/1760481600_0:165:3252:1994_600x0_80_0_0_24e68c00f3e0c6185a6617b7a06bab72.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Челябинске жителя, ударившего ножом мужчину у бара, арестовали</title>
+      <link>https://ria.ru/20231029/arest-1905973513.html</link>
+      <guid>https://ria.ru/20231029/arest-1905973513.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:44:43 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>МВД Палестины сообщило о гибели десяти человек из-за удара Израиля по Газе</title>
+      <link>https://ria.ru/20231029/udar-1905973246.html</link>
+      <guid>https://ria.ru/20231029/udar-1905973246.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:40:44 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В аэропорту Челябинска задержали вылет дневных рейсов из-за непогоды</title>
+      <link>https://ria.ru/20231029/aero-1905973100.html</link>
+      <guid>https://ria.ru/20231029/aero-1905973100.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:38:56 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/04/1b/1785804593_0:5:3025:1707_600x0_80_0_0_da5a2decd7c7ea3f30edddea975cb1e6.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В ДНР рассказали, для чего Киев шантажирует Европу газом</title>
+      <link>https://ria.ru/20231029/gaz-1905972778.html</link>
+      <guid>https://ria.ru/20231029/gaz-1905972778.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:36:57 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e6/05/17/1790235884_0:98:3000:1786_600x0_80_0_0_ce7188bb9550abfa476048170c9613ad.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Полиция сообщила о гибели двух человек из-за стрельбы во Флориде</title>
+      <link>https://ria.ru/20231029/ssha-1905972797.html</link>
+      <guid>https://ria.ru/20231029/ssha-1905972797.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:36:57 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Патриарх Кирилл освятил храм в Петербурге, рядом с которым провел детство</title>
+      <link>https://ria.ru/20231029/khram-1905970391.html</link>
+      <guid>https://ria.ru/20231029/khram-1905970391.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:28:51 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Медведев сравнил масштабы митингов за Палестину и Украину, опубликовав фото</title>
+      <link>https://ria.ru/20231029/medvedev-1905970714.html</link>
+      <guid>https://ria.ru/20231029/medvedev-1905970714.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:22:14 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/08/1895019841_0:148:2942:1803_600x0_80_0_0_748a2fa24d6c7c68472a006b90d380d4.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ЦАХАЛ заявил, что зафиксировал несколько пусков со стороны Ливана</title>
+      <link>https://ria.ru/20231029/izrail-1905969551.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905969551.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:14:33 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В четырех областях Украины объявили воздушную тревогу</title>
+      <link>https://ria.ru/20231029/trevoga-1905968863.html</link>
+      <guid>https://ria.ru/20231029/trevoga-1905968863.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:09:45 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>После смертельного ДТП в Самарской области возбудили уголовное дело</title>
+      <link>https://ria.ru/20231029/delo-1905968501.html</link>
+      <guid>https://ria.ru/20231029/delo-1905968501.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:08:54 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Палестине заявили, что более 3,3 тысячи детей погибли при обстрелах Газы</title>
+      <link>https://ria.ru/20231029/palestina-1905968202.html</link>
+      <guid>https://ria.ru/20231029/palestina-1905968202.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:05:55 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>СМИ сообщили о желании США отложить наземную операцию Израиля в Газе</title>
+      <link>https://ria.ru/20231029/smi-1905967719.html</link>
+      <guid>https://ria.ru/20231029/smi-1905967719.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:01:22 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Российская ПВО за сутки сбила более 40 украинских беспилотников</title>
+      <link>https://ria.ru/20231029/pvo-1905967607.html</link>
+      <guid>https://ria.ru/20231029/pvo-1905967607.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:01:19 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/03/1900121660_0:206:3072:1934_600x0_80_0_0_6c476df11fbf74d760804003b65d5a2a.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Источник: в Нальчике на стройке еврейского центра подожгли покрышки</title>
+      <link>https://ria.ru/20231029/nalchik-1905967502.html</link>
+      <guid>https://ria.ru/20231029/nalchik-1905967502.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 14:00:56 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/156344/48/1563444870_0:193:3077:1924_600x0_80_0_0_f861852eb5f6760791d01ff121f1ba03.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Российские военные отразили четыре атаки ВСУ на Южнодонецком направлении</title>
+      <link>https://ria.ru/20231029/spetsoperatsiya-1905966882.html</link>
+      <guid>https://ria.ru/20231029/spetsoperatsiya-1905966882.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:51:53 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/05/1894310933_0:273:3156:2048_600x0_80_0_0_0ee5e9f6e4eb635b8f85c0ced3f840ae.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>При возгорании нефтяного резервуара в Коми погиб человек</title>
+      <link>https://ria.ru/20231029/rezervuar-1905966638.html</link>
+      <guid>https://ria.ru/20231029/rezervuar-1905966638.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:47:47 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>ВСУ на Запорожском направлении за сутки потеряли до 40 человек</title>
+      <link>https://ria.ru/20231029/spetsoperatsiya-1905966105.html</link>
+      <guid>https://ria.ru/20231029/spetsoperatsiya-1905966105.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:45:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Минобороны рассказало о потерях ВСУ на Херсонском направлении</title>
+      <link>https://ria.ru/20231029/poteri-1905966016.html</link>
+      <guid>https://ria.ru/20231029/poteri-1905966016.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:44:22 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>ВСУ потеряли до 110 военных на Донецком направлении</title>
+      <link>https://ria.ru/20231029/poteri-1905965563.html</link>
+      <guid>https://ria.ru/20231029/poteri-1905965563.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:41:54 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Норвегия потребовала сделать паузу в войне в Газе для доставки гумпомощи</title>
+      <link>https://ria.ru/20231029/gaza-1905965325.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905965325.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:40:46 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>ВС России улучшили позиции на Купянском и Краснолиманском направлениях</title>
+      <link>https://ria.ru/20231029/vs-1905965054.html</link>
+      <guid>https://ria.ru/20231029/vs-1905965054.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:39:38 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/1a/1898719431_0:320:3072:2048_600x0_80_0_0_7a84010e6f70bd73707f95c170bbf31e.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Депутат Госдумы заявил, что нужно убрать "Википедию" из результатов поиска</title>
+      <link>https://ria.ru/20231029/gd-1905963885.html</link>
+      <guid>https://ria.ru/20231029/gd-1905963885.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:29:16 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/152393/94/1523939488_0:306:3264:2142_600x0_80_0_0_a8d7213100dd64dcdd5c046aeea15e35.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В двух областях Украины объявили воздушную тревогу</title>
+      <link>https://ria.ru/20231029/trevoga-1905963266.html</link>
+      <guid>https://ria.ru/20231029/trevoga-1905963266.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:21:08 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Вучич заявил об усилении Сербии из-за отказа от санкций против России</title>
+      <link>https://ria.ru/20231029/vuchich-1905963124.html</link>
+      <guid>https://ria.ru/20231029/vuchich-1905963124.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:21:02 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Экс-сотрудник "Моссада" заявил, что война в Газе будет очень длинной</title>
+      <link>https://ria.ru/20231029/izrail-1905962938.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905962938.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:20:45 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Выезд из Керчи по Крымскому мосту возобновили</title>
+      <link>https://ria.ru/20231029/most-1905961516.html</link>
+      <guid>https://ria.ru/20231029/most-1905961516.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:11:35 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/02/17/1854022600_0:0:3107:1749_600x0_80_0_0_734a3039e20520c663db29d52ce361ad.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Украина захотела ударить по России с нового фронта</title>
+      <link>https://ria.ru/20231029/ukraina-1905961368.html</link>
+      <guid>https://ria.ru/20231029/ukraina-1905961368.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:11:20 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В ХАМАС заявили об обстрелах Тель-Авива</title>
+      <link>https://ria.ru/20231029/khamas-1905961236.html</link>
+      <guid>https://ria.ru/20231029/khamas-1905961236.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:10:17 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/1b/1905725679_0:0:2925:1645_600x0_80_0_0_1d3951cff4117650c9188d31e48bbadb.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Тель-Авиве прозвучали сирены воздушной тревоги</title>
+      <link>https://ria.ru/20231029/iz-1905961117.html</link>
+      <guid>https://ria.ru/20231029/iz-1905961117.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:07:26 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/1b/1905727356_0:0:2729:1536_600x0_80_0_0_cc816000318813175ef203a3b15c825c.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Родителей девочки, на глазах которой отец избил мать в Энгельсе, накажут</title>
+      <link>https://ria.ru/20231029/izbienie-1905960995.html</link>
+      <guid>https://ria.ru/20231029/izbienie-1905960995.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:07:23 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e4/06/01/1572307858_930:268:3077:1476_600x0_80_0_0_0486455ae6912da37ab7a501eb24d53f.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В центральной части Израиля прозвучала воздушная тревога</title>
+      <link>https://ria.ru/20231029/trevoga-1905960828.html</link>
+      <guid>https://ria.ru/20231029/trevoga-1905960828.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:05:13 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>На Крымском мосту возобновили движение со стороны Тамани</title>
+      <link>https://ria.ru/20231029/most-1905960185.html</link>
+      <guid>https://ria.ru/20231029/most-1905960185.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:02:48 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/0f/1896587283_0:160:3072:1888_600x0_80_0_0_2f1b9741c5c22538d534725381ff7eaa.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Петербурге задержали лже-силовиков, "арестовавших" гостей на коуч-встрече</title>
+      <link>https://ria.ru/20231029/mvd-1905960024.html</link>
+      <guid>https://ria.ru/20231029/mvd-1905960024.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 13:01:53 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/04/07/1863863141_0:121:3001:1809_600x0_80_0_0_c723b43f5bcbef8a2340058d6f3ad9d1.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Нетаньяху извинился за упреки в адрес служб безопасности Израиля</title>
+      <link>https://ria.ru/20231029/netanyakhu-1905958813.html</link>
+      <guid>https://ria.ru/20231029/netanyakhu-1905958813.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:48:40 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В Госдуме предложили внести в закон понятие "интересов ребенка"</title>
+      <link>https://ria.ru/20231029/deti-1905958508.html</link>
+      <guid>https://ria.ru/20231029/deti-1905958508.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:41:45 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/94345/53/943455385_0:331:2500:1737_600x0_80_0_0_f0663e711524da4b4a04d7307faf66b6.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Коми взорвался нефтяной резервуар</title>
+      <link>https://ria.ru/20231029/rezervuar-1905957992.html</link>
+      <guid>https://ria.ru/20231029/rezervuar-1905957992.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:35:43 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Движение по Крымскому мосту со стороны Тамани перекрыли</title>
+      <link>https://ria.ru/20231029/most-1905956825.html</link>
+      <guid>https://ria.ru/20231029/most-1905956825.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:29:17 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/09/0f/1896587283_0:160:3072:1888_600x0_80_0_0_2f1b9741c5c22538d534725381ff7eaa.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Израиль предупредил больницу "Аль-Кудс" в Газе о намерении нанести удар</title>
+      <link>https://ria.ru/20231029/gaza-1905956556.html</link>
+      <guid>https://ria.ru/20231029/gaza-1905956556.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:27:09 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Эксперт назвал риторикой заявления Турции и Ирана по израильскому конфликту</title>
+      <link>https://ria.ru/20231029/ekspert-1905956345.html</link>
+      <guid>https://ria.ru/20231029/ekspert-1905956345.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:25:27 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Число погибших при аварии на шахте в Казахстане возросло до 42 человек</title>
+      <link>https://ria.ru/20231029/mchs-1905955918.html</link>
+      <guid>https://ria.ru/20231029/mchs-1905955918.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:23:15 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Нетаньяху удалил пост с обвинениями в адрес служб безопасности</title>
+      <link>https://ria.ru/20231029/izrail-1905955458.html</link>
+      <guid>https://ria.ru/20231029/izrail-1905955458.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:20:01 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>СМИ в ФРГ выпустили манифест, объясняющий мигрантам, как надо себя вести</title>
+      <link>https://ria.ru/20231029/germaniya-1905955067.html</link>
+      <guid>https://ria.ru/20231029/germaniya-1905955067.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:12:44 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>СМИ сообщили о возможной отправке США модифицированных систем ПВО Украине</title>
+      <link>https://ria.ru/20231029/smi-1905954593.html</link>
+      <guid>https://ria.ru/20231029/smi-1905954593.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:07:56 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/0a/0b/1901938788_0:302:3069:2028_600x0_80_0_0_027b45d59ced9e6f412d2ea2d73642da.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>В Германии забили тревогу после заявления Путина о Зеленском</title>
+      <link>https://ria.ru/20231029/zelenskiy-1905953928.html</link>
+      <guid>https://ria.ru/20231029/zelenskiy-1905953928.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 12:01:01 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>"Исламский джихад" заявил об обстреле техники Израиля, проникнувшей в Газу</title>
+      <link>https://ria.ru/20231029/obstrel-1905953465.html</link>
+      <guid>https://ria.ru/20231029/obstrel-1905953465.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 11:59:47 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>Минск и Пекин обсудили выработку плана военного сотрудничества</title>
+      <link>https://ria.ru/20231029/knr-1905951440.html</link>
+      <guid>https://ria.ru/20231029/knr-1905951440.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 11:44:18 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>В доме в Крыму обрушился балкон, есть погибшие</title>
+      <link>https://ria.ru/20231029/balkon-1905951320.html</link>
+      <guid>https://ria.ru/20231029/balkon-1905951320.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 11:44:06 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+    <item>
+      <title>ПВО поразила воздушную цель в Ростовской области</title>
+      <link>https://ria.ru/20231029/pvo-1905951186.html</link>
+      <guid>https://ria.ru/20231029/pvo-1905951186.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 11:42:34 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+      <enclosure url="https://cdnn21.img.ria.ru/images/07e7/05/17/1873664333_0:0:3071:1727_600x0_80_0_0_9877ac66540b7fbbb231129b2c4a0ff0.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>ХАМАС заявило о продолжении боев с ЦАХАЛ на севере сектора Газа</title>
+      <link>https://ria.ru/20231029/boi-1905951046.html</link>
+      <guid>https://ria.ru/20231029/boi-1905951046.html</guid>
+      <rian:priority xmlns:rian="http://rian.ru/ns">3</rian:priority>
+      <pubDate>Sun, 29 Oct 2023 11:40:41 +0300</pubDate>
+      <rian:type xmlns:rian="http://rian.ru/ns">article</rian:type>
+      <category>Лента новостей</category>
+    </item>
+  </channel>
+</rss>
