@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BBC News | Русская служба – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="BBC News | Русская служба">
+<meta property="og:image" content="https://cdn4.telegram-cdn.org/file/ffPeT8s_TNUdqd8XbLOGavD53K9VJvGTeT9d_xRXlQZ8ZAPjVjRTw_K9YjC-VtkLscMxMNgKyPrKPKYy16eL9e1MpNl42D3HtCnrkssI5lA63_Db52nvcz0nJbpNJ4gmMRDbPD95wHh_hmQ3hk5mTZBRDA531UR7P3JpVP9M27PrsdtTngOFKx0IKnpuBCcYLBSSarXgIlcDr12MAsh2IPUADAtk29xJ3fuQkoHE-SVR272Gnchqj66yZspn_k163lGrinPhz5DHzF-qMrfA526hH2sk1-TBwZHfPa1VVm2Pn0Iok_fyIZngzMTjKnfKxZS90cKEKxUxImwcmQYM0g.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="Официальный канал 
+Русской службы Би-би-си Ньюз
+
+https://www.bbc.com/russian">
+
+<meta property="twitter:title" content="BBC News | Русская служба">
+<meta property="twitter:image" content="https://cdn4.telegram-cdn.org/file/ffPeT8s_TNUdqd8XbLOGavD53K9VJvGTeT9d_xRXlQZ8ZAPjVjRTw_K9YjC-VtkLscMxMNgKyPrKPKYy16eL9e1MpNl42D3HtCnrkssI5lA63_Db52nvcz0nJbpNJ4gmMRDbPD95wHh_hmQ3hk5mTZBRDA531UR7P3JpVP9M27PrsdtTngOFKx0IKnpuBCcYLBSSarXgIlcDr12MAsh2IPUADAtk29xJ3fuQkoHE-SVR272Gnchqj66yZspn_k163lGrinPhz5DHzF-qMrfA526hH2sk1-TBwZHfPa1VVm2Pn0Iok_fyIZngzMTjKnfKxZS90cKEKxUxImwcmQYM0g.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=bbcrussian">
+
+<meta property="al:android:url" content="tg://resolve?domain=bbcrussian">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="Официальный канал 
+Русской службы Би-би-си Ньюз
+
+https://www.bbc.com/russian
+">
+
+    <link rel="prev" href="/s/bbcrussian?before=55560">
+<link rel="canonical" href="/s/bbcrussian?before=55582">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?66" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?37" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/bbcrussian">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/bbcrussian" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor1" data-content="Bс"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">BBC News | Русская служба</span></div>
+              <div class="tgme_channel_info_header_labels"><i class="verified-icon"> ✔</i></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/bbcrussian">@bbcrussian</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">382K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">11.3K</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">1.37K</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">18</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">28.7K</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">Официальный канал <br/>Русской службы Би-би-си Ньюз<br/><br/><a href="https://www.bbc.com/russian" target="_blank" rel="noopener">https://www.bbc.com/russian</a></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=81e595c9cbe189b790_14022700906978063539">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=81e595c9cbe189b790_14022700906978063539">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/bbcrussian">
+        <i class="tgme_page_photo_image bgcolor1" data-content="Bс"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">BBC News | Русская служба</span></div>
+          <div class="tgme_header_labels"><i class="verified-icon"> ✔</i></div>
+        </div>
+        <div class="tgme_header_counter">382K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/bbcrussian">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/bbcrussian?before=55560" class="tme_messages_more js-messages_more" data-before="55560"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55560" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6IjU1NTYwZyIsInQiOjE2OTkwMjc4MzMsImgiOiIzZTRkMGIzNGE4ZDllZTkyNGQifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+<div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:114.128%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:517px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/RBix-_CoPL_OKxZurn1iQvNvtn7x2wKsP9tRgmm3c6K_NcV_ptHcGTZqahn9kcdCpUFS8yiCo9ntkzaKx44Zk2lYqTVwtp5us-orPmV3A0hJb1Rsti9eLwRvczmT2gdnvgLHIoIIThudIyWSQxwuLcEQiq5Yo0T-kx5f3VvfKaINcdNy0o_HyigwWuanm4DqOaCsPVw4OMnW3QCuPCpQBqz1DzOacC1YaZOQh9oG0hFKSwwoI0s9pxnHsejILH9vkQ7Of4g-Hms3KiqwABS34YEqZmpsIHh94hznquEx3YEm0uMW1-vLIde4pQreywT-V5plGDR_-DCsq3ycdv-bIw.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55560?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:0px;width:149px;height:187px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/F9VantTcfw-_NTAt5xJLizJzzJuOACetPhsDimkDKs7_haEab0RFxYJ3X-P3cBxDzGAIOLArB3DNDR9eDMCgykzR8aa4A6zhDHWG6wEIW0G40nPcxW8Ha_vm10SLKYQ-FIk6cMiMq_6h4hwj7XiJxlSyTJtLuVOBvQig_OTLW-iYDPndnkRYBafjYzeimTBS6Z9DaqLlE9QmMr8Y5X47M49wskgJfnhH4sWhX1EO69u3Qp_3L3uqnFxnAAHRGr32t5sHpBLFlcdBAWpc77W1hcwS7GErDY4perb7Hrq8U3QS5nqDEMDpN2cAsiyPV8KqJTRBP75nDyVSwDRWmf26hQ.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55561?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:0px;width:151px;height:187px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/Rv2tfiSi7nSnN1oWRhQBFyczow-K2sFyPB6tJGxcG6-yT9jpGcRO_Zfl-rZH8sKqerehblOcRWI5JTAMnm0fuzvRNXRkZ-Hsxat1PJFHfftpc-xqVBTC4yt5F_R5fMeR6REPCTWiFGiTHCGgpOHqC_0ZGRAxrYr7ep56rLKSoqyY-kVRoyFZ_InT8-KBEfSVCj-OpMJea8QryekjRhICBCSC6oxf2nAzlJt7zygrlpsRHP-s6xoVh85vyJ0raFt98XNJiD9K4EmsafZXnvR_bLZillHcI9xBZczTa-QmLBeeAQxe96C7qz8EuNtaHo2vz9da3PS3XK2ONosJv0RhzQ.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55562?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:189px;width:111px;height:139px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/SzkxciobNXBhBZ-ujtsOq14zL1jT7FD3DMx5IEb2OS8k45I4-tnzyo3SN1QtS0pYdRaRHXUHUkIpc5otCzMMHDk2tHdqcBHh3jCSOtvICtNZUdfXo-XjV83mZ4UOMPSlLvt4_3tfkdzfDDjs6Zq6o6UCWUuuivZdAoC3fwisRWqK8THcN773G4bKbbUxqDjEzNx8gdjrrAbhOHQOb3ey291yu_FV3nxD41sCa786lBtrW1ZNcF9SEqAu36rf8n2KnspyJkkOIBjF9P39WMSV2l38TwvS7WHbwhYBfRt94jLxZpt6yA0vI1Hr6HGOH7KOkAahVm6zCgyIWprcn0Ii1A.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55563?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:113px;top:189px;width:111px;height:139px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/JYdDHyWQBaOcJVqXOoRs3tb7vcq8W6nRJR_kPcBIX_Z8pSCKee2ml-MEgQzCg7qDauxgFZzwHzbxbe3zWx_go-uQGCTck9nDUvXbPYDPjzhcdlcZVEaqiLG4m7nXdrdEOtuU7jiJrRKmwp_TfiZaCmHe8glLv0Pj6FK3MNeF1HH5ECdoYxer6vb5YLQmgh6TomjPAI4Wner1hAbD3kZCxUyrycvnCt6udqV5xXf8kZDsEnmBDKexkpby_5sccQigzfBDIbSAu1yzOWwOqoar4bQ7NhvX6ka1aCVdKoeeEuI-TUmz5dI_UObZbsfoOUQ7S4qB52v-z5fE38MMd6FZWQ.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55564?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:226px;top:189px;width:111px;height:139px;margin-right:2px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/aBYMbJoxuSHZIZkRQC5lY1LhKH8g4uLBxjfloSicLKl1r7zG72e0WUGIV3o3bx456WjaQ-l3_Qn0BjDK2zMkjX0BGuFEvpkQwXU2svbZASRZ5ZPZGCq0LZEMKboZprFtd2_WkTTfYqTt2nmjSQ6lzsSV8PHo00WQXEykrKfn6G1VuwDN701gZvBjJIxzWSs3oe074WLbzqUsuhgXtPMIyBGCHPZVO0kCr_UKqywQBK7dNu4gG4LavbIjK21nGDDH82NJwghgaIdUjY1QtNcizyD4Douhc33g5kf2u7jTnTzKmsol1mzKXsdarRzg3kS71NbWa-O9KfrKYYxmt9KMAA.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55565?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:339px;top:189px;width:114px;height:139px;margin-right:0px;margin-bottom:2px;background-image:url('https://cdn4.telegram-cdn.org/file/g_k3XYx23Quzaxg2rXic1tln7Bc2Jy87sRb9fe-GcFDiPSbEb0Z0EEp3Bh7ZGRs0Vy6dDinFUvLwA9J39COpYzLtV5QDgUK1OnuxicvXt9g1bW55bI7ryfnRXRveSzVijQqqTipFnggKBNKNI6rXCB0w6lSbQMBcOsTJCiukUKb-wa0WEHq30S_MMtb3zzAmfHj4xYxXLTIITQxbjHYhGZrsTnuizRhTWePUyEVsLfpm2wO43OsPPaKE2B_G9IKcmcoPI-omLgUd8bdZ1Z8dxhOZrvnfu8IFTmPfJuGde5FdZpRIZv4TnpqNU6u7QpwqGBVKEIW4QhMQEEjnCYfpPw.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55566?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-2px;bottom:-2px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:330px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telegram-cdn.org/file/DoJbQ--fKisWmhLqDRvFboL3jQY4QOhpmNTi0FbedXCFtgHqsBk3vyrlvzM5ZDL4PmQzBVR1gUDyESXzJcWvLhDXNpZ8CRdaMzmffNokhs0KpZf4sqPKnTfFLpLXb3eLVa_pn5_z4QaRJdLg_fop25okI6S1wVEgRMmuuaRjqJePkt9YPiG71clh-wgWwxOsdNICLkw4pQh3aek_8GQ2sc4sRggOQWnQZ50vFQCnBnOS471fSXk8oc4OPCUyMBD9ZCJg35XcXcvo09GxbZG29q45ZiJGZwBz8cbfKl7rltOqIYHVJvyAPtfiDF1spIVQDjFKNyBZDlAvdCFd0jVHww.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55567?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:151px;top:330px;width:149px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telegram-cdn.org/file/frg20r9RlojXzwT2GAyX6U_8C67mhL0ojZrOFQB5bS7KWRGE93zA5bbZ3avaMO1ZNGdpy9iOPxIJ5XQzAWpfNvoGCFlI1HzqS4QbzsZFzaHIcOZv0JvHSVZ1A3l_J7Il2E7Oo4BuAYtVIFLsBAe1Amff5R58ljkc_Nkv4XeSItRkL7AY-b0lB84d--uuDX9PQwSA6B__u-9rm-yZx7fABGfjBRBXND-jPbsF9mQXZGn7R0e6udaxGKhiDSpglTr2lKHfqF73ctakfu7RtLSvTDWqSTlZlQhpNaXrQ9ecyHVWTa-jNFZHk_5iCgBAWzAmxTP9wcf6Tl9BS63L3Tw9Jw.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55568?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:-1px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:302px;top:330px;width:151px;height:187px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telegram-cdn.org/file/bhwZLLNkV1VgEXBpyDVdxlL4AqZUJKKeuWAmRms5g3EuVKLMTQvgcVlTuKVmQUN659f66C-48Qc2NUBVsV0yXbw1N2jI6oLWnEmyfBeTxluHnTM-aQroSns443QO8Dx-OX_o8Lpw3T_1hyylRsJw0WtF_zYWwFFqWhjpgiZkgcds22TR9DhIpeojWM4vq4vUxpvb97YXLO2KBim3sQ4xCeh_4ErWtb8OxqwX2emKZqkZbM9M6rGLZgY7hs-_oG2hoIhyObklOO4hSSybR8LkhaGnVJuim9eV-zRjfUSiXY3_Ubt8rg50U1xj7CbfnDzQVZfayHA45xFNoF_HfaddpQ.jpg')" data-ratio="0.8" href="https://t.me/bbcrussian/55569?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:19px;right:20px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:-1px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div>
+<div class="tgme_widget_message_text js-message_text" dir="auto"><div class="tgme_widget_message_text js-message_text" dir="auto">В 2017 году, когда стало известно о массовых преследованиях геев в Чечне, Рамзан Кадыров сказал, отвечая на вопрос о расправах: «У нас таких людей нет».  <br/><br/>Сегодня в России давление на ЛГБТК+ сообщество продолжает усиливаться: начиная с закона о запрете «гей-пропаганды» и заканчивая недавно принятым законом о запрете трансгендерного перехода. Наиболее тяжелые условия для этих людей – на Северном Кавказе, где их преследуют, пытают и даже могут казнить. <br/><br/>Сегодня, 3 ноября, в Берлине открылась выставка под названием No such people here, посвященная историям ЛГБТК+ людей, бежавших, оставшихся и убитых. Рассказываем, что на ней можно увидеть.</div></div>
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">31.2K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55560"><time datetime="2023-11-03T14:02:22+00:00" class="time">14:02</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55570" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzAsInQiOjE2OTkwMjc4MzMsImgiOiIwNzMzOWVhZDE3ZDYyNDAxODkifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+<a class="tgme_widget_message_reply" href="https://t.me/bbcrussian/55559" >
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">BBC News | Русская служба</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">В ближайшие часы глава ливанской радикальной группировки «Хезболла» Хасан Насралла обратится к своим сторонникам в Ливане и по всему миру.  Столкновения боевиков «Хезболлы» с израильскими военными на ливано-израильской границе оцениваются как весьма интенсивные…</div>
+</a>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/bbcrussian/55570" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">41.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55570"><time datetime="2023-11-03T14:05:06+00:00" class="time">14:05</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55571" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzEsInQiOjE2OTkwMjc4MzMsImgiOiI5MzdjNDE2MDExODc3NGQyNDIifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Владимир Путин снова напрямую обвинил в массовых беспорядках Запад: <i>«Удивляет позиция заокеанских деятелей — поддерживают Израиль, а у нас пытаются организовывать еврейские погромы, просто свинство».<br/></i><br/>Он&nbsp;пообещал, что власти отреагируют на&nbsp;события в&nbsp;Дагестане «в&nbsp;соответствии с&nbsp;законом».<b><br/></b><br/><i>«То, что произошло, то произошло. А реакция духовенства была быстрой, убедительной. Тем более для Дагестана, для любимого мной Дагестана, это не какая-то тенденция главная, а событие, на которое надо обратить внимание, и в соответствии с российскими законами отреагировать на это. И мы это сделаем»</i>, — заявил Путин на встрече с новым составом Общественной палаты России в канун одного из российских государственных праздников — Дня народного единства.<br/><br/>В начале недели Путин заявлял, что беспорядки в Махачкале «были инспирированы в том числе через социальные сети, не в последнюю очередь с территории Украины, руками агентуры западных спецслужб».<br/><br/>Подробнее: <a href="https://bbc.in/40pGXDh" target="_blank" rel="noopener">https://bbc.in/40pGXDh</a><br/><br/><a href="https://storage.googleapis.com/gsc-link/www.bbc.com/8fd671bb.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>Ссылка без VPN.</i></a></div>
+<a class="tgme_widget_message_link_preview" href="https://bbc.in/40pGXDh">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">BBC News Русская служба</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telegram-cdn.org/file/itaz6uOS40TT8aetHiLTaIVGGkD0qHAe7_cP0IAwVKyEuOPgkQr0tafdArk_1IQ9FxNfB5gHDbE_ys7MH5d5USSObzC6xh0eHu0hN1W8RCnqsEcd_KogkwMWqD2jRFHDmpbKnG3YZPN4gpj8dkjTywOCG2i0P1cRLOYYytysZssgN5Bu-0Jv0xN_FjFPRFXjIs0494P4_CiuO38hQc_Tuljo8gJk-23Xqqf7NqRF2yU-ZknZhsvK7uYokL_aYfFDBRutEVvl6oY7DZUziS-_hOYeyGJBMlPMu3NpbFRldWq2b6CI3LLLQO8zSSduaIa6_0V--_IpfpvIhjeg9HZl2A.jpg');padding-top:56.25%"></i>
+  <div class="link_preview_title" dir="auto">Погром в&nbsp;аэропорту Махачкалы: СКР&nbsp;нашел 20 подозреваемых, а&nbsp;Путин пожаловался на&nbsp;«свинство заокеанских деятелей»</div>
+  <div class="link_preview_description" dir="auto">На&nbsp;фоне призывов смягчить наказание участникам еврейского погрома в&nbsp;Дагестане Следственный комитет России объявил, что установил уже 20 подозреваемых по&nbsp;уголовному делу. Вскоре после этого о&nbsp;произошедшем снова высказался российский президент Владимир Путин.…</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">31.8K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55571"><time datetime="2023-11-03T14:21:24+00:00" class="time">14:21</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55572" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzIsInQiOjE2OTkwMjc4MzMsImgiOiJhMmRiNzVjZmM1YzVmNmFmNGEifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Суд приговорил к длительным срокам врачей и суррогатных матерей, обвиненных в торговле детьми из-за сопровождения суррогатного материнства. <br/><br/>Эмбриолог Тарас Ашитков получил 17,5 лет строгого режима, врач-репродуктолог Юлиана Иванова 16,5 лет общего режима, акушер-гинеколог Лилиан Панаиоти 16 лет общего режима, гендиректор «Европейского центра суррогатного материнства» Владислав Мельников&nbsp;— 19,5 лет строгого режима.<br/><br/>Две суррогатные матери, Татьяна Блинова и&nbsp;Лилия Валеева, получили, соответственно, 4 года и&nbsp;10 лет общего режима.<br/><br/>И адвокаты, и сами врачи считают, что дело сфабриковано и абсурдно. Перед заседанием они еще раз подчеркнули, что невозможно продать детей их же родителям.<br/><br/>Подробнее: <a href="https://bbc.in/45WjieM" target="_blank" rel="noopener">https://bbc.in/45WjieM</a><br/><br/><a href="https://storage.googleapis.com/gsc-link/www.bbc.com/02415eac.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>Ссылка без VPN</i></a></div>
+<a class="tgme_widget_message_link_preview" href="https://bbc.in/45WjieM">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">BBC News Русская служба</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telegram-cdn.org/file/poXhIxWSsQFNVDG6vLJsrwOtYyED2qphHnrTIsx6OMzPS0riWPRP6PlQpJxDt-wWx9xo-iYK9pGy870eV2SVdlRSWn-_vfpCkyCiY2weV4JN6KLlaIHwMQ4jq-mZI_Np2YHowR7F6nis26kjob0aQWFb-8UwyyoW7eGK5hGqHEF0Ib258dA3xv2V2SwwkxLKQep37SBoBPdJrGUi-hInuEIT9r1GBArIzTUWI-UVsLlCEtXxes_PdMEA4SlqBf82A21XFngXGHIeJE7dQIbQUfaI1MDSf1RL5tXrMYZq4hmydO86XNW4Vce5Mz371nA4sYtc8ZynXdcURV43ugqWlg.jpg');padding-top:56.25%"></i>
+  <div class="link_preview_title" dir="auto">Огромные сроки по&nbsp;«делу врачей»: суд в Москве вынес приговор медикам, обвиняемым в&nbsp;торговле детьми</div>
+  <div class="link_preview_description" dir="auto">Никулинский суд Москвы приговорил к длительным срокам заключения нескольких человек, среди которых врачи и суррогатные матери, обвиненные в торговле детьми из-за сопровождения суррогатного материнства.</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">26.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55572"><time datetime="2023-11-03T14:53:32+00:00" class="time">14:53</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55573" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzMsInQiOjE2OTkwMjc4MzMsImgiOiI5ZWI3YzMzM2FlNTJkNjE5NWMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/bbcrussian/55573" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">22.6K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55573"><time datetime="2023-11-03T15:07:01+00:00" class="time">15:07</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55574" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzQsInQiOjE2OTkwMjc4MzMsImgiOiI3M2Y3NzIyODY1NmE4MDllOGYifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+<a class="tgme_widget_message_video_player not_supported js-message_video_player" href="https://t.me/bbcrussian/55574"><i class="tgme_widget_message_video_thumb" style="background-image:url('https://cdn4.telegram-cdn.org/file/kP2X7WbI91UmFcyeMMM2lLmngXQhsDiQ98CImy7KIFq2rcNlu89F9ODmlhwmSW3rp3F581ceU5iesTxIuia9-mu5mBuTt9tVi52JOr4Wx6XyEhlrnZHDviOoi2o1bl2FG0-1h53bOFCjzyShH6GT0dfFkLu5Ar7oaU4-tTfOfiPLBEtoajIGSKBy9r0igJXDMXCdiWkZ_FkdDH3bvmremYaKY1nhZm17zW0K3Cz2oSb464Glw3BiRqusuhByS2-W7LSxeOjj1z4-2n4CRhKAcIDqtfG4zz-1JHr97X0WODNjJ96Fxxe7UylKbNe-JrkkbkwSkpPJuG3jCRcHpme0XQ')"></i>
+
+<div class="tgme_widget_message_video_wrap" style="width:464px;padding-top:133.33333333333%">
+  
+</div>
+<div class="message_video_play js-message_video_play"></div>
+<time class="message_video_duration js-message_video_duration">1:03</time>
+<div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Media is too big</div>
+    <span class="message_media_view_in_telegram">VIEW IN TELEGRAM</span>
+  </div>
+</div></a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">Что думают горские евреи Дербента о беспорядках в Махачкале</div>
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">21.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55574"><time datetime="2023-11-03T15:11:49+00:00" class="time">15:11</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55575" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzUsInQiOjE2OTkwMjc4MzMsImgiOiIzMzRlY2Y3YjI0NTlkM2UzYzgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+<a class="tgme_widget_message_reply" href="https://t.me/bbcrussian/55570" >
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">BBC News | Русская служба</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto"></div>
+</a>
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Лидер «Хезболлы» выступил с&nbsp;видеообращением. Главное<br/><br/></b>Лидер &quot;Хезболлы&quot; Хасан Насралла выступил с полуторачасовой речью. Она стала его первым публичным выступлением с 2006 года. Насралла эмоционально поддержал ХАМАС, но заверил, что нападение на Израиль 7 октября группировка спланировала полностью сама, а вступать в полномасштабную войну с Израилем первой «Хезболла» не намерена.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i> Вот основные тезисы его выступления:<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i>Насралла призвал «работать днем и ночью», чтобы достичь перемирия в Газе, заявив, что это «главная цель» «Хезболлы».<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i>Вторая цель ливанской группировки, поддерживаемой Ираном: победа ХАМАС в Газе. Он описал нынешнюю войну как «переломный момент».<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i>Насралла также заверил, что нападение ХАМАС 7 октября на 100% планировала сама группировка, и она не предупреждала о нем своих союзников.<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i>Насралла также заявил, что с 8 октября «Хезболла» находится в «беспрецедентной битве» с Израилем на границе Израиль-Ливан. Он добавил, что считает реалистичной «возможность эскалации ливанского фронта в широкомасштабную битву». По его словам, превентивный удар ЦАХАЛ по Ливану будет «самой большой ошибкой» Израиля за все время его существования. Ранее сегодня на фоне обострившихся столкновений на израильско-ливанской границе армия Израиля на севере страны перешла в режим «высокой боевой готовности».<br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296AA.png')"><b>▪️</b></i>Вину за нынешний вооруженный конфликт Насралла возложил и на США, которые спонсируют Израиль. По его утверждению, США могут остановить агрессию против Газы, потому что «это их агрессия». Он также призвал прекратить поставки газа и нефти в Израиль.</div>
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">18.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55575"><time datetime="2023-11-03T15:25:48+00:00" class="time">15:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55577" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzcsInQiOjE2OTkwMjc4MzMsImgiOiJlYzA3ZmQ0NGFmYjIwNWYxNjgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Сэм Бэнкман-Фрид еще недавно был известен как «криптокороль» и одно из самых публичных лиц криптовалютной индустрии, но теперь ему потенциально грозят несколько десятилетий тюремного заключения.<b><br/><br/></b>Суд в США признал его виновным в мошенничестве, обмане клиентов и отмывании денег.<br/><br/>Ошеломительное падение 31-летнего экс-миллиардера началось в прошлом году. Его арестовали после того, как его компания FTX, на тот момент вторая по величине криптовалютная биржа в мире, обанкротилась.<br/><br/>Судебный процесс над Бэнкманом-Фридом может иметь большие последствия для криптоиндустрии. <br/><br/>Подробнее: <a href="https://bbc.in/40m4LYC" target="_blank" rel="noopener">https://bbc.in/40m4LYC</a><br/><br/><a href="https://storage.googleapis.com/gsc-link/www.bbc.com/36bc11cf.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>Ссылка без VPN</i></a></div>
+<a class="tgme_widget_message_link_preview" href="https://bbc.in/40m4LYC">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">BBC News Русская служба</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telegram-cdn.org/file/LulgqQGdOGaEj9q_A8TkvnC7xISIfVhR65Jp-kGXUspr-eSwC459aILTIgassZFfXcHBIEa2MD6oxMkCz_97rVRRgp8a6J0_f5iwMX2VKodVoti9vVoQe297M527x690-LsALj95rE3DGv60PZ-1Orc4qt4tOzLBbBNADBBD53B89asoM8XFALSwn-tShkEpi9XUkkY4TZjthopg8wxuUOW2A06-pZ63EJk5a0-R_t-_DkiUfyOibvmNY2S_a9ezg6AgTiCdYsVOXRhdRFA7rM7Ax6xFznhG8hsRVNGnfRJfU-ey0lLPU_1agQ8ZfpjflZH7xUUcLLGgdmU2TCKCIw.jpg');padding-top:56.25%"></i>
+  <div class="link_preview_title" dir="auto">Крах криптокороля. В США суд признал виновным главу биржи FTX Сэма Бэнкмана-Фрида</div>
+  <div class="link_preview_description" dir="auto">Суд в США признал виновным в мошенничестве, обмане вкладчиков и отмывании денег Сэма Бэнкмана-Фрида – в прошлом руководителя FTX, одной из крупнейших в мире криптовалютных бирж.</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">14.7K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55577"><time datetime="2023-11-03T15:36:02+00:00" class="time">15:36</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55578" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzgsInQiOjE2OTkwMjc4MzMsImgiOiJhZWE5OTZmMGMzM2M1ODY3ZGUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>В результате обстрела села в Запорожской области пострадали одиннадцать человек<br/><br/></b>Об этом <a href="https://t.me/komish_gromada/843" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">сообщил</a> Камышевский поселковый совет Запорожской области.<br/><br/>Как говорится в сообщении, сегодня в 10 утра российские военные нанесли ракетный удар по поселку Заречное. В результате ранения разной степени тяжести получили одиннадцать мирных жителей.<br/><br/>Также повреждения получили многоквартирные и частные жилые дома, несколько из них разрушены.<br/><br/>Камышевский поселковый совет также опубликовал фото последствий этого ракетного удара.</div>
+<a class="tgme_widget_message_link_preview" href="https://t.me/komish_gromada/843">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telegram-cdn.org/file/AKSP2e3Bgy5YgtIb_TGfN4unjjgWviFEWQ-1kLmaxoXn9Fy3bXVFb098aPDqHj_y8S5tGIsFsGOtVCFlju2iU76psbiLTkbyc_mq7rEwfqaODbUx2UKJcc8JujeXxfKD5AFfIzsbdelWJO10G76HpJsWctBWAOz_k7IFWZ_chgT82y4K3QFWyQ5HIn3PWEe1hpksoxzTrSvA46t3Zp3wLZ8l1M8mSmlZhyC6lU0RVvTrMlvgmT2GPGHJ5ubdCrIGnZWn4kobr4oRLnEzhrJf94ZpdPsmQOcSrwyj9FLEEYmraRb9hAI3zLxXKjS7nrUoNxrLtlQIzCiUt_bdqchZpw.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">Telegram</div>
+  
+  <div class="link_preview_title" dir="auto">Комишуваська селищна рада Запорізького району Запорізької області</div>
+  <div class="link_preview_description" dir="auto">Сьогодні о 10:14 ворог завдав ракетного удару по селищу Зарічне.  Пошкоджено багатоквартирні та приватні житлові будинки, декілька будинків зруйновано. Поранення різного ступеню тяжкості отримали одинадцять мирних мешканців, їм надається необхідна медична…</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">12.2K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55578"><time datetime="2023-11-03T15:44:36+00:00" class="time">15:44</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55579" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1NzksInQiOjE2OTkwMjc4MzMsImgiOiJlNGI4YTIzZmI5NWExMzk0ZjgifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+
+<div class="tgme_widget_message_text js-message_text" dir="auto">Американский миллиардер Илон Маск заявил, что искусственный интеллект приведет к тому, что человечеству больше не придется работать, а главным вопросом будущего для человечества станут поиски смысла жизни. <br/><br/>Об этом он поговорил с премьер-министром Великобритании Риши Сунаком в рамках двухдневного саммита, посвященного регулированию искусственного интеллекта.<br/><br/>«Мы&nbsp;становимся свидетелями самой разрушительной силы в&nbsp;истории,&nbsp;— заявил Маск. —&nbsp;Наступит день, когда работать больше не&nbsp;понадобится&nbsp;— вы&nbsp;сможете выполнять работу себе в&nbsp;удовольствие, но&nbsp;ИИ&nbsp;сможет делать абсолютно все».<br/><br/>Рассказываем, о чем еще говорили Маск и Сунак: <a href="https://bbc.in/3tV8HDj" target="_blank" rel="noopener">https://bbc.in/3tV8HDj</a><br/><br/><a href="https://storage.googleapis.com/gsc-link/www.bbc.com/eeb9228e.html" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><i>Ссылка без VPN</i></a></div>
+<a class="tgme_widget_message_link_preview" href="https://bbc.in/3tV8HDj">
+  
+  <div class="link_preview_site_name accent_color" dir="auto">BBC News Русская служба</div>
+  <i class="link_preview_image" style="background-image:url('https://cdn4.telegram-cdn.org/file/az_-10D7Prdxz0ADsBL4KkYEeceOGgECOCU-O6CidCkhEb7nGy5d9livmt4Ch27VFCnxG1L7np1xAdv66suFTLzcahwBmk4I9NQIi6Q325WQHFvx7Uxu3tjDXZlVdayKtY6NT06NIse6e_DAi95WbX6ijJd02ElvG_0ZlwLu4Ht77RbykgBroBeUvUyY8kn41qqJiMpphf1NKo0t60_vxp3l6QEZnMTz4i8Zrpm8NqHvbWAz0qvRHdbJt6nvz-c_w-M19ceewUYCkCIfEc-LpGTQqLTZpjJNV-K0T4wJwoA2yYk1piTaqjXwBHEB8GjbwPu5b8A7wsYKSBUIIsCCmA.jpg');padding-top:56.25%"></i>
+  <div class="link_preview_title" dir="auto">«Человечеству больше не придется работать»: Илон Маск предупредил о будущем искусственного интеллекта</div>
+  <div class="link_preview_description" dir="auto">Премьер-министр Великобритании Риши Сунак и бизнесмен Илон Маск обсудили будущее искусственного интеллекта на саммите в Лондоне.</div>
+</a>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55579"><time datetime="2023-11-03T15:50:28+00:00" class="time">15:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55580" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1ODAsInQiOjE2OTkwMjc4MzMsImgiOiIxZTk1NjQ4NTkwNTNjMzIxNWMifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5345787734695990196 1244663199_456250292" href="https://t.me/bbcrussian/55580" style="width:800px;background-image:url('https://cdn4.telegram-cdn.org/file/d5DL6Gvga3faAeP80HKxyWrKiRctclVCweN8-sAKzZISLDr8uKM5WDZk8wtayGh_kpbqM0RhOcqu2pPMNjOm1lqnClAeJhIubu5nKu2wQQDEMaTiriKVgUoFCT5nTWkQ-yQtzRx6wzCSz84I0ET9U3ZsekgAElsWvqVr1oCH-hh1BJUGDz-ua6-fvtdlAkw5X1bQ_t1sFVaLSxjREtTjWf1g8KGQGzGX-K_sxeD3mgiaTiN6KQSjNNcElqduqLeVEHUnvc_9ujb9ukc1oQ0g_XwiEGC-B0fAlalO-WJlAy4yXNES6WeMSISI_G3YFiJDAjLfcKFE7vPhJDKNZbf4AQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:52.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">Израиль уже неделю ведет наземную операцию в секторе Газа. В четверг начальник израильского генштаба заявил, что ЦАХАЛ окружил город Газа и ведет в нем бои, а премьер Израиля Беньямин Нетаньяху говорит, что армия «находится на пиковой точке битвы».<br/><br/>Чего Израиль хочет достичь наземной операцией и какой ценой? <br/><br/>На эти вопросы <a href="https://podcast.ru/1460240829" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">отвечает</a> корреспондент издания «Коммерсантъ» и автор <a href="https://t.me/mideastr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">телеграм-канала «Фалафельная»</a> Марианна Беленькая.<br/><br/><tg-emoji emoji-id="5312002447747591536"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji><a href="https://podcast.ru/1460240829" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">Слушать подкаст</a> <tg-emoji emoji-id="5312002447747591536"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E296B6.png')"><b>▶️</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/bbcrussian/55580" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">6.7K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55580"><time datetime="2023-11-03T15:59:01+00:00" class="time">15:59</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="bbcrussian/55581" data-view="eyJjIjotMTAwMzkyMTc1MiwicCI6NTU1ODEsInQiOjE2OTkwMjc4MzMsImgiOiIyZTAxYzUzOTE1OGM3M2M3OGUifQ">
+  <div class="tgme_widget_message_user"><a href="https://t.me/bbcrussian"><i class="tgme_widget_message_user_photo bgcolor1" data-content="B"><img src="https://cdn4.telegram-cdn.org/file/gIVGUM1EeIAO5XbWQpKp_K5sjTSs1yeyi0I3yxWWp3EgrK7sk9jwuVsSVY-vS7SGvA6liwjETZZ6mE5ExCNQuRy04K40PKkfFJgXluMNjxaqdXcvmqbmyfurKqjaranY8Du-fyg0IWaOy8hGH2Vca-YG4Bep3fzdVfvk_mi6RnFg9XEsFjxcqVFPrQUavdn0DgGEKyxApzoWGSZ9Z9QFrUsEU_kWdJaUKOK6nFRs_0rRJEfJj_GkPYmZKRNwKUvXnSWuTmeiqMXVVzg68AJ9ksgEXxoFh1mJuCaq4oiHiEe7mQgklGfdxMKg8_VOWadkGfJ8VNUSu8t0TjeCcjk7OQ.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/bbcrussian"><span dir="auto">BBC News | Русская служба</span></a></div>
+
+
+<a class="tgme_widget_message_document_wrap" href="https://t.me/bbcrussian/55581">
+  <div class="tgme_widget_message_document_icon accent_bg audio"></div>
+  <div class="tgme_widget_message_document">
+    <div class="tgme_widget_message_document_title accent_color" dir="auto">&quot;Что это было?&quot; Как проходит наземная операция в Газе? </div>
+    <div class="tgme_widget_message_document_extra" dir="auto"></div>
+  </div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>Как проходит наземная операция в Газе и какие у нее цели? Разбирались с корреспондентом издания «Коммерсантъ» и автором </b><a href="https://t.me/mideastr" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>телеграм-канала «Фалафельная»</b></a><b> Марианной Беленькой.<br/><br/><br/></b>0:00 Приветствие. Ведущий — Илья Кизиров<br/><br/>00:46 Что сейчас происходит в Газе?<br/><br/>03:06 Почему Израиль откладывал наземную операцию?<br/><br/>12:30 Зачем ХАМАС нужны подземные тоннели?<br/><br/>14:30 Зачем ЦАХАЛ нанес удар по лагерю беженцев?<br/><br/>21:14 Что известно о жертвах среди мирного населения в Газе?<br/><br/>31:35 Сколько продлится операция в Газе?<br/><br/><i>Нас можно слушать и на YouTube </i><a href="https://bit.ly/3rot87v" target="_blank" rel="noopener"><i>https://bit.ly/3rot87v</i></a></div>
+
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.7K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/bbcrussian/55581"><time datetime="2023-11-03T16:01:48+00:00" class="time">16:01</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?31"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?62"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 213.67ms -->
