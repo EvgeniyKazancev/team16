@@ -12,8 +12,10 @@ public:
 
 private:
 	static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream);
+	static size_t read_header(char *buffer, size_t size, size_t nitems, void *userdata);
 	CURL *curl_handle_;
 	FILE *file_;
 	std::string content_type_;
+	std::string headers_;
 };
 

@@ -11,7 +11,7 @@ public:
 	HtmlParser() = delete;
 	HtmlParser(const HtmlParser &) = delete;
 	HtmlParser &operator=(const HtmlParser&) = delete;
-	HtmlParser(const Lib::dataSource &src);
+	HtmlParser(const Lib::dataSource &src, const std::string &working_dir);
 	void parse(const mysqlx::Session &db_session) override;
 	~HtmlParser();
 };

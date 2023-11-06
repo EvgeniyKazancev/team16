@@ -9,7 +9,7 @@ public:
 	RssParser() = delete;
 	RssParser(const RssParser &) = delete;
 	RssParser &operator=(const RssParser&) = delete;
-	RssParser(const Lib::dataSource &src);
+	RssParser(const Lib::dataSource &src, const std::string &working_dir);
 	void parse(const mysqlx::Session &db_session) override;
 	~RssParser();
 private:

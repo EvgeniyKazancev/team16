@@ -9,7 +9,7 @@
 class IParser {
 public:
 	IParser() = delete;
-	IParser(const Lib::dataSource &src);
+	IParser(const Lib::dataSource &src, const std::string &working_dir);
 	IParser(const IParser &) = delete;
 	IParser &operator=(const IParser&) = delete;
 	virtual void parse(const mysqlx::Session &db_session) = 0;
@@ -17,5 +17,6 @@ public:
 protected:
 	unsigned parse_depth_;
 	std::string url_;
+	std::string working_dir_;
 };
 

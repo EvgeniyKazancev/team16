@@ -4,8 +4,8 @@
 
 #include <mysqlx/xdevapi.h>
 
-TgParser::TgParser(const Lib::dataSource &src) :
-	IParser(src) {
+TgParser::TgParser(const Lib::dataSource &src, const std::string &working_dir) :
+	IParser(src, working_dir) {
 
 }
 

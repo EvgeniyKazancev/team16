@@ -67,7 +67,7 @@ void NewsParser::run() {
 		for (const auto &src: sources_) {
 			if (src.type == "Web") {
 				try {
-					parser = std::make_shared<HtmlParser>(src);
+					parser = std::make_shared<HtmlParser>(src, working_dir_);
 				}
 				catch (const std::invalid_argument &e) {
 					std::stringstream ss;
