@@ -5,11 +5,15 @@ SRC = src/main.cpp \
 	src/config_file.cpp \
 	src/iparser.cpp \
 	src/rssparser.cpp \
-	src/newsparser.cpp
+	src/newsparser.cpp \
+	src/htmlparser.cpp \
+	src/tgparser.cpp
+BINDIR = bin
 TARGET = newsparser
 STD = c++20
 INCLUDES = /usr/include/mysql-cppconn-8
 LIBS = -ltinyxml2 -lcurl -lmysqlcppconn8
 
 all:
-	g++ -o ${TARGET} --std=${STD} -I${INCLUDES} ${SRC} ${LIBS}
+	mkdir -p ${BINDIR}
+	g++ -o ${BINDIR}/${TARGET} --std=${STD} -I${INCLUDES} ${SRC} ${LIBS}

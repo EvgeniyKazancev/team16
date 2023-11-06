@@ -1,14 +1,18 @@
 #pragma once
 
+#include "project_lib.h"
+
 #include <string>
+
+#include <mysqlx/xdevapi.h>
 
 class IParser {
 public:
 	IParser() = delete;
+	IParser(const Lib::dataSource &src);
 	IParser(const IParser &) = delete;
 	IParser &operator=(const IParser&) = delete;
-	IParser(const std::string& url);
-	virtual void Parse() = 0;
+	virtual void parse(const mysqlx::Session &db_session) = 0;
 	virtual ~IParser() = 0;
 protected:
 	unsigned parse_depth_;

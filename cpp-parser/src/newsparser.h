@@ -1,23 +1,19 @@
 #pragma once
 
+#include "project_lib.h"
 #include "config_file.h"
 #include "converter.h"
 #include "download_file.h"
+#include "htmlparser.h"
+#include "tgparser.h"
+#include "rssparser.h"
 
 #include <string>
 #include <vector>
 #include <chrono>
-#include <ctime>
+#include <memory>
 
 #include <mysqlx/xdevapi.h>
-
-struct dataSource {
-	unsigned id;
-	std::string url;
-	std::string type;
-	unsigned parse_depth;
-	std::chrono::system_clock::time_point created;
-};
 
 class NewsParser final {
 public:
@@ -32,6 +28,7 @@ private:
 	const std::string WORKING_DIR_PREFIX{ "/tmp/newsparser-" };
 	std::string working_dir_;
 	ConfigFile config_ { CONFIG_FILE };
-	std::vector<dataSource> sources_;
+	std::vector<Lib::dataSource> sources_;
+	std::vector<std::shared_ptr<IParser>> parsers_;
 };
 

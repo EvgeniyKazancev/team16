@@ -29,10 +29,11 @@ NewsParser::NewsParser() {
 			for (const auto &row: rows) {
 				auto since_epoch = chrono::seconds((row[4].get<long>()));
 				auto timestamp = epoch + since_epoch;
+				auto type = row[2].get<mysqlx::string>();
 				sources_.emplace_back(
 					row[0].get<unsigned>(),
 					row[1].get<mysqlx::string>(),
-					row[2].get<mysqlx::string>(),
+					type,
 					row[3].get<unsigned>(),
 					timestamp
 				);
@@ -55,8 +56,32 @@ NewsParser::NewsParser() {
 }
 
 void NewsParser::run() {
-	for (const auto &src: sources_) {
-		
+	try {
+		mysqlx::Session db_session{
+			config_["DBHost"],
+			std::stoi(config_["DBPort"]),
+			config_["DBUser"],
+			config_["DBPassword"]
+		};
+		std::shared_ptr<IParser> parser;
+		for (const auto &src: sources_) {
+			if (src.type == "Web") {
+				try {
+					parser = std::make_shared<HtmlParser>(src);
+				}
+				catch (const std::invalid_argument &e) {
+					std::stringstream ss;
+					ss << "Error: " << e.what();
+					logError(ss.str());
+				}
+				parser->parse(db_session);
+			}
+		}
+	}
+	catch (const mysqlx::Error &e) {
+		std::stringstream ss;
+		ss << "Unable to connect to database: " << e;
+		logError(ss.str());
 	}
 }
 

@@ -1,11 +1,11 @@
 #include "rssparser.h"
 
-RssParser::RssParser(const std::string& url) :
-IParser(url) {
+RssParser::RssParser(const Lib::dataSource &src) :
+IParser(src) {
 
 }
 
-void RssParser::Parse() {
+void RssParser::parse(const mysqlx::Session &db_session) {
 
 }
 
