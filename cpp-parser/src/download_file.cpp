@@ -5,11 +5,15 @@
 #include <iostream>
 #include <string>
 #include <functional>
+#include <sstream>
+#include <iomanip>
+#include <algorithm>
 
 #include <unistd.h>
 
 DownloadFile::DownloadFile(const std::string &url, const std::string &filename) {
 	auto filename_cstr = filename.c_str();
+	unsigned short attemp_number{ 1 };
 
 	curl_global_init(CURL_GLOBAL_ALL);
 	curl_handle_ = curl_easy_init();
@@ -40,7 +44,31 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename) 
 	}
 	long http_code = 0;
 	curl_easy_getinfo(curl_handle_, CURLINFO_RESPONSE_CODE, &http_code);
-	std::cout << http_code << ": " << headers_ << std::endl;
+	if (http_code == 200) {
+		curl_easy_cleanup(curl_handle_);
+		return;
+	}
+	if (http_code == 404) {
+		throw std::runtime_error{ "404 not found" };
+	}
+	if (http_code == 403) {
+		throw std::runtime_error{ "403 forbidden" };
+	}
+	if (http_code != 301 && http_code != 302) {
+		std::stringstream ss;
+		ss << "http response code is " << http_code;
+		throw std::runtime_error{ ss.str() };
+	}
+	auto location_pos = headers_.find("location: ");
+	if (location_pos == std::string::npos) {
+		throw std::runtime_error{ "unable to get a new location url after redirect" };
+	}
+	auto newline_pos = headers_.find("\n", location_pos + 10);
+	auto location = headers_.substr(location_pos + 10, newline_pos - (location_pos + 10));
+	std::erase(location, ' ');
+	std::erase(location, '\r');
+	std::erase(location, '\n');
+	std::cout << http_code << ": " << std::quoted(location) << std::endl;
 	
 	curl_easy_cleanup(curl_handle_);
 }

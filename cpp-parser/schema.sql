@@ -20,6 +20,12 @@ CREATE TABLE `sources` (
 	UNIQUE (`url`)
 );
 
+INSERT INTO `sources` VALUES
+	(DEFAULT, 'https://knife.media/category/news/', 'Web', DEFAULT, DEFAULT),
+	(DEFAULT, 'https://www.reddit.com/r/Popular_Science_Ru/', 'Web', DEFAULT, DEFAULT),
+	(DEFAULT, 'https://www.dailymail.co.uk/articles.rss', 'RSS', DEFAULT, DEFAULT),
+	(DEFAULT, 'bbcrussian', 'Telegram', DEFAULT, DEFAULT);
+
 CREATE TABLE `users` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`name` VARCHAR(30) NOT NULL,
