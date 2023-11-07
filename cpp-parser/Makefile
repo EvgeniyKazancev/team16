@@ -11,9 +11,9 @@ SRC = src/main.cpp \
 BINDIR = bin
 TARGET = newsparser
 STD = c++20
-INCLUDES = /usr/include/mysql-cppconn-8
-LIBS = -ltinyxml2 -lcurl -lmysqlcppconn8
+INCLUDES = -I/usr/include/libxml2/ -I/usr/include/mysql-cppconn-8/
+LIBS = -ltinyxml2 -lcurl -lmysqlcppconn8 -lxml2
 
 all:
 	mkdir -p ${BINDIR}
-	g++ -o ${BINDIR}/${TARGET} --std=${STD} -I${INCLUDES} ${SRC} ${LIBS}
+	g++ -o ${BINDIR}/${TARGET} --std=${STD} ${INCLUDES} ${SRC} ${LIBS}

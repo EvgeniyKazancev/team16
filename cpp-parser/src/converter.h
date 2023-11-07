@@ -1,6 +1,10 @@
 #pragma once
-#include <iconv.h>
+
 #include <string>
+
+extern "C" {
+	#include <iconv.h>
+}
 
 class Converter final {
 public:

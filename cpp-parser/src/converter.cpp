@@ -1,7 +1,10 @@
 #include "converter.h"
 
 #include <algorithm>
-#include <cstring>
+
+extern "C" {
+	#include <cstring>
+}
 
 Converter::Converter() {
 	buffer_ = new char[size_ + 1];
