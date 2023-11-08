@@ -106,7 +106,7 @@ int main(int argc, char **argv)
     /* Macro to check API for match with the DLL we are using */
     LIBXML_TEST_VERSION    
 
-    doc = htmlReadFile(argv[1], NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET);
+    doc = htmlReadFile(argv[1], "utf-8", HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET | XML_PARSE_RECOVER);
     if (doc == NULL) 
     {
         fprintf(stderr, "Document not parsed successfully.\n");
@@ -126,7 +126,7 @@ int main(int argc, char **argv)
 	std::string node_name;
     //traverse_dom_trees(roo_element, node_name);
 
-	//printTitle(doc, roo_element);
+	printTitle(doc, roo_element);
 	searchMeta(doc, roo_element);
 
     xmlFreeDoc(doc);       // free document

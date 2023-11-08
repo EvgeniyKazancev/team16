@@ -17,3 +17,34 @@ std::vector<std::string> Lib::split(const std::string &src, const std::string &d
 	return result;
 }
 
+void Lib::ltrim(std::string &s) {
+	s.erase(
+		s.begin(),
+		std::find_if(
+			s.begin(),
+			s.end(),
+			[](char c) {
+				return !std::isspace(c);
+			}
+		)
+	);
+}
+
+void Lib::rtrim(std::string &s) {
+	s.erase(
+		std::find_if(
+			s.rbegin(),
+			s.rend(),
+			[](char c) {
+				return !std::isspace(c);
+			}
+		).base(),
+		s.end()
+	);
+}
+
+void Lib::trim(std::string &s) {
+	ltrim(s);
+	rtrim(s);
+}
+

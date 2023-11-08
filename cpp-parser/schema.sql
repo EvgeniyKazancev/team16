@@ -28,11 +28,16 @@ INSERT INTO `sources` VALUES
 
 CREATE TABLE `users` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`name` VARCHAR(30) NOT NULL,
+	`email` VARCHAR(30) NOT NULL,
+	`first_name` VARCHAR(30) NOT NULL,
+	`last_name` VARCHAR(30) NOT NULL,
+	`patronym` VARCHAR(30),
 	`password_hash` TEXT NOT NULL,
 	`created` TIMESTAMP NOT NULL DEFAULT now(),
-	UNIQUE(`name`)
+	UNIQUE(`email`)
 );
+
+INSERT INTO `users` VALUES (DEFAULT, 'lordgprs@yandex.ru', 'Максим', 'Вельгач', 'Сергеевич', MD5('12345'), DEFAULT);
 
 CREATE TABLE `publications` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,

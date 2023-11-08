@@ -6,6 +6,9 @@
 
 namespace Lib {
 	std::vector<std::string> split(const std::string &, const std::string &);
+	void ltrim(std::string &s);
+	void rtrim(std::string &s);
+	void trim(std::string &s);
 
 	struct dataSource {
 		unsigned id;

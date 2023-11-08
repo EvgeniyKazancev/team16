@@ -23,7 +23,7 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 
 		curl_handle_ = curl_easy_init();
 		curl_easy_setopt(curl_handle_, CURLOPT_URL, current_url.c_str());
-		curl_easy_setopt(curl_handle_, CURLOPT_VERBOSE, 0L);
+		curl_easy_setopt(curl_handle_, CURLOPT_VERBOSE, 1L);
 		curl_easy_setopt(curl_handle_, CURLOPT_NOPROGRESS, 1L);
 		curl_easy_setopt(curl_handle_, CURLOPT_WRITEFUNCTION, write_data);
 		curl_easy_setopt(curl_handle_, CURLOPT_HEADERFUNCTION, read_header);
