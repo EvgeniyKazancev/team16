@@ -8,7 +8,7 @@ extern "C" {
 class DownloadFile {
 public:
 	DownloadFile() = delete;
-	DownloadFile(const std::string &url, const std::string &filename, unsigned short max_redirects = 2);
+	DownloadFile(const std::string &url, const std::string &filename, unsigned short max_redirects = 5);
 	~DownloadFile();
 	std::string &contentType() const;
 

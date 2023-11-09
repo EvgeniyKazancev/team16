@@ -71,7 +71,65 @@ std::string HtmlParser::getDomainFromUrl(const std::string &url) const {
 	return url.substr(proto_pos + 2, domain_pos - (proto_pos + 2));
 }
 
-void HtmlParser::traverseTree(htmlDocPtr doc, xmlNode *node, const std::string &url, std::set<std::string> &links, std::map<std::string, std::string> &open_graph) {
+void HtmlParser::searchForText(
+	htmlDocPtr doc,
+	xmlNode *node,
+	std::set<std::string> &headers,
+	std::set<std::string> &text_blocks
+) {
+	if (node->type != XML_ELEMENT_NODE) {
+		return;
+	}
+	auto childNode = node->xmlChildrenNode;
+	if (childNode == nullptr || childNode->type != XML_TEXT_NODE) {
+		return;
+	}
+
+	std::string node_name;
+	if (node->name != nullptr) {
+		node_name = reinterpret_cast<const char *>(node->name);
+	}
+	xmlChar* content{ xmlNodeListGetString(doc, node->xmlChildrenNode, 1) };
+
+	if (content != nullptr) {
+		std::string content_str{ reinterpret_cast<const char *>(content) };
+		Lib::trim(content_str);
+		if (content_str.length() <= 8) {
+			xmlFree(content);	
+			return;
+		}
+		//std::cout << node_name << ": " << std::quoted(content_str) << std::endl;
+		if (
+			(
+				node_name == "title" || (
+					node_name.length() >= 2 &&
+					node_name[0] == 'h' &&
+					std::isdigit(node_name[1])
+				)
+			) &&
+			!headers.contains(content_str)
+		) {
+			headers.insert(content_str);
+			if (!text_blocks.contains(content_str)) {
+				text_blocks.insert(content_str);
+			}
+		}
+		else if (!text_blocks.contains(content_str) && content_str.length() >= 50) {
+			text_blocks.insert(content_str);
+		}
+	}
+	xmlFree(content);	
+}
+
+void HtmlParser::traverseTree(
+	htmlDocPtr doc,
+	xmlNode *node,
+	const std::string &url,
+	std::set<std::string> &links,
+	std::map<std::string, std::string> &open_graph,
+	std::set<std::string> &headers,
+	std::set<std::string> &text_blocks
+) {
 	for (auto current_node = node; current_node != nullptr; current_node = current_node->next) {
 		std::string node_name;
 		if (current_node->name != nullptr) {
@@ -94,32 +152,11 @@ void HtmlParser::traverseTree(htmlDocPtr doc, xmlNode *node, const std::string &
 			else if (node_name == "a") {
 				parseLinks(doc, current_node, url, links);
 			}
-			traverseTree(doc, current_node->children, url, links, open_graph);
+			traverseTree(doc, current_node->children, url, links, open_graph, headers, text_blocks);
 			continue;
 		}
-		if (current_node->type == XML_ELEMENT_NODE) {
-			auto childNode = current_node->xmlChildrenNode;
-			if (childNode == nullptr) {
-				traverseTree(doc, current_node->children, url, links, open_graph);
-				continue;
-			}
-			if (childNode->type == XML_TEXT_NODE) {
-				xmlChar* content;
-				content = xmlNodeListGetString(doc, current_node->xmlChildrenNode, 1);
-				if (content != nullptr) {
-					std::string content_str{ reinterpret_cast<const char *>(content) };
-					Lib::trim(content_str);
-					if (content_str.length() <= 8) {
-						xmlFree(content);	
-						traverseTree(doc, current_node->children, url, links, open_graph);
-						continue;
-					}
-					std::cout << node_name << ": " << std::quoted(content_str) << std::endl;
-				}
-				xmlFree(content);	
-			}
-		}
-		traverseTree(doc, current_node->children, url, links, open_graph);
+		searchForText(doc, current_node, headers, text_blocks);
+		traverseTree(doc, current_node->children, url, links, open_graph, headers, text_blocks);
 	}	
 }
 
@@ -127,22 +164,22 @@ void HtmlParser::parse(const mysqlx::Session &db_session) {
 	parseUrl(db_session, url_, parse_depth_);
 }
 
-void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &url, const unsigned parse_depth) {
+void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &url, const unsigned parse_depth, const unsigned fileno) {
 	if (parse_depth == 0) {
 		return;
 	}
 
 	std::cout << "Parsing " << url << " (" << getDomainFromUrl(url) << ")\n" << std::endl;
-	//std::string filename { working_dir_.append("/webpage.html") };
-	std::string filename { "reddit.html" };
+	std::string filename { working_dir_ + "/webpage-" + std::to_string(fileno) + ".html" };
+	//std::string filename { "reddit.html" };
 	std::string content_type;
-	//try {
-	//	DownloadFile{ url, filename };
-	//}
-	//catch (const std::runtime_error &e) {
-	//	throw std::runtime_error{ std::string{ "error while downloading html: " } + e.what() };
-	//	return;
-	//}
+	try {
+		DownloadFile{ url, filename };
+	}
+	catch (const std::runtime_error &e) {
+		std::cerr << "Runtime error: " << std::string{ "error while downloading html: " } + e.what() << std::endl;
+		return;
+	}
 	
 	htmlDocPtr doc{ htmlReadFile(filename.c_str(), "utf-8", HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET) };
 	if (doc == nullptr) {
@@ -158,8 +195,10 @@ void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &
 
 	std::map<std::string, std::string> open_graph;
 	std::set<std::string> links;
+	std::set<std::string> headers;
+	std::set<std::string> text_blocks;
 
-	traverseTree(doc, root_element, url, links, open_graph);
+	traverseTree(doc, root_element, url, links, open_graph, headers, text_blocks);
 
 	for (const auto it: open_graph) {
 		std::cout << it.first << ": " << it.second << std::endl;
@@ -168,8 +207,19 @@ void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &
 	for (const auto &link: links) {
 		std::cout << "Link: " << link << " " << std::endl;
 	}
+
+	for (const auto &header: headers) {
+		std::cout << "Header: " << std::quoted(header) << std::endl;
+	}
 	
-	//fs::remove(filename);
+	for (const auto &text_block: text_blocks) {
+		std::cout << "Text block: " << std::quoted(text_block) << std::endl;
+	}
+	fs::remove(filename);
+	
+	for (const auto &link: links) {
+		parseUrl(db_session, link, parse_depth - 1, fileno + 1);
+	}	
 }
 
 void HtmlParser::parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph) {
@@ -207,7 +257,8 @@ void HtmlParser::parseLinks(htmlDocPtr doc, xmlNode *node, const std::string &cu
 		return;
 	}
 
-	if (completeUrl(href).find(current_url) != std::string::npos && !urlEqual(current_url, href) && !links.contains(href)) {
+	href = completeUrl(href);
+	if (href.find(current_url) != std::string::npos && !urlEqual(current_url, href) && !links.contains(href)) {
 		links.insert(href);
 	}
 }

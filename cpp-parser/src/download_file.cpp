@@ -1,4 +1,5 @@
 #include "download_file.h"
+#include "project_lib.h"
 
 #include <stdexcept>
 #include <iostream>
@@ -19,11 +20,13 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 	std::string current_url{ url };
 
 	for (unsigned short attemp_number = 0; attemp_number < max_redirects; ++attemp_number) {
+		headers_.clear();
 		auto filename_cstr = filename.c_str();
 
+		std::cout << "URL: " << current_url << " Attemp:" << attemp_number << " Max Redirects:" << max_redirects << std::endl;
 		curl_handle_ = curl_easy_init();
 		curl_easy_setopt(curl_handle_, CURLOPT_URL, current_url.c_str());
-		curl_easy_setopt(curl_handle_, CURLOPT_VERBOSE, 1L);
+		curl_easy_setopt(curl_handle_, CURLOPT_VERBOSE, 0L);
 		curl_easy_setopt(curl_handle_, CURLOPT_NOPROGRESS, 1L);
 		curl_easy_setopt(curl_handle_, CURLOPT_WRITEFUNCTION, write_data);
 		curl_easy_setopt(curl_handle_, CURLOPT_HEADERFUNCTION, read_header);
@@ -36,7 +39,7 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 
 		file_ = fopen(filename_cstr, "wb");
 		if (!file_) {
-			throw std::runtime_error{ "Can not open file for write" };
+			throw std::runtime_error{ std::string{ "Can not open file " } + filename + " for write" };
 		}
 
 		curl_easy_setopt(curl_handle_, CURLOPT_WRITEDATA, file_);
@@ -71,9 +74,9 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 		}
 		auto newline_pos = headers_.find("\n", location_pos + 10);
 		auto location = headers_.substr(location_pos + 10, newline_pos - (location_pos + 10));
-		std::erase(location, ' ');
-		std::erase(location, '\r');
-		std::erase(location, '\n');
+		Lib::trim(location);
+		//std::cout << "Headers: " << headers_;
+		std::cout << "New location: " << location << '\n' << headers_.substr(location_pos, 100) << std::endl;
 		if (location.substr(0, 7) == "http://" || location.substr(0, 8) == "https://") {
 			current_url = location;
 		}
@@ -90,6 +93,7 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 	
 		curl_easy_cleanup(curl_handle_);
 	}
+	curl_global_cleanup();
 	throw std::runtime_error{ "too many redirects" };
 }
 
@@ -104,6 +108,7 @@ size_t DownloadFile::write_data(void *ptr, size_t size, size_t nmemb, void *stre
 
 size_t DownloadFile::read_header(char *buffer, size_t size, size_t nitems, void *userdata) {
 	std::string *headers = reinterpret_cast<std::string *>(userdata);
+
 	int i = 0;
 	for (; i < nitems; ++i) {
 		*headers += buffer[i];
