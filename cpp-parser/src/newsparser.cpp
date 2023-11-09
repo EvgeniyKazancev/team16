@@ -63,6 +63,7 @@ void NewsParser::run() {
 			config_["DBUser"],
 			config_["DBPassword"]
 		};
+		db_session.sql("USE " + config_["DBName"]).execute();
 		std::shared_ptr<IParser> parser;
 		for (const auto &src: sources_) {
 			if (src.type == "Web") {

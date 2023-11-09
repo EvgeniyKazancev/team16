@@ -1,6 +1,4 @@
 -- Schema for news parser
-DROP TABLE IF EXISTS `source_restricted_keywords`;
-DROP TABLE IF EXISTS `sources`;
 DROP TABLE IF EXISTS `users_favorites`;
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `publications_text`;
@@ -10,6 +8,8 @@ DROP TABLE IF EXISTS `publications`;
 DROP TABLE IF EXISTS `category_allowed_keywords`;
 DROP TABLE IF EXISTS `category_restricted_keywords`;
 DROP TABLE IF EXISTS `categories`;
+DROP TABLE IF EXISTS `source_restricted_keywords`;
+DROP TABLE IF EXISTS `sources`;
 
 CREATE TABLE `sources` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -42,12 +42,15 @@ INSERT INTO `users` VALUES (DEFAULT, 'lordgprs@yandex.ru', 'Максим', 'Ве
 
 CREATE TABLE `publications` (
 	`id` BIGINT NOT NULL PRIMARY KEY,
+	`source_id` BIGINT NOT NULL,
 	`url` VARCHAR(200) NOT NULL,
 	`copies_count` INTEGER NOT NULL DEFAULT 1,
-	`hash` VARCHAR(200) NOT NULL,
 	`created` TIMESTAMP NOT NULL DEFAULT now(),
 	UNIQUE(`url`),
-	UNIQUE(`hash`)
+	FOREIGN KEY (`source_id`)
+		REFERENCES `sources`(`id`)
+		ON DELETE RESTRICT
+		ON UPDATE RESTRICT
 );
 
 CREATE TABLE `publications_text` (

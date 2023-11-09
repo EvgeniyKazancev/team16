@@ -9,7 +9,7 @@ TgParser::TgParser(const Lib::dataSource &src, const std::string &working_dir) :
 
 }
 
-void TgParser::parse (const mysqlx::Session &db_session) {
+void TgParser::parse (mysqlx::Session &db_session) {
 
 }
 

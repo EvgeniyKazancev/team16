@@ -6,6 +6,7 @@
 #include <map>
 #include <set>
 #include <vector>
+#include <utility>
 
 #include <libxml/HTMLparser.h>
 #include <mysqlx/xdevapi.h>
@@ -16,25 +17,25 @@ public:
 	HtmlParser(const HtmlParser &) = delete;
 	HtmlParser &operator=(const HtmlParser&) = delete;
 	HtmlParser(const Lib::dataSource &src, const std::string &working_dir);
-	void parse(const mysqlx::Session &db_session) override;
+	void parse(mysqlx::Session &db_session) override;
 	~HtmlParser();
 
 private:
-	void parseUrl(const mysqlx::Session &db_session, const std::string &url, unsigned parse_depth, unsigned fileno = 1);
+	void fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks) const;
+	std::string getMainPageAddress() const;
+	void parseUrl(mysqlx::Session &db_session, const std::string &url, unsigned parse_depth, unsigned fileno = 1);
 	void traverseTree(
 		htmlDocPtr doc,
 		xmlNode *node,
 		const std::string &url,
 		std::set<std::string> &links,
 		std::map<std::string, std::string> &open_graph,
-		std::set<std::string> &headers,
-		std::set<std::string> &text_blocks
+		std::set<std::pair<bool, std::string>> &text_blocks
 	);
 	void searchForText(
 		htmlDocPtr doc,
 		xmlNode *node,
-		std::set<std::string> &headers,
-		std::set<std::string> &text_blocks
+		std::set<std::pair<bool, std::string>> &text_blocks
 	);
 	std::string getProtoFromUrl(const std::string &url) const;
 	std::string getDomainFromUrl(const std::string &url) const;
@@ -45,7 +46,5 @@ private:
 
 	std::string proto_;
 	std::string domain_;
-	std::string caption_;
-	std::string text_;
 };
 

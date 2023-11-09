@@ -8,17 +8,35 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <thread>
+#include <chrono>
 
 extern "C" {
 	#include <cstdlib>
 	#include <unistd.h>
 }
 
-DownloadFile::DownloadFile(const std::string &url, const std::string &filename, const unsigned short max_redirects) {
+bool DownloadFile::success() const {
+	return !error_;
+}
 
+long DownloadFile::getHttpCode() const {
+	return http_code_;
+}
+
+const std::string &DownloadFile::getError() const {
+	return error_string_;
+}
+
+DownloadFile::DownloadFile() {
 	curl_global_init(CURL_GLOBAL_ALL);
+}
+
+void DownloadFile::download(const std::string &url, const std::string &filename, const unsigned short max_redirects) {
+	using namespace std::literals::chrono_literals;
 	std::string current_url{ url };
 
+	std::this_thread::sleep_for(1s);
 	for (unsigned short attemp_number = 0; attemp_number < max_redirects; ++attemp_number) {
 		headers_.clear();
 		auto filename_cstr = filename.c_str();
@@ -34,12 +52,13 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 		curl_easy_setopt(
 			curl_handle_,
 			CURLOPT_USERAGENT,
-			"Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-F916B) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/22.0 Chrome/111.0.5563.116 Mobile Safari/537.36"
+			"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
 		);
 
 		file_ = fopen(filename_cstr, "wb");
 		if (!file_) {
-			throw std::runtime_error{ std::string{ "Can not open file " } + filename + " for write" };
+			error_ = true;
+			error_string_ = "unable to open file for write";
 		}
 
 		curl_easy_setopt(curl_handle_, CURLOPT_WRITEDATA, file_);
@@ -50,33 +69,39 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 		if (res == 0 && ct != nullptr) {
 			content_type_ = ct;
 		}
-		long http_code = 0;
-		curl_easy_getinfo(curl_handle_, CURLINFO_RESPONSE_CODE, &http_code);
-		if (http_code == 200) {	// success
+		http_code_ = 0;
+		curl_easy_getinfo(curl_handle_, CURLINFO_RESPONSE_CODE, &http_code_);
+		if (http_code_ == 200) {	// success
 			curl_easy_cleanup(curl_handle_);
 			return;
 		}
-		if (http_code == 404) {
-			throw std::runtime_error{ "404 not found" };
+		if (http_code_ == 404) {
+			error_ = true;
+			error_string_ = "not found";
+			return;
 		}
-		if (http_code == 403) {
-			throw std::runtime_error{ "403 forbidden" };
+		if (http_code_ == 403) {
+			error_ = true;
+			error_string_ = "forbidden";
+			return;
 		}
-		if (http_code != 301 && http_code != 302) {
-			std::stringstream ss;
-			ss << "http response code is " << http_code;
-			throw std::runtime_error{ ss.str() };
+		if (http_code_ != 301 && http_code_ != 302) {
+			error_ = true;
+			error_string_ = "unknown error";
+			return;
 		}
 		// follow redirect
 		auto location_pos = headers_.find("location: ");
 		if (location_pos == std::string::npos) {
-			throw std::runtime_error{ "unable to get a new location url after redirect" };
+			error_ = true;
+			error_string_ = "unable to get a new location after redirect";
+			return;
 		}
 		auto newline_pos = headers_.find("\n", location_pos + 10);
 		auto location = headers_.substr(location_pos + 10, newline_pos - (location_pos + 10));
 		Lib::trim(location);
 		//std::cout << "Headers: " << headers_;
-		std::cout << "New location: " << location << '\n' << headers_.substr(location_pos, 100) << std::endl;
+		//std::cout << "New location: " << location << '\n' << headers_.substr(location_pos, 100) << std::endl;
 		if (location.substr(0, 7) == "http://" || location.substr(0, 8) == "https://") {
 			current_url = location;
 		}
@@ -89,12 +114,13 @@ DownloadFile::DownloadFile(const std::string &url, const std::string &filename, 
 			auto last_slash_pos = current_url.rfind('/');
 			current_url = current_url.substr(0, last_slash_pos + 1) + location;
 		}
-		//std::cout << http_code << ": " << std::quoted(location) << " " << std::quoted(current_url) << std::endl;
+		//std::cout << http_code_ << ": " << std::quoted(location) << " " << std::quoted(current_url) << std::endl;
 	
 		curl_easy_cleanup(curl_handle_);
 	}
-	curl_global_cleanup();
-	throw std::runtime_error{ "too many redirects" };
+
+	error_ = true;
+	error_string_ = "too many redirects";
 }
 
 DownloadFile::~DownloadFile() {
@@ -113,7 +139,6 @@ size_t DownloadFile::read_header(char *buffer, size_t size, size_t nitems, void 
 	for (; i < nitems; ++i) {
 		*headers += buffer[i];
 	}
-	//std::cout << *headers << std::endl;
 
 	return i * size;
 }

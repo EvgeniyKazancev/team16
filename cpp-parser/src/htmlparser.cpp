@@ -16,6 +16,7 @@ HtmlParser::HtmlParser(const Lib::dataSource &src, const std::string &working_di
 	}
 	domain_ = getDomainFromUrl(url_);
 	proto_ = getProtoFromUrl(url_);
+
 }
 
 std::string HtmlParser::completeUrl(const std::string &url) const {
@@ -74,8 +75,7 @@ std::string HtmlParser::getDomainFromUrl(const std::string &url) const {
 void HtmlParser::searchForText(
 	htmlDocPtr doc,
 	xmlNode *node,
-	std::set<std::string> &headers,
-	std::set<std::string> &text_blocks
+	std::set<std::pair<bool, std::string>> &text_blocks
 ) {
 	if (node->type != XML_ELEMENT_NODE) {
 		return;
@@ -100,25 +100,30 @@ void HtmlParser::searchForText(
 		}
 		//std::cout << node_name << ": " << std::quoted(content_str) << std::endl;
 		if (
-			(
-				node_name == "title" || (
-					node_name.length() >= 2 &&
-					node_name[0] == 'h' &&
-					std::isdigit(node_name[1])
-				)
-			) &&
-			!headers.contains(content_str)
+			node_name == "title" || (
+				node_name.length() >= 2 &&
+				node_name[0] == 'h' &&
+				std::isdigit(node_name[1])
+			)
 		) {
-			headers.insert(content_str);
-			if (!text_blocks.contains(content_str)) {
-				text_blocks.insert(content_str);
+			auto pair = make_pair(true, content_str);
+			if (!text_blocks.contains(pair)) {
+				text_blocks.insert(pair);
 			}
 		}
-		else if (!text_blocks.contains(content_str) && content_str.length() >= 50) {
-			text_blocks.insert(content_str);
+		else if (content_str.length() >= 50) {
+			auto pair = make_pair(false, content_str);
+
+			if (!text_blocks.contains(pair)) {
+				text_blocks.insert(pair);
+			}
 		}
 	}
 	xmlFree(content);	
+}
+
+std::string HtmlParser::getMainPageAddress() const {
+	return proto_ + "://" + domain_;
 }
 
 void HtmlParser::traverseTree(
@@ -127,8 +132,7 @@ void HtmlParser::traverseTree(
 	const std::string &url,
 	std::set<std::string> &links,
 	std::map<std::string, std::string> &open_graph,
-	std::set<std::string> &headers,
-	std::set<std::string> &text_blocks
+	std::set<std::pair<bool, std::string>> &text_blocks
 ) {
 	for (auto current_node = node; current_node != nullptr; current_node = current_node->next) {
 		std::string node_name;
@@ -152,19 +156,59 @@ void HtmlParser::traverseTree(
 			else if (node_name == "a") {
 				parseLinks(doc, current_node, url, links);
 			}
-			traverseTree(doc, current_node->children, url, links, open_graph, headers, text_blocks);
+			traverseTree(doc, current_node->children, url, links, open_graph, text_blocks);
 			continue;
 		}
-		searchForText(doc, current_node, headers, text_blocks);
-		traverseTree(doc, current_node->children, url, links, open_graph, headers, text_blocks);
+		searchForText(doc, current_node, text_blocks);
+		traverseTree(doc, current_node->children, url, links, open_graph, text_blocks);
 	}	
 }
 
-void HtmlParser::parse(const mysqlx::Session &db_session) {
+void HtmlParser::parse(mysqlx::Session &db_session) {
 	parseUrl(db_session, url_, parse_depth_);
 }
 
-void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &url, const unsigned parse_depth, const unsigned fileno) {
+void HtmlParser::fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks) const {
+	std::stringstream ss;
+	long new_id{ 0 };
+
+	ss << "SELECT `id` FROM `publications` WHERE `url` = '" << url << "'";
+	{
+		auto result = db_session.sql(ss.str()).execute();
+		auto row = result.fetchOne();
+		if (row) {
+			ss.str(std::string{});
+			ss << "UPDATE `publications` SET `copies_count` = `copies_count` + 1 WHERE `id` = " << row[0].get<long>();
+			db_session.sql(ss.str()).execute();
+			return;
+		}
+	}
+
+	{
+		std::string req{ "SELECT max(`id`) FROM `publications`" };
+		auto result = db_session.sql(req).execute();
+		auto row = result.fetchOne();
+		if (!row[0].isNull()) {
+			new_id = row[0].get<long>() + 1;
+		}
+		ss.str(std::string{});
+		ss << "INSERT INTO `publications` (`id`, `source_id`, `url`) VALUES (" << new_id << ", " << new_id << ", " << source_id_ << ", '" << url << "')";
+		db_session.startTransaction();
+		try {
+			db_session.sql(ss.str()).execute();
+			for (auto it: text_blocks) {
+				ss.str(std::string{});
+			}
+			db_session.commit();
+		}
+		catch (const mysqlx::Error &e) {
+			db_session.rollback();
+			std::cerr << "Error while processing MySQL query: " << e << std::endl;
+		}
+	}
+}
+
+void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, const unsigned parse_depth, const unsigned fileno) {
 	if (parse_depth == 0) {
 		return;
 	}
@@ -173,12 +217,12 @@ void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &
 	std::string filename { working_dir_ + "/webpage-" + std::to_string(fileno) + ".html" };
 	//std::string filename { "reddit.html" };
 	std::string content_type;
-	try {
-		DownloadFile{ url, filename };
-	}
-	catch (const std::runtime_error &e) {
-		std::cerr << "Runtime error: " << std::string{ "error while downloading html: " } + e.what() << std::endl;
-		return;
+	DownloadFile df;
+	
+	df.download(url, filename);
+	if (!df.success()) {
+		std::cerr << "HTTP code: " << df.getHttpCode() << std::endl;
+		std::cerr << "Error: " << df.getError() << std::endl;
 	}
 	
 	htmlDocPtr doc{ htmlReadFile(filename.c_str(), "utf-8", HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET) };
@@ -195,10 +239,9 @@ void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &
 
 	std::map<std::string, std::string> open_graph;
 	std::set<std::string> links;
-	std::set<std::string> headers;
-	std::set<std::string> text_blocks;
+	std::set<std::pair<bool, std::string>> text_blocks;
 
-	traverseTree(doc, root_element, url, links, open_graph, headers, text_blocks);
+	traverseTree(doc, root_element, url, links, open_graph, text_blocks);
 
 	for (const auto it: open_graph) {
 		std::cout << it.first << ": " << it.second << std::endl;
@@ -208,18 +251,15 @@ void HtmlParser::parseUrl(const mysqlx::Session &db_session, const std::string &
 		std::cout << "Link: " << link << " " << std::endl;
 	}
 
-	for (const auto &header: headers) {
-		std::cout << "Header: " << std::quoted(header) << std::endl;
-	}
-	
-	for (const auto &text_block: text_blocks) {
-		std::cout << "Text block: " << std::quoted(text_block) << std::endl;
+	for (const auto &it: text_blocks) {
+		std::cout << "Text block: " << it.first << " " << std::quoted(it.second) << std::endl;
 	}
 	fs::remove(filename);
 	
-	for (const auto &link: links) {
-		parseUrl(db_session, link, parse_depth - 1, fileno + 1);
-	}	
+	fillDatabase(db_session, url, text_blocks);
+	//for (const auto &link: links) {
+	//	parseUrl(db_session, link, parse_depth - 1, fileno + 1);
+	//}	
 }
 
 void HtmlParser::parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph) {
@@ -258,7 +298,7 @@ void HtmlParser::parseLinks(htmlDocPtr doc, xmlNode *node, const std::string &cu
 	}
 
 	href = completeUrl(href);
-	if (href.find(current_url) != std::string::npos && !urlEqual(current_url, href) && !links.contains(href)) {
+	if (href.find(getMainPageAddress()) != std::string::npos && !urlEqual(current_url, href) && !links.contains(href)) {
 		links.insert(href);
 	}
 }

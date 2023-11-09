@@ -5,7 +5,7 @@ IParser(src, working_dir) {
 
 }
 
-void RssParser::parse(const mysqlx::Session &db_session) {
+void RssParser::parse(mysqlx::Session &db_session) {
 
 }
 
