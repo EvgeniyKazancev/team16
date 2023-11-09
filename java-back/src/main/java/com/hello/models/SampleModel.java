@@ -1,4 +1,4 @@
-package com.hello;
+package com.hello.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

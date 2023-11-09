@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: com.hello.SampleController
+Main-Class: com.hello.controllers.SampleController
