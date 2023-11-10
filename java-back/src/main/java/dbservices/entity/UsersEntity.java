@@ -16,7 +16,7 @@ public class UsersEntity {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "email")
+    @Column(name = "email",unique = true)
     private String email;
 
     @Column(name = "first_name")
