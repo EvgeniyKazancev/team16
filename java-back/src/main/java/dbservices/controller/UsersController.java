@@ -34,19 +34,17 @@ public class UsersController {
     }
 
     @PutMapping("/addUser")
-    public ResponseMessage addUser(@RequestParam String email, @RequestParam String firstName, @RequestParam String lastName,
-                                   @RequestParam String patronum, @RequestParam String passwordHash){
-        return usersServices.addUser(email,firstName,lastName,patronum,passwordHash);
+    public ResponseMessage addUser(@RequestBody UsersEntity usersEntity){
+        return usersServices.addUser(usersEntity);
     }
 
     @PutMapping("/updateUser")
-    public ResponseMessage updateUser(@RequestParam Long userId,@RequestParam String email,@RequestParam String firstName,@RequestParam String lastName,
-                                      @RequestParam String patronum,@RequestParam String passwordHash){
-        return  usersServices.updateUser(userId,email,firstName,lastName,patronum,passwordHash);
+    public ResponseMessage updateUser(@RequestParam Long id,@RequestBody UsersEntity usersEntity){
+        return  usersServices.updateUser(id,usersEntity);
 
     }
     @DeleteMapping("/deleteUser")
-    public ResponseMessage deleteUser(Long userId){
+    public ResponseMessage deleteUser(@RequestParam Long userId){
         return usersServices.deleteUser(userId);
     }
 

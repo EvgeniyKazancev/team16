@@ -1,5 +1,6 @@
 package dbservices.services;
 
+import dbservices.dto.UsersEntityDTO;
 import dbservices.entity.UsersEntity;
 import dbservices.enums.ResponseType;
 import dbservices.repository.UserRepository;
@@ -34,15 +35,8 @@ public class UsersServices {
 
 
 
-    public ResponseMessage addUser(String email, String firstName, String lastName,
-                                   String patronym, String passwordHash){
-        UsersEntity user = new UsersEntity();
-        user.setEmail(email);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setPatronym(patronym);
-        user.setPasswordHash(passwordHash);
-        user.setCreated(LocalDate.now());
+    public ResponseMessage addUser(UsersEntity user){
+
         if (userRepository.existsByEmail(user.getEmail())){
             return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
         }
@@ -50,18 +44,21 @@ public class UsersServices {
         return new ResponseMessage("Пользователь успешно создан",ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    public ResponseMessage updateUser(Long userId,String email, String firstName, String lastName,
-                                      String patronym, String passwordHash){
-        UsersEntity user = getUsers(userId);
-        user.setEmail(email);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setPatronym(patronym);
-        user.setPasswordHash(passwordHash);
+    public ResponseMessage updateUser(Long id,UsersEntity updateUser){
+        UsersEntity user = getUsers(id);
+        user.setEmail(updateUser.getEmail());
+        user.setFirstName(updateUser.getFirstName());
+        user.setLastName(updateUser.getLastName());
+        user.setPatronym(updateUser.getPatronym());
+        user.setPasswordHash(updateUser.getPasswordHash());
         user.setCreated(LocalDate.now());
+        if (userRepository.existsByEmail(user.getEmail())){
+            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
+        }
         userRepository.save(user);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
+
 
     public ResponseMessage deleteUser(Long userId){
         userRepository.deleteById(userId);
