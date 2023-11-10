@@ -1,0 +1,41 @@
+package dbservices.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.Objects;
+@Getter
+@Setter
+@Entity
+@Table(name = "articles", schema = "test", catalog = "")
+public class ArticlesEntity {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id")
+    private long id;
+    @Basic
+    @Column(name = "source")
+    private String source;
+    @Basic
+    @Column(name = "caption")
+    private String caption;
+    @Basic
+    @Column(name = "link")
+    private String link;
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArticlesEntity that = (ArticlesEntity) o;
+        return id == that.id && Objects.equals(source, that.source) && Objects.equals(caption, that.caption) && Objects.equals(link, that.link);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, source, caption, link);
+    }
+}
