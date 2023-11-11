@@ -1,5 +1,7 @@
 #include "project_lib.h"
+
 #include <iostream>
+#include <map>
 
 // split string to vector
 std::vector<std::string> Lib::split(const std::string &src, const std::string &delimiter) {
@@ -46,5 +48,21 @@ void Lib::rtrim(std::string &s) {
 void Lib::trim(std::string &s) {
 	ltrim(s);
 	rtrim(s);
+}
+
+void Lib::encodeHtml(std::string &content_str) {
+	std::map<char, std::string> html_entities = {
+		{ '\'', "&apos;" },
+		{ '\\', "&bsol;" }
+	};
+	for (auto it: html_entities) {
+		for (
+			auto apos = content_str.find(it.first);
+			apos != std::string::npos;
+			apos = content_str.find(it.first)
+		) {
+			content_str = content_str.substr(0, apos) + it.second + content_str.substr(apos + 1, content_str.length() - (apos + 1));
+		}
+	}
 }
 

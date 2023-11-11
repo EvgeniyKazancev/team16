@@ -1,6 +1,6 @@
 #pragma once
 
-#include "iparser.h"
+#include "parser.h"
 
 #include <string>
 #include <map>
@@ -11,17 +11,17 @@
 #include <libxml/HTMLparser.h>
 #include <mysqlx/xdevapi.h>
 
-class HtmlParser final : public IParser {
+class HtmlParser final : public Parser {
 public: 
 	HtmlParser() = delete;
 	HtmlParser(const HtmlParser &) = delete;
 	HtmlParser &operator=(const HtmlParser&) = delete;
-	HtmlParser(const Lib::dataSource &src, const std::string &working_dir);
+	HtmlParser(const Lib::dataSource &src, const std::string &working_dir, volatile bool &terminate_signal);
 	void parse(mysqlx::Session &db_session) override;
 	~HtmlParser();
 
 private:
-	void fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks) const;
+	void fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks, const std::map<std::string, std::string> &open_graph) const;
 	std::string getMainPageAddress() const;
 	void parseUrl(mysqlx::Session &db_session, const std::string &url, unsigned parse_depth, unsigned fileno = 1);
 	void traverseTree(

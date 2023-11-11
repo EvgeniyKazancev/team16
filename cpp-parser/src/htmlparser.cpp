@@ -9,8 +9,8 @@
 
 namespace fs = std::filesystem;
 
-HtmlParser::HtmlParser(const Lib::dataSource &src, const std::string &working_dir) :
-	IParser(src, working_dir) {
+HtmlParser::HtmlParser(const Lib::dataSource &src, const std::string &working_dir, volatile bool &terminate_signal) :
+	Parser(src, working_dir, terminate_signal) {
 	if (src.type != "Web") {
 		throw std::invalid_argument{ "source is not Web page" };
 	}
@@ -23,6 +23,10 @@ std::string HtmlParser::completeUrl(const std::string &url) const {
 	if (url.empty()) {
 		return std::string{};
 	}
+	if (url.substr(0, 7) == "mailto:") {
+		return url;
+	}
+
 	std::string correct_url{ url };
 	if (correct_url[correct_url.length() - 1] == '/') {
 		correct_url = correct_url.substr(0, correct_url.length() - 1);
@@ -98,6 +102,7 @@ void HtmlParser::searchForText(
 			xmlFree(content);	
 			return;
 		}
+		Lib::encodeHtml(content_str);
 		//std::cout << node_name << ": " << std::quoted(content_str) << std::endl;
 		if (
 			node_name == "title" || (
@@ -168,43 +173,39 @@ void HtmlParser::parse(mysqlx::Session &db_session) {
 	parseUrl(db_session, url_, parse_depth_);
 }
 
-void HtmlParser::fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks) const {
+void HtmlParser::fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks, const std::map<std::string, std::string> &open_graph) const {
 	std::stringstream ss;
 	long new_id{ 0 };
 
-	ss << "SELECT `id` FROM `publications` WHERE `url` = '" << url << "'";
-	{
-		auto result = db_session.sql(ss.str()).execute();
-		auto row = result.fetchOne();
-		if (row) {
-			ss.str(std::string{});
-			ss << "UPDATE `publications` SET `copies_count` = `copies_count` + 1 WHERE `id` = " << row[0].get<long>();
-			db_session.sql(ss.str()).execute();
-			return;
-		}
+	auto result = db_session.sql("SELECT max(`id`) FROM `publications`").execute();
+	auto row = result.fetchOne();
+	if (!row[0].isNull()) {
+		new_id = row[0].get<long>() + 1;
 	}
-
-	{
-		std::string req{ "SELECT max(`id`) FROM `publications`" };
-		auto result = db_session.sql(req).execute();
-		auto row = result.fetchOne();
-		if (!row[0].isNull()) {
-			new_id = row[0].get<long>() + 1;
-		}
+	db_session.startTransaction();
+	ss.str(std::string{});
+	try {
 		ss.str(std::string{});
-		ss << "INSERT INTO `publications` (`id`, `source_id`, `url`) VALUES (" << new_id << ", " << new_id << ", " << source_id_ << ", '" << url << "')";
-		db_session.startTransaction();
-		try {
+		ss << "INSERT INTO `publications` (`id`, `source_id`, `url`) VALUES (" << new_id << ", " << source_id_ << ", '" << url << "');";
+		std::cout << ss.str() << std::endl;
+		db_session.sql(ss.str()).execute();
+		for (auto it: text_blocks) {
+			ss.str(std::string{});
+			ss << "INSERT INTO `publications_text` (`publication_id`, `is_header`, `text`) VALUES (" << new_id << ", " << it.first << ", '" << it.second << "');";
+			std::cout << ss.str() << std::endl;
 			db_session.sql(ss.str()).execute();
-			for (auto it: text_blocks) {
-				ss.str(std::string{});
-			}
-			db_session.commit();
 		}
-		catch (const mysqlx::Error &e) {
-			db_session.rollback();
-			std::cerr << "Error while processing MySQL query: " << e << std::endl;
+		for (auto it: open_graph) {
+			ss.str(std::string{});
+			ss << "INSERT INTO `open_graph_data` (`publication_id`, `property`, `content`) VALUES (" << new_id << ", '" << it.first << "', '" << it.second << "');";
+			std::cout << ss.str() << std::endl;
+			db_session.sql(ss.str()).execute();
 		}
+		db_session.commit();
+	}
+	catch (const mysqlx::Error &e) {
+		db_session.rollback();
+		std::cerr << "Error while processing MySQL query: " << e << std::endl;
 	}
 }
 
@@ -212,8 +213,12 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 	if (parse_depth == 0) {
 		return;
 	}
+	if (terminate_signal_caught_) {
+		return;
+	}
 
-	std::cout << "Parsing " << url << " (" << getDomainFromUrl(url) << ")\n" << std::endl;
+	std::cout << "Parsing " << url << " (" << getDomainFromUrl(url) << ") with depth " << parse_depth << "\n" << std::endl;
+	std::cout << "Termination invoked: " << terminate_signal_caught_ << std::endl;
 	std::string filename { working_dir_ + "/webpage-" + std::to_string(fileno) + ".html" };
 	//std::string filename { "reddit.html" };
 	std::string content_type;
@@ -223,9 +228,15 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 	if (!df.success()) {
 		std::cerr << "HTTP code: " << df.getHttpCode() << std::endl;
 		std::cerr << "Error: " << df.getError() << std::endl;
+
+		return;
+	}
+	if (df.getContentType() != "text/html") {
+		std::cout << "Content-Type: " << df.getContentType() << ". Skipping url..." << std::endl;
+		return;
 	}
 	
-	htmlDocPtr doc{ htmlReadFile(filename.c_str(), "utf-8", HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET) };
+	htmlDocPtr doc{ htmlReadFile(filename.c_str(), df.getCharset().c_str(), HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET) };
 	if (doc == nullptr) {
 		fs::remove(filename);
 		throw std::runtime_error{ "HTML parse error" };
@@ -243,23 +254,46 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 
 	traverseTree(doc, root_element, url, links, open_graph, text_blocks);
 
-	for (const auto it: open_graph) {
-		std::cout << it.first << ": " << it.second << std::endl;
-	}
+	//for (const auto it: open_graph) {
+	//	std::cout << it.first << ": " << it.second << std::endl;
+	//}
 
-	for (const auto &link: links) {
-		std::cout << "Link: " << link << " " << std::endl;
-	}
+	//for (const auto &link: links) {
+	//	std::cout << "Link: " << link << " " << std::endl;
+	//}
 
-	for (const auto &it: text_blocks) {
-		std::cout << "Text block: " << it.first << " " << std::quoted(it.second) << std::endl;
-	}
+	//for (const auto &it: text_blocks) {
+	//	std::cout << "Text block: " << it.first << " " << std::quoted(it.second) << std::endl;
+	//}
 	fs::remove(filename);
 	
-	fillDatabase(db_session, url, text_blocks);
-	//for (const auto &link: links) {
-	//	parseUrl(db_session, link, parse_depth - 1, fileno + 1);
-	//}	
+	fillDatabase(db_session, url, text_blocks, open_graph);
+	for (const auto &link: links) {
+		if (terminate_signal_caught_) {
+			return;
+		}
+
+		try {
+			std::stringstream ss;
+			ss << "DELETE FROM `publications` WHERE `url` = '" << link << "' AND `created` + interval 60 minute < CURRENT_TIMESTAMP";
+			db_session.sql(ss.str()).execute();
+			ss.str(std::string{});
+			ss << "SELECT `id` FROM `publications` WHERE `url` = '" << link << "'";
+			auto result = db_session.sql(ss.str()).execute();
+			auto row = result.fetchOne();
+			if (row) {
+				ss.str(std::string{});
+				ss << "UPDATE `publications` SET `copies_count` = `copies_count` + 1 WHERE `id` = " << row[0].get<long>();
+				db_session.sql(ss.str()).execute();
+				std::cout << "\nPage " << std::quoted(link) << " has been already parsed. Skipping..." << std::endl;
+				continue;
+			}	
+		}
+		catch (const mysqlx::Error &e) {
+			std::cerr << "error while accessing the database: " << e << std::endl;
+		}
+		parseUrl(db_session, link, parse_depth - 1, fileno + 1);
+	}	
 }
 
 void HtmlParser::parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph) {

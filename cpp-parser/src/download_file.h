@@ -16,6 +16,8 @@ public:
 	bool success() const;
 	long getHttpCode() const;
 	const std::string &getError() const;
+	const std::string &getContentType() const;
+	const std::string &getCharset() const;
 
 private:
 	static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream);
@@ -23,6 +25,7 @@ private:
 	CURL *curl_handle_;
 	FILE *file_;
 	std::string content_type_;
+	std::string charset_;
 	std::string headers_;
 	bool error_{false };
 	long http_code_;

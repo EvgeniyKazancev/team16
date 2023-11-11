@@ -28,6 +28,14 @@ const std::string &DownloadFile::getError() const {
 	return error_string_;
 }
 
+const std::string &DownloadFile::getContentType() const {
+	return content_type_;
+}
+
+const std::string &DownloadFile::getCharset() const {
+	return charset_;
+}
+
 DownloadFile::DownloadFile() {
 	curl_global_init(CURL_GLOBAL_ALL);
 }
@@ -36,7 +44,7 @@ void DownloadFile::download(const std::string &url, const std::string &filename,
 	using namespace std::literals::chrono_literals;
 	std::string current_url{ url };
 
-	std::this_thread::sleep_for(1s);
+	std::this_thread::sleep_for(500ms);
 	for (unsigned short attemp_number = 0; attemp_number < max_redirects; ++attemp_number) {
 		headers_.clear();
 		auto filename_cstr = filename.c_str();
@@ -67,7 +75,21 @@ void DownloadFile::download(const std::string &url, const std::string &filename,
 		char *ct = nullptr;
 		auto res = curl_easy_getinfo(curl_handle_, CURLINFO_CONTENT_TYPE, &ct);
 		if (res == 0 && ct != nullptr) {
+			std::string temp{ ct };
 			content_type_ = ct;
+			auto charset_pos = content_type_.find("charset");
+			if (charset_pos != std::string::npos) {
+				auto equal_pos = content_type_.find('=', charset_pos);
+				if (equal_pos != std::string::npos) {
+					charset_ = content_type_.substr(equal_pos + 1, content_type_.length() - (equal_pos + 1));
+					Lib::trim(charset_);
+				}
+			}
+			auto semicolon_pos = content_type_.find(';');
+			if (semicolon_pos != std::string::npos) {
+				content_type_ = content_type_.substr(0, semicolon_pos);
+			}
+
 		}
 		http_code_ = 0;
 		curl_easy_getinfo(curl_handle_, CURLINFO_RESPONSE_CODE, &http_code_);
