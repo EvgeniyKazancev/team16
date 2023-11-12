@@ -4,6 +4,7 @@
 
 #include <string>
 
+#include <libxml/HTMLparser.h>
 #include <mysqlx/xdevapi.h>
 
 class Parser {
@@ -15,7 +16,10 @@ public:
 	virtual void parse(mysqlx::Session &db_session) = 0;
 	virtual ~Parser() = default;
 
-protected:
+protected:	
+	std::string extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const;
+	void removeTags(std::string &str) const;
+
 	unsigned parse_depth_;
 	std::string url_;
 	std::string working_dir_;

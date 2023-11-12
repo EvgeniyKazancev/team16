@@ -66,7 +66,7 @@ void NewsParser::run() {
 		db_session.sql("USE " + config_["DBName"]).execute();
 		db_session.startTransaction();
 		try {
-			db_session.sql("DELETE FROM `open_graph_data`;").execute();
+			db_session.sql("DELETE FROM `publications_data`;").execute();
 			db_session.sql("DELETE FROM `publications_text`;").execute();
 			db_session.sql("DELETE FROM `publications`;").execute();
 			db_session.commit();
@@ -82,7 +82,10 @@ void NewsParser::run() {
 				std::cout << "\nClean exit..." << std::endl;
 				break;
 			}
-			
+			if (src.type != "Telegram") {
+				continue;
+			}
+		
 			if (src.type == "Web") {
 				try {
 					parser = std::make_shared<HtmlParser>(src, working_dir_, terminate_signal_caught_);
@@ -91,9 +94,21 @@ void NewsParser::run() {
 					std::stringstream ss;
 					ss << "Error: " << e.what();
 					logError(ss.str());
+					continue;
 				}
-				parser->parse(db_session);
 			}
+			else if (src.type == "Telegram") {
+				try {
+					parser = std::make_shared<TgParser>(src, working_dir_, terminate_signal_caught_);
+				}
+				catch (const std::invalid_argument &e) {
+					std::stringstream ss;
+					ss << "Error: " << e.what();
+					logError(ss.str());
+					continue;
+				}
+			}
+			parser->parse(db_session);
 		}
 	}
 	catch (const mysqlx::Error &e) {

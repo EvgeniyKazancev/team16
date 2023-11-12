@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS `users_favorites`;
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `publications_text`;
-DROP TABLE IF EXISTS `open_graph_data`;
+DROP TABLE IF EXISTS `publications_data`;
 DROP TABLE IF EXISTS `publications_categories`;
 DROP TABLE IF EXISTS `publications`;
 DROP TABLE IF EXISTS `category_allowed_keywords`;
@@ -56,7 +56,7 @@ CREATE TABLE `publications` (
 
 CREATE TABLE `publications_text` (
 	`publication_id` BIGINT NOT NULL,
-	`is_header` BOOLEAN NOT NULL,
+	`is_header` BOOLEAN NOT NULL DEFAULT FALSE,
 	`text` TEXT NOT NULL,
 	FOREIGN KEY (`publication_id`)
 		REFERENCES `publications`(`id`)
@@ -64,7 +64,7 @@ CREATE TABLE `publications_text` (
 		ON UPDATE CASCADE
 );
 
-CREATE TABLE `open_graph_data` (
+CREATE TABLE `publications_data` (
 	`publication_id` BIGINT NOT NULL,
 	`property` VARCHAR(200) NOT NULL,
 	`content` VARCHAR(500) NOT NULL,

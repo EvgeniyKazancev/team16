@@ -8,10 +8,9 @@
 #include <vector>
 #include <utility>
 
-#include <libxml/HTMLparser.h>
 #include <mysqlx/xdevapi.h>
 
-class HtmlParser final : public Parser {
+class HtmlParser : public Parser {
 public: 
 	HtmlParser() = delete;
 	HtmlParser(const HtmlParser &) = delete;
@@ -21,9 +20,13 @@ public:
 	~HtmlParser();
 
 private:
+	std::string getProtoFromUrl(const std::string &url) const;
+	std::string getDomainFromUrl(const std::string &url) const;
+	std::string completeUrl(const std::string &url) const;
+	bool urlEqual(const std::string &url1, const std::string &url2) const;
+	void parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph);
+	void parseLinks(htmlDocPtr doc, xmlNode *node, const std::string &current_url, std::set<std::string> &links);
 	void fillDatabase(mysqlx::Session &db_session, const std::string &url, const std::set<std::pair<bool, std::string>> &text_blocks, const std::map<std::string, std::string> &open_graph) const;
-	std::string getMainPageAddress() const;
-	void parseUrl(mysqlx::Session &db_session, const std::string &url, unsigned parse_depth, unsigned fileno = 1);
 	void traverseTree(
 		htmlDocPtr doc,
 		xmlNode *node,
@@ -37,14 +40,13 @@ private:
 		xmlNode *node,
 		std::set<std::pair<bool, std::string>> &text_blocks
 	);
-	std::string getProtoFromUrl(const std::string &url) const;
-	std::string getDomainFromUrl(const std::string &url) const;
-	std::string completeUrl(const std::string &url) const;
-	bool urlEqual(const std::string &url1, const std::string &url2) const;
-	void parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph);
-	void parseLinks(htmlDocPtr doc, xmlNode *node, const std::string &current_url, std::set<std::string> &links);
+	void parseUrl(mysqlx::Session &db_session, const std::string &url, unsigned parse_depth, unsigned fileno = 1);
+	std::string getMainPageAddress() const;
+
+
+protected:
 
 	std::string proto_;
-	std::string domain_;
+	std::string domain_;	
 };
 

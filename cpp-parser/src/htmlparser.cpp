@@ -93,38 +93,30 @@ void HtmlParser::searchForText(
 	if (node->name != nullptr) {
 		node_name = reinterpret_cast<const char *>(node->name);
 	}
-	xmlChar* content{ xmlNodeListGetString(doc, node->xmlChildrenNode, 1) };
+	std::string content_str{ extractTextFromNode(doc, node) };
 
-	if (content != nullptr) {
-		std::string content_str{ reinterpret_cast<const char *>(content) };
-		Lib::trim(content_str);
-		if (content_str.length() <= 8) {
-			xmlFree(content);	
-			return;
-		}
-		Lib::encodeHtml(content_str);
-		//std::cout << node_name << ": " << std::quoted(content_str) << std::endl;
-		if (
-			node_name == "title" || (
-				node_name.length() >= 2 &&
-				node_name[0] == 'h' &&
-				std::isdigit(node_name[1])
-			)
-		) {
-			auto pair = make_pair(true, content_str);
-			if (!text_blocks.contains(pair)) {
-				text_blocks.insert(pair);
-			}
-		}
-		else if (content_str.length() >= 50) {
-			auto pair = make_pair(false, content_str);
-
-			if (!text_blocks.contains(pair)) {
-				text_blocks.insert(pair);
-			}
+	if (content_str.length() <= 8) {
+		return;
+	}
+	if (
+		node_name == "title" || (
+			node_name.length() >= 2 &&
+			node_name[0] == 'h' &&
+			std::isdigit(node_name[1])
+		)
+	) {
+		auto pair = make_pair(true, content_str);
+		if (!text_blocks.contains(pair)) {
+			text_blocks.insert(pair);
 		}
 	}
-	xmlFree(content);	
+	else if (content_str.length() >= 50) {
+		auto pair = make_pair(false, content_str);
+
+		if (!text_blocks.contains(pair)) {
+			text_blocks.insert(pair);
+		}
+	}
 }
 
 std::string HtmlParser::getMainPageAddress() const {
@@ -197,7 +189,7 @@ void HtmlParser::fillDatabase(mysqlx::Session &db_session, const std::string &ur
 		}
 		for (auto it: open_graph) {
 			ss.str(std::string{});
-			ss << "INSERT INTO `open_graph_data` (`publication_id`, `property`, `content`) VALUES (" << new_id << ", '" << it.first << "', '" << it.second << "');";
+			ss << "INSERT INTO `publications_data` (`publication_id`, `property`, `content`) VALUES (" << new_id << ", '" << it.first << "', '" << it.second << "');";
 			std::cout << ss.str() << std::endl;
 			db_session.sql(ss.str()).execute();
 		}
@@ -221,7 +213,6 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 	std::cout << "Termination invoked: " << terminate_signal_caught_ << std::endl;
 	std::string filename { working_dir_ + "/webpage-" + std::to_string(fileno) + ".html" };
 	//std::string filename { "reddit.html" };
-	std::string content_type;
 	DownloadFile df;
 	
 	df.download(url, filename);
@@ -270,6 +261,7 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 	fillDatabase(db_session, url, text_blocks, open_graph);
 	for (const auto &link: links) {
 		if (terminate_signal_caught_) {
+			xmlFreeDoc(doc);
 			return;
 		}
 
@@ -294,6 +286,7 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 		}
 		parseUrl(db_session, link, parse_depth - 1, fileno + 1);
 	}	
+	xmlFreeDoc(doc);
 }
 
 void HtmlParser::parseOpenGraph(htmlDocPtr doc, xmlNode *node, std::map<std::string, std::string> &open_graph) {
