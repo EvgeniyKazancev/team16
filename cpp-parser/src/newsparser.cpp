@@ -21,7 +21,7 @@ NewsParser::NewsParser() {
 		};
 		db_session.sql(std::string{ "USE " }.append(config_["DBName"])).execute();
 		try {
-			std::string req{ "SELECT `id`, `url`, `source_type`, `parse_depth`, unix_timestamp(`created`) FROM sources ORDER BY `id`" };
+			std::string req{ "SELECT `id`, `url`, `source_type`, COALESCE(`parse_depth`, 0), unix_timestamp(`created`) FROM sources ORDER BY `id`" };
 			auto result = db_session.sql(req).execute();
 
 			auto epoch = chrono::time_point<chrono::high_resolution_clock>();
@@ -64,19 +64,51 @@ void NewsParser::run() {
 			config_["DBPassword"]
 		};
 		db_session.sql("USE " + config_["DBName"]).execute();
-		std::shared_ptr<IParser> parser;
+		db_session.startTransaction();
+		try {
+			db_session.sql("DELETE FROM `publications_data`;").execute();
+			db_session.sql("DELETE FROM `publications_text`;").execute();
+			db_session.sql("DELETE FROM `publications`;").execute();
+			db_session.commit();
+		}
+		catch (const mysqlx::Error &e) {
+			db_session.rollback();
+			logError("Cannot delete all publications()");
+			return;
+		}
+		std::shared_ptr<Parser> parser;
 		for (const auto &src: sources_) {
+			if (terminate_signal_caught_) {
+				std::cout << "\nClean exit..." << std::endl;
+				break;
+			}
+			if (src.type != "Telegram") {
+				continue;
+			}
+		
 			if (src.type == "Web") {
 				try {
-					parser = std::make_shared<HtmlParser>(src, working_dir_);
+					parser = std::make_shared<HtmlParser>(src, working_dir_, terminate_signal_caught_);
 				}
 				catch (const std::invalid_argument &e) {
 					std::stringstream ss;
 					ss << "Error: " << e.what();
 					logError(ss.str());
+					continue;
 				}
-				parser->parse(db_session);
 			}
+			else if (src.type == "Telegram") {
+				try {
+					parser = std::make_shared<TgParser>(src, working_dir_, terminate_signal_caught_);
+				}
+				catch (const std::invalid_argument &e) {
+					std::stringstream ss;
+					ss << "Error: " << e.what();
+					logError(ss.str());
+					continue;
+				}
+			}
+			parser->parse(db_session);
 		}
 	}
 	catch (const mysqlx::Error &e) {
@@ -94,4 +126,8 @@ NewsParser::~NewsParser() {
 
 void NewsParser::logError(const std::string &str) {
 	std::cerr << str << std::endl;
+}
+
+void NewsParser::cleanExit() {
+	terminate_signal_caught_ = true;
 }

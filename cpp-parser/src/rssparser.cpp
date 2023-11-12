@@ -1,7 +1,7 @@
 #include "rssparser.h"
 
-RssParser::RssParser(const Lib::dataSource &src, const std::string &working_dir) :
-IParser(src, working_dir) {
+RssParser::RssParser(const Lib::dataSource &src, const std::string &working_dir, volatile bool &terminate_signal) :
+Parser(src, working_dir, terminate_signal) {
 
 }
 
