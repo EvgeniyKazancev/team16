@@ -23,7 +23,7 @@ CREATE TABLE `sources` (
 );
 
 INSERT INTO `sources` VALUES
-	(DEFAULT, 'https://knife.media/category/news/', 'Web', DEFAULT, DEFAULT),
+	(DEFAULT, 'knifemedia', 'Telegram', NULL, DEFAULT),
 	(DEFAULT, 'https://www.reddit.com/r/Popular_Science_Ru/', 'Web', DEFAULT, DEFAULT),
 	(DEFAULT, 'https://www.dailymail.co.uk/articles.rss', 'RSS', NULL, DEFAULT),
 	(DEFAULT, 'bbcrussian', 'Telegram', NULL, DEFAULT);
@@ -44,7 +44,7 @@ INSERT INTO `users` VALUES (DEFAULT, 'lordgprs@yandex.ru', 'Максим', 'Ве
 CREATE TABLE `publications` (
 	`id` BIGINT NOT NULL PRIMARY KEY,
 	`source_id` BIGINT NOT NULL,
-	`url` VARCHAR(200) NOT NULL,
+	`url` VARCHAR(500) NOT NULL,
 	`copies_count` INTEGER NOT NULL DEFAULT 1,
 	`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	UNIQUE(`url`),

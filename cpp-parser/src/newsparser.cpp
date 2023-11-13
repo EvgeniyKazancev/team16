@@ -2,6 +2,7 @@
 
 #include <list>
 #include <filesystem>
+#include <thread>
 
 #include <sys/types.h>
 #include <unistd.h>
@@ -64,51 +65,50 @@ void NewsParser::run() {
 			config_["DBPassword"]
 		};
 		db_session.sql("USE " + config_["DBName"]).execute();
-		db_session.startTransaction();
-		try {
-			db_session.sql("DELETE FROM `publications_data`;").execute();
-			db_session.sql("DELETE FROM `publications_text`;").execute();
-			db_session.sql("DELETE FROM `publications`;").execute();
-			db_session.commit();
-		}
-		catch (const mysqlx::Error &e) {
-			db_session.rollback();
-			logError("Cannot delete all publications()");
-			return;
-		}
-		std::shared_ptr<Parser> parser;
-		for (const auto &src: sources_) {
-			if (terminate_signal_caught_) {
-				std::cout << "\nClean exit..." << std::endl;
-				break;
-			}
-			if (src.type != "Telegram") {
-				continue;
-			}
+		//db_session.startTransaction();
+		//try {
+		//	db_session.sql("DELETE FROM `publications_data`;").execute();
+		//	db_session.sql("DELETE FROM `publications_text`;").execute();
+		//	db_session.sql("DELETE FROM `publications`;").execute();
+		//	db_session.commit();
+		//}
+		//catch (const mysqlx::Error &e) {
+		//	db_session.rollback();
+		//	logError("Cannot delete all publications()");
+		//	return;
+		//}
+		while (main_loop_active_) {
+			std::shared_ptr<Parser> parser;
+			for (const auto &src: sources_) {
+				if (terminate_signal_caught_) {
+					break;
+				}
+				//if (src.type != "RSS") {
+				//	continue;
+				//}
 		
-			if (src.type == "Web") {
-				try {
+				if (src.type == "Web") {
 					parser = std::make_shared<HtmlParser>(src, working_dir_, terminate_signal_caught_);
 				}
-				catch (const std::invalid_argument &e) {
-					std::stringstream ss;
-					ss << "Error: " << e.what();
-					logError(ss.str());
-					continue;
-				}
-			}
-			else if (src.type == "Telegram") {
-				try {
+				else if (src.type == "Telegram") {
 					parser = std::make_shared<TgParser>(src, working_dir_, terminate_signal_caught_);
 				}
-				catch (const std::invalid_argument &e) {
-					std::stringstream ss;
-					ss << "Error: " << e.what();
-					logError(ss.str());
-					continue;
+				else if (src.type == "RSS") {
+					parser = std::make_shared<RssParser>(src, working_dir_, terminate_signal_caught_);
 				}
+				parser->parse(db_session);
 			}
-			parser->parse(db_session);
+			//break;
+			std::cout << "****************** Waiting for next iteration *****************\n" << std::endl;
+			auto pause = std::stoi(config_["Pause"]) * 2;
+			for (unsigned short i = 0; i < pause; ++i) {
+				if (terminate_signal_caught_) {
+					std::cout << "\nClean exit..." << std::endl;
+					break;
+				}
+				std::this_thread::sleep_for(chrono::milliseconds(500));
+			}
+			
 		}
 	}
 	catch (const mysqlx::Error &e) {
@@ -129,5 +129,6 @@ void NewsParser::logError(const std::string &str) {
 }
 
 void NewsParser::cleanExit() {
+	main_loop_active_ = false;
 	terminate_signal_caught_ = true;
 }
