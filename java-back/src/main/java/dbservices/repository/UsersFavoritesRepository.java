@@ -1,12 +1,10 @@
 package dbservices.repository;
 
-import dbservices.entity.Categories;
+import dbservices.entity.UsersFavorites;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoriesRepository extends JpaRepository<Categories,String> {
+public interface UsersFavoritesRepository extends JpaRepository<UsersFavorites, Long> {
 
-
-    void deleteById(Long id);
 }

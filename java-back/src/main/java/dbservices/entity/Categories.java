@@ -9,7 +9,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "categories", schema = "test", catalog = "")
-public class CategoriesEntity {
+public class Categories {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
@@ -24,7 +24,7 @@ public class CategoriesEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CategoriesEntity that = (CategoriesEntity) o;
+        Categories that = (Categories) o;
         return id == that.id && Objects.equals(name, that.name);
     }
 

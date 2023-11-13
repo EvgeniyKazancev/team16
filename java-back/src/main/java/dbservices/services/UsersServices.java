@@ -1,70 +1,78 @@
 package dbservices.services;
 
-import dbservices.dto.UsersEntityDTO;
-import dbservices.entity.UsersEntity;
+import dbservices.entity.Users;
 import dbservices.enums.ResponseType;
-import dbservices.repository.UserRepository;
+import dbservices.repository.UsersFavoritesRepository;
+import dbservices.repository.UsersRepository;
 import dbservices.response.ResponseMessage;
-import org.hibernate.annotations.Cascade;
+import dbservices.util.UserValidator;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BeanPropertyBindingResult;
 
 import javax.persistence.EntityNotFoundException;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UsersServices {
-    public UsersServices(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+     private final UsersFavoritesRepository usersFavoritesRepository;
+    private final UsersRepository usersRepository;
+    private final UserValidator userValidator;
 
-    private final UserRepository userRepository;
-
-
-
-    public UsersEntity getUsers(Long userId){
-              return userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
-    }
-
-    public List<UsersEntity> getAllUsers(){
-        return userRepository.findAll();
+    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository, UserValidator userValidator) {
+        this.usersFavoritesRepository = usersFavoritesRepository;
+        this.usersRepository = usersRepository;
+        this.userValidator = userValidator;
     }
 
 
 
-    public ResponseMessage addUser(UsersEntity user){
-
-        if (userRepository.existsByEmail(user.getEmail())){
-            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
-        }
-        userRepository.save(user);
-        return new ResponseMessage("Пользователь успешно создан",ResponseType.OPERATION_SUCCESSFUL.getCode());
+    public Users getUsers(Long userId) {
+        return usersRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
     }
 
-    public ResponseMessage updateUser(Long id,UsersEntity updateUser){
-        UsersEntity user = getUsers(id);
+    public List<Users> getAllUsers() {
+        return usersRepository.findAll();
+    }
+
+
+
+    public ResponseMessage addUser(Users user) {
+
+        userValidator.validate(user,new BeanPropertyBindingResult(user, "email"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
+//        if (userRepository.existsByEmail(user.getEmail())) {
+//            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
+//        }
+        usersRepository.save(user);
+        return new ResponseMessage("Пользователь успешно создан", ResponseType.OPERATION_SUCCESSFUL.getCode());
+    }
+
+    public ResponseMessage updateUser(Long id, Users updateUser) {
+        Users user = getUsers(id);
         user.setEmail(updateUser.getEmail());
         user.setFirstName(updateUser.getFirstName());
         user.setLastName(updateUser.getLastName());
         user.setPatronym(updateUser.getPatronym());
         user.setPasswordHash(updateUser.getPasswordHash());
-        user.setCreated(LocalDate.now());
-        if (userRepository.existsByEmail(user.getEmail())){
-            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
-        }
-        userRepository.save(user);
+        user.setCreated(LocalDateTime.now());
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "email"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
+//        if (userRepository.existsByEmail(user.getEmail())) {
+//            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
+//        }
+        usersRepository.save(user);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
 
-    public ResponseMessage deleteUser(Long userId){
-        userRepository.deleteById(userId);
-        return new ResponseMessage("Пользователь успешно удален",ResponseType.OPERATION_SUCCESSFUL.getCode());
+    public ResponseMessage deleteUser(Long userId) {
+        usersFavoritesRepository.deleteById(userId);
+        usersRepository.deleteById(userId);
+        return new ResponseMessage("Пользователь успешно удален", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
-
 
 
 }

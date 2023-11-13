@@ -2,25 +2,25 @@ package dbservices.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.annotation.Scope;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "publications_text", schema = "test", catalog = "")
-public class PublicationsTextEntity {
-    @Basic
-    @Column(name = "publication_id")
-    private long publicationId;
-    @Basic
+@Table(name = "publications_text", schema = "test")
+public class PublicationsText {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "publication_id")
+    private Publications publicationId;
+
     @Column(name = "is_header")
-    private byte isHeader;
-    @Basic
+    private boolean isHeader;
+
     @Column(name = "text")
     private String text;
 
@@ -30,7 +30,7 @@ public class PublicationsTextEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PublicationsTextEntity that = (PublicationsTextEntity) o;
+        PublicationsText that = (PublicationsText) o;
         return publicationId == that.publicationId && isHeader == that.isHeader && Objects.equals(text, that.text);
     }
 

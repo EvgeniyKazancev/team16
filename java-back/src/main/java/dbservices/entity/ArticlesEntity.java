@@ -14,13 +14,13 @@ public class ArticlesEntity {
     @Id
     @Column(name = "id")
     private long id;
-    @Basic
+
     @Column(name = "source")
     private String source;
-    @Basic
+
     @Column(name = "caption")
     private String caption;
-    @Basic
+
     @Column(name = "link")
     private String link;
 

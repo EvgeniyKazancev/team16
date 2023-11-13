@@ -1,40 +1,44 @@
 package dbservices.services;
 
-import dbservices.entity.SourcesEntity;
-import dbservices.entity.UsersEntity;
+import dbservices.entity.Sources;
 import dbservices.enums.ResponseType;
+import dbservices.repository.PublicationRepository;
 import dbservices.repository.SourcesRepository;
 import dbservices.response.ResponseMessage;
+import dbservices.util.SourcesValidator;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BeanPropertyBindingResult;
 
 import javax.persistence.EntityNotFoundException;
-import java.time.LocalDate;
 
 @Service
 public class SourcesServices {
-         private final SourcesRepository sourcesRepository;
+   private final PublicationRepository publicationRepository;
+    private final SourcesRepository sourcesRepository;
+    private final SourcesValidator sourcesValidator;
 
-    public SourcesServices(SourcesRepository sourcesRepository) {
+    public SourcesServices(PublicationRepository publicationRepository, SourcesRepository sourcesRepository, SourcesValidator sourcesValidator) {
+        this.publicationRepository = publicationRepository;
+
         this.sourcesRepository = sourcesRepository;
+        this.sourcesValidator = sourcesValidator;
     }
 
-    public SourcesEntity getSources(Long sourcesId){
+    public Sources getSources(Long sourcesId) {
         return sourcesRepository.findById(sourcesId).orElseThrow(() -> new EntityNotFoundException("Источник не найден" + ResponseType.NOT_FOUND.getCode()));
     }
 
-    public ResponseMessage addSources(String url,String sourcesType,int parseDepth){
-        SourcesEntity sourcesEntity = new SourcesEntity();
-        sourcesEntity.setUrl(url);
-        sourcesEntity.setSourceType(sourcesType);
-        sourcesEntity.setParseDepth(parseDepth);
-        sourcesEntity.setCreated(LocalDate.now());
-        sourcesRepository.save(sourcesEntity);
-        return new ResponseMessage("Источник успешно добавлен" + sourcesEntity.getSourceType(), ResponseType.OPERATION_SUCCESSFUL.getCode());
+    public ResponseMessage addSources(Sources sources) {
+        sourcesValidator.validate(sources, new BeanPropertyBindingResult(sources, "url"));
+        sourcesRepository.save(sources);
+        return new ResponseMessage("Источник успешно добавлен" + sources.getSourceType(), ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    public ResponseMessage deleteSources(Long sourcesId){
+    public ResponseMessage deleteSources(Long sourcesId) {
+
         sourcesRepository.deleteById(sourcesId);
-        return new ResponseMessage("Источник успешно удален",ResponseType.OPERATION_SUCCESSFUL.getCode()) ;
+        publicationRepository.deleteById(sourcesId);
+        return new ResponseMessage("Источник успешно удален", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
 }

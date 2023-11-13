@@ -1,11 +1,12 @@
 package dbservices.repository;
 
-import dbservices.entity.SourcesEntity;
+import dbservices.entity.Sources;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SourcesRepository extends JpaRepository<SourcesEntity,Long> {
+public interface SourcesRepository extends JpaRepository<Sources,Long> {
 
-    void deleteById(Long sourcesId);
+    boolean existsByUrl (String url);
+
 }

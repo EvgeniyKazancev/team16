@@ -1,13 +1,12 @@
 package dbservices.repository;
 
-import dbservices.entity.UsersEntity;
+import dbservices.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UsersEntity,Long> {
+public interface UsersRepository extends JpaRepository<Users,Long> {
 
   boolean existsByEmail(String email);
-   @Override
-   void deleteById(Long userId);
+
 }

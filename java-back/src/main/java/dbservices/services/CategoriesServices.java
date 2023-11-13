@@ -1,6 +1,6 @@
 package dbservices.services;
 
-import dbservices.entity.CategoriesEntity;
+import dbservices.entity.Categories;
 import dbservices.enums.ResponseType;
 import dbservices.repository.CategoriesRepository;
 import dbservices.response.ResponseMessage;
@@ -14,10 +14,9 @@ public class CategoriesServices {
         this.categoriesRepository = categoriesRepository;
     }
 
-    public  ResponseMessage addCategories(String name){
-        CategoriesEntity categoriesEntity = new CategoriesEntity();
-        categoriesEntity.setName(name);
-        categoriesRepository.save(categoriesEntity);
+    public  ResponseMessage addCategories(Categories categories){
+
+        categoriesRepository.save(categories);
         return new ResponseMessage("Категория  успешно создана" , ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
