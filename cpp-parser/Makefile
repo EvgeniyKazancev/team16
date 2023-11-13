@@ -3,7 +3,7 @@ SRC = src/main.cpp \
 	src/converter.cpp \
 	src/project_lib.cpp \
 	src/config_file.cpp \
-	src/iparser.cpp \
+	src/parser.cpp \
 	src/rssparser.cpp \
 	src/newsparser.cpp \
 	src/htmlparser.cpp \

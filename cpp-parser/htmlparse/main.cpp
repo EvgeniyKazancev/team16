@@ -36,6 +36,17 @@ void traverse_dom_trees(xmlNode * a_node, std::string &node_name)
     }
 }
 
+void removeTags(std::string &str) {
+	for (auto lt_pos = str.find('<'); lt_pos != std::string::npos; lt_pos = str.find('<')) {
+		auto gt_pos = str.find('>');
+		if (gt_pos == std::string::npos) {
+			return;
+		}
+
+		str = str.substr(0, lt_pos) + str.substr(gt_pos + 1, str.length() - (gt_pos + 1));
+	}
+}
+
 static void printTitle(xmlDoc *doc, xmlNode * a_node)
 {
     xmlNode *cur_node = NULL;
@@ -51,9 +62,20 @@ static void printTitle(xmlDoc *doc, xmlNode * a_node)
 			)
 
 		) {
+			xmlBufferPtr buffer = xmlBufferCreate();
+			int size = xmlNodeDump(buffer, doc, cur_node, 0, 1);
+			std::string buffer_content{ reinterpret_cast<const char *>(buffer->content) };
+			removeTags(buffer_content);
+			std::cout << buffer_content << std::endl;
+			xmlBufferFree(buffer);
+
             xmlChar* content;
+			auto node_content = xmlNodeGetContent(cur_node->xmlChildrenNode);
+            printf("*********************** node type: Element, name: %s, content: %s\n", cur_node->name, node_content);
+			xmlFree(node_content);
+
             content = xmlNodeListGetString(doc, cur_node->xmlChildrenNode, 1);
-            printf("*********************** node type: Element, name: %s, content: %s\n", cur_node->name, content);
+            printf("*********************** node type: Element, name: %s, string: %s\n", cur_node->name, content);
             xmlFree(content);
         }
 
