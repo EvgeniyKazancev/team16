@@ -4,6 +4,7 @@
 #include <libxml/HTMLparser.h>
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 void traverse_dom_trees(xmlNode * a_node, std::string &node_name)
 {
@@ -36,14 +37,26 @@ void traverse_dom_trees(xmlNode * a_node, std::string &node_name)
     }
 }
 
-void removeTags(std::string &str) {
+/*void removeTags(std::string &str) {
 	for (auto lt_pos = str.find('<'); lt_pos != std::string::npos; lt_pos = str.find('<')) {
+		std::cout << "String: " << std::quoted(str) << std::endl;
+		sleep(1);
 		auto gt_pos = str.find('>');
 		if (gt_pos == std::string::npos) {
 			return;
 		}
 
 		str = str.substr(0, lt_pos) + str.substr(gt_pos + 1, str.length() - (gt_pos + 1));
+	}
+}*/
+
+void removeTags(std::string &str) {
+	for (auto lt_pos = str.find('<'); lt_pos != std::string::npos; lt_pos = str.find('<')) {
+		auto gt_pos = str.find('>', lt_pos);
+		if (gt_pos == std::string::npos) {
+			return;
+		}
+		str.erase(lt_pos, gt_pos - lt_pos);
 	}
 }
 
@@ -64,9 +77,12 @@ static void printTitle(xmlDoc *doc, xmlNode * a_node)
 		) {
 			xmlBufferPtr buffer = xmlBufferCreate();
 			int size = xmlNodeDump(buffer, doc, cur_node, 0, 1);
-			std::string buffer_content{ reinterpret_cast<const char *>(buffer->content) };
-			removeTags(buffer_content);
-			std::cout << buffer_content << std::endl;
+			std::string buffer_content;
+			if (size != -1 && buffer != nullptr && buffer->content != nullptr) {
+				std::string buffer_content = reinterpret_cast<const char *>(buffer->content);
+				std::cout << "String: " << std::quoted(buffer_content) << std::endl;
+				removeTags(buffer_content);
+			}
 			xmlBufferFree(buffer);
 
             xmlChar* content;

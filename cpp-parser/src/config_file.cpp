@@ -1,15 +1,24 @@
 #include "config_file.h"
 
 #include <algorithm>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 ConfigFile::ConfigFile(const std::string &filename) {
-	std::ifstream fs(filename, std::ios::in);
-	if (!fs.is_open()) {
+	std::string current_filename{ filename };
+	std::cout << current_filename << std::endl;
+	if (!fs::exists(current_filename)) {
+		auto path = Lib::split(current_filename, "/");
+		current_filename = std::string{ "/etc/" + path.back() };
+	}
+	std::ifstream ifs(current_filename, std::ios::in);
+	if (!ifs.is_open()) {
 		throw std::runtime_error{ "Cannot open file '" + filename + "' for read" };
 	}
 	std::string buf;
-	while (!fs.eof()) {
-		getline(fs, buf);
+	while (!ifs.eof()) {
+		getline(ifs, buf);
 		// Removing space characters from string
 		std::erase(buf, ' ');
 		std::erase(buf, '\t');
@@ -23,7 +32,7 @@ ConfigFile::ConfigFile(const std::string &filename) {
 			options_.insert(make_pair(tokens[0], tokens[1]));
 		}
 	}
-	fs.close();
+	ifs.close();
 }
 
 const std::string &ConfigFile::operator[](const std::string &index) const {
