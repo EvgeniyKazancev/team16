@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 @Getter
 @Setter
@@ -30,8 +31,11 @@ public class Publications {
     private String hash;
 
     @Column(name = "created")
-    private LocalDate created;
+    private LocalDateTime created;
 
+    public Publications(){
+        this.created = LocalDateTime.now();
+    }
 
 
     @Override

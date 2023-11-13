@@ -2,21 +2,24 @@ package dbservices.services;
 
 import dbservices.entity.Publications;
 import dbservices.enums.ResponseType;
+import dbservices.repository.CategoriesRepository;
 import dbservices.repository.PublicationRepository;
 import dbservices.repository.PublicationTextRepository;
 import dbservices.response.ResponseMessage;
 import dbservices.util.PublicationValidator;
-import org.springframework.stereotype.Repository;
+
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
 
 @Service
 public class PublicationServices {
+    private final CategoriesRepository categoriesRepository;
     private final PublicationValidator publicationValidator;
     private final PublicationTextRepository publicationTextRepository;
     private final PublicationRepository publicationRepository;
 
-    public PublicationServices(PublicationValidator publicationValidator, PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository) {
+    public PublicationServices(CategoriesRepository categoriesRepository, PublicationValidator publicationValidator, PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository) {
+        this.categoriesRepository = categoriesRepository;
         this.publicationValidator = publicationValidator;
         this.publicationTextRepository = publicationTextRepository;
         this.publicationRepository = publicationRepository;
@@ -34,6 +37,7 @@ public class PublicationServices {
     }
 
     public ResponseMessage deletePublication(Long publicationId){
+        categoriesRepository.deleteById(publicationId);
         publicationTextRepository.deleteById(publicationId);
         publicationRepository.deleteById(publicationId);
         return new ResponseMessage("Публикация удалена", ResponseType.OPERATION_SUCCESSFUL.getCode());
