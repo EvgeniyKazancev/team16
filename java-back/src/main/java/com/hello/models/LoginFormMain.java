@@ -1,4 +1,9 @@
 package com.hello.models;
 
-public record LoginFormMain(String email, String password) {
+import lombok.Getter;
+
+@Getter
+public class LoginFormMain {
+    private String email;
+    private String password;
 }
