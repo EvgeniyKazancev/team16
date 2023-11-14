@@ -10,9 +10,8 @@
 namespace chrono = std::chrono;
 namespace fs = std::filesystem;
 
-NewsParser::NewsParser() {
-	working_dir_ = WORKING_DIR_PREFIX + std::to_string(getpid());
-	fs::create_directory(working_dir_);
+void NewsParser::updateSources() {
+	sources_.clear();
 	try {
 		mysqlx::Session db_session{
 			config_["DBHost"],
@@ -52,8 +51,11 @@ NewsParser::NewsParser() {
 		ss << "Unable to connect to database: " << e;
 		logError(ss.str());
 	}
+}
 
-
+NewsParser::NewsParser() {
+	working_dir_ = WORKING_DIR_PREFIX + std::to_string(getpid());
+	fs::create_directory(working_dir_);
 }
 
 void NewsParser::run() {
@@ -79,6 +81,8 @@ void NewsParser::run() {
 		//}
 		while (main_loop_active_) {
 			std::shared_ptr<Parser> parser;
+	
+			updateSources();
 			for (const auto &src: sources_) {
 				if (terminate_signal_caught_) {
 					break;
@@ -99,7 +103,7 @@ void NewsParser::run() {
 				parser->parse(db_session);
 			}
 			//break;
-			std::cout << "****************** Waiting for next iteration *****************\n" << std::endl;
+			//std::cout << "****************** Waiting for next iteration *****************\n" << std::endl;
 			auto pause = std::stoi(config_["Pause"]) * 2;
 			for (unsigned short i = 0; i < pause; ++i) {
 				if (terminate_signal_caught_) {

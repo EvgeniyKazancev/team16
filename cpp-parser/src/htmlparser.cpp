@@ -262,7 +262,7 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 				ss.str(std::string{});
 				ss << "UPDATE `publications` SET `copies_count` = `copies_count` + 1 WHERE `id` = " << row[0].get<long>();
 				db_session.sql(ss.str()).execute();
-				std::cout << "\nPage " << std::quoted(link) << " has been already parsed. Skipping..." << std::endl;
+				//std::cout << "\nPage " << std::quoted(link) << " has been already parsed. Skipping..." << std::endl;
 				continue;
 			}	
 		}

@@ -41,6 +41,7 @@ std::string Parser::extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const {
 //	}
 //	std::string buffer_content { reinterpret_cast<char *>(content) };
 	Lib::trim(buffer_content);
+	Lib::removeMultipleSpaces(buffer_content);
 	Lib::encodeHtml(buffer_content);
 	return buffer_content;
 }
