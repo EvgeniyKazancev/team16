@@ -13,6 +13,7 @@ namespace Lib {
 	void trim(std::string &s);
 	void encodeHtml(std::string &content_str);
 	void removeFromString(std::string &str, const std::string pattern);
+	void removeMultipleSpaces(std::string &str);
 
 	struct dataSource {
 		unsigned id;

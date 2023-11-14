@@ -67,7 +67,7 @@ void TgParser::fillDatabase(mysqlx::Session &db_session) const {
 		auto result = db_session.sql(ss.str()).execute();
 		auto row = result.fetchOne();
 		if (row) {
-			std::cout << "\nPage " << std::quoted(post.link) << " has been already parsed. Skipping..." << std::endl;
+			//std::cout << "\nPage " << std::quoted(post.link) << " has been already parsed. Skipping..." << std::endl;
 			continue;
 		}
 

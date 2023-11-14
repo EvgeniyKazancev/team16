@@ -23,6 +23,7 @@ public:
 
 private:
 	void logError(const std::string &str);
+	void updateSources();
 
 	const std::string CONFIG_FILE{ "newsparser.conf" };
 	const std::string WORKING_DIR_PREFIX{ "/tmp/newsparser-" };
