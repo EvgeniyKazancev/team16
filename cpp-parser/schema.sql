@@ -17,16 +17,23 @@ CREATE TABLE `sources` (
 	`source_type` VARCHAR(10) NOT NULL,
 	`parse_depth` INTEGER DEFAULT 2, -- Maximum 4!
 	`created` TIMESTAMP NOT NULL DEFAULT now(),
+	`name` VARCHAR(50) NOT NULL,
 	CHECK (`source_type` IN ('Telegram', 'Web', 'RSS')),
 	CHECK (`parse_depth` >= 1 AND `parse_depth` <= 4),
 	UNIQUE (`url`)
 );
 
 INSERT INTO `sources` VALUES
-	(DEFAULT, 'https://knife.media/category/news/', 'Web', DEFAULT, DEFAULT),
-	(DEFAULT, 'https://www.reddit.com/r/Popular_Science_Ru/', 'Web', DEFAULT, DEFAULT),
-	(DEFAULT, 'https://www.dailymail.co.uk/articles.rss', 'RSS', NULL, DEFAULT),
-	(DEFAULT, 'bbcrussian', 'Telegram', NULL, DEFAULT);
+	(DEFAULT, 'knifemedia', 'Telegram', NULL, DEFAULT, 'Knife Media'),
+	(DEFAULT, 'https://www.reddit.com/r/Popular_Science_Ru/', 'Web', DEFAULT, DEFAULT, 'Reddit Popular Science Ru'),
+	(DEFAULT, 'https://www.dailymail.co.uk/articles.rss', 'RSS', NULL, DEFAULT, 'Daily Mail'),
+	(DEFAULT, 'bbcrussian', 'Telegram', NULL, DEFAULT, 'BBC Russian'),
+	(DEFAULT, 'nplus1', 'Telegram', NULL, DEFAULT, 'N+1'),
+	(DEFAULT, 'nsmag', 'Telegram', NULL, DEFAULT, 'Naked Science'),
+	(DEFAULT, 'https://newatlas.com/index.rss', 'RSS', NULL, DEFAULT, 'New Atlas'),
+	(DEFAULT, 'https://www.theverge.com/rss/index.xml', 'RSS', NULL, DEFAULT, 'The Verge'),
+	(DEFAULT, 'meduza_news', 'Telegram', NULL, DEFAULT, 'Медуза');
+
 
 CREATE TABLE `users` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -44,7 +51,7 @@ INSERT INTO `users` VALUES (DEFAULT, 'lordgprs@yandex.ru', 'Максим', 'Ве
 CREATE TABLE `publications` (
 	`id` BIGINT NOT NULL PRIMARY KEY,
 	`source_id` BIGINT NOT NULL,
-	`url` VARCHAR(200) NOT NULL,
+	`url` VARCHAR(500) NOT NULL,
 	`copies_count` INTEGER NOT NULL DEFAULT 1,
 	`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	UNIQUE(`url`),

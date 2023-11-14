@@ -67,7 +67,7 @@ void TgParser::fillDatabase(mysqlx::Session &db_session) const {
 		auto result = db_session.sql(ss.str()).execute();
 		auto row = result.fetchOne();
 		if (row) {
-			std::cout << "\nPage " << std::quoted(post.link) << " has been already parsed. Skipping..." << std::endl;
+			//std::cout << "\nPage " << std::quoted(post.link) << " has been already parsed. Skipping..." << std::endl;
 			continue;
 		}
 
@@ -190,7 +190,7 @@ std::map<std::string, std::string> TgParser::getCss(htmlNodePtr node) const {
 	return result;
 }
 
-std::set<std::string> TgParser::getClasses(xmlNode *node) const {
+std::set<std::string> TgParser::getClasses(htmlNodePtr node) const {
 	for (xmlAttr *attribute = node->properties; attribute != nullptr; attribute = attribute->next) {
 		auto attribute_name{ reinterpret_cast<const char *>(attribute->name) };
 		auto attribute_value{ reinterpret_cast<const char *>(xmlNodeListGetString(html_, attribute->children, 1)) };
@@ -202,7 +202,7 @@ std::set<std::string> TgParser::getClasses(xmlNode *node) const {
 	return std::set<std::string>{};
 }
 
-std::string TgParser::getAttribute(xmlNode *node, const std::string &attribute_for_search) const {
+std::string TgParser::getAttribute(htmlNodePtr node, const std::string &attribute_for_search) const {
 	for (xmlAttr *attribute = node->properties; attribute != nullptr; attribute = attribute->next) {
 		auto attribute_name{ reinterpret_cast<const char *>(attribute->name) };
 		auto attribute_value{ reinterpret_cast<const char *>(xmlNodeListGetString(html_, attribute->children, 1)) };

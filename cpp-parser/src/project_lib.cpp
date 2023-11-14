@@ -92,3 +92,18 @@ void Lib::removeFromString(std::string &str, const std::string pattern) {
 	}
 }
 
+void Lib::removeMultipleSpaces(std::string &str) {
+    size_t str_begin = 0;
+    while (str_begin < str.length()) {
+        if (std::isspace(str[str_begin])) {
+            size_t str_end = str_begin + 1;
+            while (std::isspace(str[str_end])) {
+                ++str_end;
+            }
+            if (str_end - str_begin > 1) {
+                str.erase(str_begin + 1, str_end - str_begin - 1);
+            }
+        }
+        ++str_begin;
+    }
+}

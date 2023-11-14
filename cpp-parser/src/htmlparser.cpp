@@ -179,18 +179,15 @@ void HtmlParser::fillDatabase(mysqlx::Session &db_session, const std::string &ur
 	try {
 		ss.str(std::string{});
 		ss << "INSERT INTO `publications` (`id`, `source_id`, `url`) VALUES (" << new_id << ", " << source_id_ << ", '" << url << "');";
-		std::cout << ss.str() << std::endl;
 		db_session.sql(ss.str()).execute();
 		for (auto it: text_blocks) {
 			ss.str(std::string{});
 			ss << "INSERT INTO `publications_text` (`publication_id`, `is_header`, `text`) VALUES (" << new_id << ", " << it.first << ", '" << it.second << "');";
-			std::cout << ss.str() << std::endl;
 			db_session.sql(ss.str()).execute();
 		}
 		for (auto it: open_graph) {
 			ss.str(std::string{});
 			ss << "INSERT INTO `publications_data` (`publication_id`, `property`, `content`) VALUES (" << new_id << ", '" << it.first << "', '" << it.second << "');";
-			std::cout << ss.str() << std::endl;
 			db_session.sql(ss.str()).execute();
 		}
 		db_session.commit();
@@ -210,7 +207,6 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 	}
 
 	std::cout << "Parsing " << url << " (" << getDomainFromUrl(url) << ") with depth " << parse_depth << "\n" << std::endl;
-	std::cout << "Termination invoked: " << terminate_signal_caught_ << std::endl;
 	std::string filename { working_dir_ + "/webpage-" + std::to_string(fileno) + ".html" };
 	//std::string filename { "reddit.html" };
 	DownloadFile df;
@@ -245,17 +241,6 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 
 	traverseTree(doc, root_element, url, links, open_graph, text_blocks);
 
-	//for (const auto it: open_graph) {
-	//	std::cout << it.first << ": " << it.second << std::endl;
-	//}
-
-	//for (const auto &link: links) {
-	//	std::cout << "Link: " << link << " " << std::endl;
-	//}
-
-	//for (const auto &it: text_blocks) {
-	//	std::cout << "Text block: " << it.first << " " << std::quoted(it.second) << std::endl;
-	//}
 	fs::remove(filename);
 	
 	fillDatabase(db_session, url, text_blocks, open_graph);
@@ -277,7 +262,7 @@ void HtmlParser::parseUrl(mysqlx::Session &db_session, const std::string &url, c
 				ss.str(std::string{});
 				ss << "UPDATE `publications` SET `copies_count` = `copies_count` + 1 WHERE `id` = " << row[0].get<long>();
 				db_session.sql(ss.str()).execute();
-				std::cout << "\nPage " << std::quoted(link) << " has been already parsed. Skipping..." << std::endl;
+				//std::cout << "\nPage " << std::quoted(link) << " has been already parsed. Skipping..." << std::endl;
 				continue;
 			}	
 		}
