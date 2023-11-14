@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -17,5 +18,5 @@ public class UsersEntityDTO implements Serializable {
     private String lastName;
     private String patronym;
     private String passwordHash;
-    private LocalDate created;
+    private LocalDateTime created;
 }

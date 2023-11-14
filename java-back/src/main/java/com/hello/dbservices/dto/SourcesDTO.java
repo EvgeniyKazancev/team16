@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -16,5 +17,5 @@ public class SourcesDTO implements Serializable {
     private String url;
     private String sourceType;
     private int parseDepth;
-    private LocalDate created;
+    private LocalDateTime created;
 }

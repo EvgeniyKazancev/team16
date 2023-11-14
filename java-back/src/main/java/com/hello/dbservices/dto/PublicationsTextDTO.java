@@ -1,6 +1,7 @@
-package dbservices.dto;
+package com.hello.dbservices.dto;
 
-import dbservices.entity.Publications;
+
+import com.hello.dbservices.entity.Publications;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

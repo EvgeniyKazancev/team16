@@ -21,7 +21,7 @@ public class PublicationsCategories {
     private Publications publicationId;
 
     @ManyToOne(optional = false)
-    @Column(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private Categories categoryId;
 
 

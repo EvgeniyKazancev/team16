@@ -45,8 +45,7 @@ public class PublicationServices {
     }
 
     public PublicationsText getNewsText(Long publicationId){
-             PublicationsText news =  publicationTextRepository.findByPublicationId(publicationId);
-       return news;
+        return publicationTextRepository.findByPublicationId(publicationId);
     }
 
     public List<Publications> getAllPublicationsFromSource(Long sourcesId){
