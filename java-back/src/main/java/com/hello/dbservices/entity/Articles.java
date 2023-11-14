@@ -10,15 +10,21 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "categories", schema = "test", catalog = "")
-public class Categories {
+@Table(name = "articles", schema = "test", catalog = "")
+public class Articles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "source")
+    private String source;
+
+    @Column(name = "caption")
+    private String caption;
+
+    @Column(name = "link")
+    private String link;
 
 
 
@@ -29,8 +35,9 @@ public class Categories {
         Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        Categories categories =(Categories) o;
-        return getId() != null && Objects.equals(getId(),categories.getId()) && Objects.equals(getName(),categories.getName());
+        Articles that = (Articles) o;
+        return getId() != null && Objects.equals(getId(),that.getId()) && Objects.equals(getSource(),that.getSource()) && Objects.equals(getCaption(),that.getCaption())
+                               && Objects.equals(getLink(),that.getLink());
     }
 
     @Override

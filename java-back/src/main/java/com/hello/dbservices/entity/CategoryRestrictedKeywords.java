@@ -10,15 +10,18 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "categories", schema = "test", catalog = "")
-public class Categories {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "category_restricted_keywords", schema = "test", catalog = "")
+public class CategoryRestrictedKeywords {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "category_id",nullable = false)
+    private Categories categoriesId;
+
+    @Column(name = "keyword")
+    private String keyword;
 
 
 
@@ -29,8 +32,8 @@ public class Categories {
         Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        Categories categories =(Categories) o;
-        return getId() != null && Objects.equals(getId(),categories.getId()) && Objects.equals(getName(),categories.getName());
+        CategoryRestrictedKeywords categoryRestrictedKeywords = (CategoryRestrictedKeywords) o;
+        return getId() != null && Objects.equals(getId(),categoryRestrictedKeywords.getId()) && Objects.equals(getKeyword(),categoryRestrictedKeywords.getCategoriesId());
     }
 
     @Override

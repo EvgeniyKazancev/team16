@@ -10,16 +10,16 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "categories", schema = "test", catalog = "")
-public class Categories {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "source_restricted_keywords", schema = "test", catalog = "")
+public class SourceRestrictedKeywords {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "source_id")
+    private long sourceId;
 
-    @Column(name = "name")
-    private String name;
-
+    @Column(name = "keyword")
+    private String keyword;
 
 
     @Override
@@ -29,8 +29,10 @@ public class Categories {
         Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        Categories categories =(Categories) o;
-        return getId() != null && Objects.equals(getId(),categories.getId()) && Objects.equals(getName(),categories.getName());
+        SourceRestrictedKeywords sourceRestrictedKeywords = (SourceRestrictedKeywords) o;
+        return getId() != null && Objects.equals(getId(),sourceRestrictedKeywords.getId()) && Objects.equals(getSourceId(),sourceRestrictedKeywords.getSourceId())
+                               && Objects.equals(getKeyword(),sourceRestrictedKeywords.getKeyword());
+
     }
 
     @Override

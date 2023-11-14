@@ -1,16 +1,9 @@
 package com.hello.dbservices.services;
 
-<<<<<<< HEAD:java-back/src/main/java/dbservices/services/PublicationServices.java
-import dbservices.entity.Publications;
-import dbservices.entity.PublicationsText;
-import dbservices.enums.ResponseType;
-import dbservices.repository.CategoriesRepository;
-import dbservices.repository.PublicationRepository;
-import dbservices.repository.PublicationTextRepository;
-import dbservices.repository.UsersRepository;
-import dbservices.response.ResponseMessage;
-import dbservices.util.PublicationValidator;
-=======
+
+import com.hello.dbservices.entity.PublicationsText;
+import com.hello.dbservices.repository.UsersRepository;
+
 import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.repository.CategoriesRepository;
@@ -18,12 +11,13 @@ import com.hello.dbservices.repository.PublicationRepository;
 import com.hello.dbservices.repository.PublicationTextRepository;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.util.PublicationValidator;
->>>>>>> e57ede8 (JPA pre-edit.):java-back/src/main/java/com/hello/dbservices/services/PublicationServices.java
 
+
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
 
-import javax.persistence.EntityNotFoundException;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
