@@ -1,6 +1,7 @@
-package dbservices.dto;
+package com.hello.dbservices.dto;
 
-import dbservices.entity.Sources;
+import com.hello.dbservices.entity.Sources;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class PublicationsDTO implements Serializable {
-    private long id;
+    private Long id;
     private Sources sourcesId;
     private String url;
     private int copiesCount;

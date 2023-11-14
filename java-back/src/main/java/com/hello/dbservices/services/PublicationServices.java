@@ -10,45 +10,48 @@ import com.hello.dbservices.repository.CategoriesRepository;
 import com.hello.dbservices.repository.PublicationRepository;
 import com.hello.dbservices.repository.PublicationTextRepository;
 import com.hello.dbservices.response.ResponseMessage;
+//import com.hello.dbservices.util.PublicationValidator;
+
+
 import com.hello.dbservices.util.PublicationValidator;
-
-
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
 
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @Service
 public class PublicationServices {
     private final UsersRepository usersRepository;
     private final CategoriesRepository categoriesRepository;
-    private final PublicationValidator publicationValidator;
+  private  final PublicationValidator publicationValidator;
     private final PublicationTextRepository publicationTextRepository;
     private final PublicationRepository publicationRepository;
 
-    public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository, PublicationValidator publicationValidator,
+    public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository,PublicationValidator publicationValidator,
                                PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository) {
         this.usersRepository = usersRepository;
         this.categoriesRepository = categoriesRepository;
-        this.publicationValidator = publicationValidator;
+       this.publicationValidator = publicationValidator;
         this.publicationTextRepository = publicationTextRepository;
         this.publicationRepository = publicationRepository;
     }
 
     public ResponseMessage addPublication(Publications publications){
-        publicationValidator.validate(publications,new BeanPropertyBindingResult(publications,"url"));
+      //  publicationValidator.validate(publications,new BeanPropertyBindingResult(publications,"url"));
         publicationRepository.save(publications);
         return new ResponseMessage("Публикация добавлена", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
     public PublicationsText getNewsText(Long publicationId){
-        return publicationTextRepository.findByPublicationId(publicationId);
+        return publicationTextRepository.findByPublicationId_Id(publicationId);
     }
 
     public List<Publications> getAllPublicationsFromSource(Long sourcesId){
+
         return publicationRepository.findAllById(sourcesId);
     }
     public List<Publications> getPublicationsFromSourceBetweenDate(Long sourcesId, LocalDateTime startDate, LocalDateTime endDate){

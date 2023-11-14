@@ -3,9 +3,10 @@ package com.hello.dbservices.util;
 import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.repository.PublicationRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-
+@Component
 public class PublicationValidator implements Validator {
 private final PublicationRepository publicationRepository;
 
