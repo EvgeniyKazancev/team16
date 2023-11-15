@@ -3,16 +3,14 @@ package com.hello.dbservices.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "users", schema = "test")
-public class Users {
+public class UsersHideSecureInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -30,12 +28,9 @@ public class Users {
     @Column(name = "patronym")
     private String patronym;
 
-    @Column(name = "password_hash", nullable = false)
-    private String passwordHash;
-
     @Column(name = "created", nullable = false)
     private LocalDateTime created;
-    public Users(){
+    public UsersHideSecureInfo(){
         this.created = LocalDateTime.now();
     }
 

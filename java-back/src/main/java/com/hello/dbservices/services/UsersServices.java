@@ -4,31 +4,35 @@ import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.repository.UsersFavoritesRepository;
 import com.hello.dbservices.repository.UsersRepository;
+import com.hello.dbservices.repository.UsersHideSecureInfoRepository;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.util.UserValidator;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
 
-import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class UsersServices {
-     private final UsersFavoritesRepository usersFavoritesRepository;
+    private final UsersFavoritesRepository usersFavoritesRepository;
     private final UsersRepository usersRepository;
+    private final UsersHideSecureInfoRepository usersHideSecureInfoRepository;
     private final UserValidator userValidator;
 
-    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository, UserValidator userValidator) {
+    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository, UsersHideSecureInfoRepository usersHideSecureInfoRepository, UserValidator userValidator) {
         this.usersFavoritesRepository = usersFavoritesRepository;
         this.usersRepository = usersRepository;
+        this.usersHideSecureInfoRepository = usersHideSecureInfoRepository;
         this.userValidator = userValidator;
     }
 
 
-
     public Users getUsers(Long userId) {
-        return usersRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
+        return usersRepository.
+                findById(userId).
+                orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
     }
 
     public List<Users> getAllUsers() {
@@ -36,12 +40,11 @@ public class UsersServices {
     }
 
 
-
     public ResponseMessage addUser(Users user) {
 
-        userValidator.validate(user,new BeanPropertyBindingResult(user, "email"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "email"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "firstName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "lastName"));
 //        if (userRepository.existsByEmail(user.getEmail())) {
 //            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
 //        }
@@ -58,8 +61,8 @@ public class UsersServices {
         user.setPasswordHash(updateUser.getPasswordHash());
         user.setCreated(LocalDateTime.now());
         userValidator.validate(user, new BeanPropertyBindingResult(user, "email"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "firstName"));
+        userValidator.validate(user, new BeanPropertyBindingResult(user, "lastName"));
 //        if (userRepository.existsByEmail(user.getEmail())) {
 //            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
 //        }
