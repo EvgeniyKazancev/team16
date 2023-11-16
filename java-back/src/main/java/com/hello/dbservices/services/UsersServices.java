@@ -5,27 +5,38 @@ import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.repository.UsersFavoritesRepository;
 import com.hello.dbservices.repository.UsersRepository;
 import com.hello.dbservices.response.ResponseMessage;
-import com.hello.dbservices.util.UserValidator;
+
+
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BeanPropertyBindingResult;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class UsersServices {
-     private final UsersFavoritesRepository usersFavoritesRepository;
+    private final UsersFavoritesRepository usersFavoritesRepository;
     private final UsersRepository usersRepository;
-    private final UserValidator userValidator;
 
-    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository, UserValidator userValidator) {
+
+    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository) {
         this.usersFavoritesRepository = usersFavoritesRepository;
         this.usersRepository = usersRepository;
-        this.userValidator = userValidator;
     }
 
+    private ResponseMessage validation(Users user) {
+        if (usersRepository.existsByEmail(user.getEmail())) {
+            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
+        } else if (!Character.isUpperCase(user.getFirstName().charAt(0))) {
+            return new ResponseMessage("Имя должно начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
 
+        } else if (!Character.isUpperCase(user.getLastName().charAt(0))) {
+            return new ResponseMessage("Фамилия должна начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
+        }
+        return null;
+    }
 
     public Users getUsers(Long userId) {
         return usersRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
@@ -36,16 +47,14 @@ public class UsersServices {
     }
 
 
-
     public ResponseMessage addUser(Users user) {
+        ResponseMessage validationResponse = validation(user);
+        if (validationResponse != null) {
+            return validationResponse;
+        }
 
-        userValidator.validate(user,new BeanPropertyBindingResult(user, "email"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
-//        if (userRepository.existsByEmail(user.getEmail())) {
-//            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
-//        }
         usersRepository.save(user);
+
         return new ResponseMessage("Пользователь успешно создан", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
@@ -57,19 +66,17 @@ public class UsersServices {
         user.setPatronym(updateUser.getPatronym());
         user.setPasswordHash(updateUser.getPasswordHash());
         user.setCreated(LocalDateTime.now());
-        userValidator.validate(user, new BeanPropertyBindingResult(user, "email"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"firstName"));
-        userValidator.validate(user, new BeanPropertyBindingResult(user,"lastName"));
-//        if (userRepository.existsByEmail(user.getEmail())) {
-//            return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
-//        }
+
+        ResponseMessage validationResponse = validation(updateUser);
+        if (validationResponse != null) {
+            return validationResponse;
+        }
         usersRepository.save(user);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-
+    @Transactional
     public ResponseMessage deleteUser(Long userId) {
-        usersFavoritesRepository.deleteById(userId);
         usersRepository.deleteById(userId);
         return new ResponseMessage("Пользователь успешно удален", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }

@@ -10,10 +10,10 @@ import com.hello.dbservices.repository.CategoriesRepository;
 import com.hello.dbservices.repository.PublicationRepository;
 import com.hello.dbservices.repository.PublicationTextRepository;
 import com.hello.dbservices.response.ResponseMessage;
-//import com.hello.dbservices.util.PublicationValidator;
 
 
-import com.hello.dbservices.util.PublicationValidator;
+
+
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
@@ -27,45 +27,46 @@ import java.util.List;
 public class PublicationServices {
     private final UsersRepository usersRepository;
     private final CategoriesRepository categoriesRepository;
-  private  final PublicationValidator publicationValidator;
+
     private final PublicationTextRepository publicationTextRepository;
     private final PublicationRepository publicationRepository;
 
-    public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository,PublicationValidator publicationValidator,
+    public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository,
                                PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository) {
         this.usersRepository = usersRepository;
         this.categoriesRepository = categoriesRepository;
-       this.publicationValidator = publicationValidator;
+
         this.publicationTextRepository = publicationTextRepository;
         this.publicationRepository = publicationRepository;
     }
 
-    public ResponseMessage addPublication(Publications publications){
-      //  publicationValidator.validate(publications,new BeanPropertyBindingResult(publications,"url"));
+    public ResponseMessage addPublication(Publications publications) {
+       // publicationValidator.validate(publications, new BeanPropertyBindingResult(publications, "url"));
         publicationRepository.save(publications);
         return new ResponseMessage("Публикация добавлена", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    public PublicationsText getNewsText(Long publicationId){
-        return publicationTextRepository.findByPublicationId_Id(publicationId);
+    public String getNewsText(Long publicationId) {
+        return publicationTextRepository.findByPublicationId_Id(publicationId).getText();
     }
 
-    public List<Publications> getAllPublicationsFromSource(Long sourcesId){
+    public List<Publications> getAllPublicationsFromSource(Long sourcesId) {
 
         return publicationRepository.findAllById(sourcesId);
     }
-    public List<Publications> getPublicationsFromSourceBetweenDate(Long sourcesId, LocalDateTime startDate, LocalDateTime endDate){
-      List<Publications> publicationsList = publicationRepository.findPublicationsByIdAndCreatedBetween(sourcesId,startDate,endDate);
-        if(startDate == null){
-           publicationsList = publicationRepository.findAllById(sourcesId);
-        }else if
-        (publicationsList.isEmpty()){
+
+    public List<Publications> getPublicationsFromSourceBetweenDate(Long sourcesId, LocalDateTime startDate, LocalDateTime endDate) {
+        List<Publications> publicationsList = publicationRepository.findPublicationsByIdAndCreatedBetween(sourcesId, startDate, endDate);
+        if (startDate == null) {
+            publicationsList = publicationRepository.findAllById(sourcesId);
+        } else if
+        (publicationsList.isEmpty()) {
             throw new EntityNotFoundException("Данные в указанный период отсутствуют");
         }
-           return publicationsList;
+        return publicationsList;
     }
 
-    public ResponseMessage deletePublication(Long publicationId){
+    public ResponseMessage deletePublication(Long publicationId) {
         categoriesRepository.deleteById(publicationId);
         publicationTextRepository.deleteById(publicationId);
         publicationRepository.deleteById(publicationId);

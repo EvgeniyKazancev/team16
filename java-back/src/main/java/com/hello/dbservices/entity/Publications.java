@@ -18,7 +18,7 @@ public class Publications {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "sources_id",nullable = false)
     private Sources sourcesId;
 

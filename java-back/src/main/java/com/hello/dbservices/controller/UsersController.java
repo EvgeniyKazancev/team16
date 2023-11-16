@@ -5,6 +5,7 @@ import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.services.UsersServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class UsersController {
 
     @PutMapping("/addUser")
     public ResponseMessage addUser(@RequestBody Users users){
+
         return usersServices.addUser(users);
     }
 
