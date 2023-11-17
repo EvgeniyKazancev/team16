@@ -1,24 +1,15 @@
-package com.hello.dbservices.controller;
+package com.hello.controller;
 
 import com.hello.dbservices.entity.Users;
-<<<<<<< HEAD:java-back/src/main/java/com/hello/dbservices/controller/UsersController.java
-import com.hello.dbservices.response.ResponseMessage;
-import com.hello.dbservices.services.UsersServices;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-=======
 import com.hello.dbservices.entity.UsersHSI;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.services.UsersServices;
 import com.hello.dbservices.services.UsersServicesHSI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
->>>>>>> 626ae04 (User and login API in progress.):java-back/src/main/java/com/hello/controller/UsersController.java
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/users")
@@ -33,19 +24,6 @@ public class UsersController {
     @Autowired
     public UsersController(UsersServices usersServices, UsersServicesHSI usersServicesHSI) {
         this.usersServices = usersServices;
-<<<<<<< HEAD:java-back/src/main/java/com/hello/dbservices/controller/UsersController.java
-
-    }
-
-    @GetMapping("/getUserId")
-    public Users getUser(@RequestParam Long userId){
-        return usersServices.getUsers(userId);
-    }
-
-    @GetMapping("/getAllUsers")
-    public List<Users> getAllUsers(){
-        return usersServices.getAllUsers();
-=======
         this.usersServicesHSI = usersServicesHSI;
     }
 
@@ -63,7 +41,6 @@ public class UsersController {
         if (usersHSIList.isEmpty())
             throw new ResponseStatusException(HttpStatusCode.valueOf(403));
         return usersHSIList;
->>>>>>> 626ae04 (User and login API in progress.):java-back/src/main/java/com/hello/controller/UsersController.java
     }
 
     @PutMapping("/addUser")

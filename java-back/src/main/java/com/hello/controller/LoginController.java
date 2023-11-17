@@ -1,8 +1,6 @@
 package com.hello.controller;
 
 import com.hello.dbservices.dto.LoginDTO;
-import com.hello.dbservices.entity.Users;
-import com.hello.dbservices.entity.UsersHSI;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.services.UsersServices;
