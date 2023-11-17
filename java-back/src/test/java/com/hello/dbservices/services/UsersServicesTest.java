@@ -85,7 +85,7 @@ class UsersServicesTest {
     }
 
     @Test
-    void testAddUserFirstNameNotCapitalized() {
+   public void testAddUserFirstNameNotCapitalized() {
 
         Users user = new Users();
         user.setEmail("existing@example.com");
@@ -101,7 +101,7 @@ class UsersServicesTest {
     }
 
     @Test
-    void testAddUserLastNameNotCapitalized() {
+   public void testAddUserLastNameNotCapitalized() {
 
         Users user = new Users();
         user.setEmail("existing@example.com");
@@ -115,6 +115,20 @@ class UsersServicesTest {
         assertEquals("Фамилия должна начинаться с заглавной буквы", response.getMessage());
         assertEquals(ResponseType.UNAUTHORIZED.getCode(), response.getCode());
     }
+    @Test
+    public void testAddUserEmailNotCapitalized(){
+        String email = "lord@yandex.ru";
+        Users users = new Users();
+        users.setEmail(email);
+
+        when(usersRepository.existsByEmail(email)).thenReturn(true);
+
+        ResponseMessage responseMessage = usersServices.addUser(users);
+
+        assertEquals("Такой email уже существует",responseMessage.getMessage());
+        assertEquals(ResponseType.UNAUTHORIZED.getCode(),responseMessage.getCode());
+    }
+
     @Test
     public void deleteUser() {
         Users user = getUsersTest();

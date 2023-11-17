@@ -34,7 +34,7 @@ public class SourcesServices {
             return new ResponseMessage("Такой URL уже существует", ResponseType.UNAUTHORIZED.getCode());
         }
         sourcesRepository.save(sources);
-        return new ResponseMessage("Источник успешно добавлен" + sources.getSourceType(), ResponseType.OPERATION_SUCCESSFUL.getCode());
+        return new ResponseMessage("Источник успешно добавлен" , ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
     @Transactional

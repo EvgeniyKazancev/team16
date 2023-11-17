@@ -27,7 +27,6 @@ import java.util.List;
 public class PublicationServices {
     private final UsersRepository usersRepository;
     private final CategoriesRepository categoriesRepository;
-
     private final PublicationTextRepository publicationTextRepository;
     private final PublicationRepository publicationRepository;
 
