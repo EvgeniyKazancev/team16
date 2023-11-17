@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "users", schema = "test")
-public class UsersHideSecureInfo {
+public class UsersHSI {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -30,7 +30,7 @@ public class UsersHideSecureInfo {
 
     @Column(name = "created", nullable = false)
     private LocalDateTime created;
-    public UsersHideSecureInfo(){
+    public UsersHSI(){
         this.created = LocalDateTime.now();
     }
 

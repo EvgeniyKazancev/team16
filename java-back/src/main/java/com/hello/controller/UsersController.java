@@ -1,4 +1,4 @@
-package com.hello.dbservices.controller;
+package com.hello.controller;
 
 import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.entity.UsersHSI;
@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/users")
@@ -45,17 +44,18 @@ public class UsersController {
     }
 
     @PutMapping("/addUser")
-    public ResponseMessage addUser(@RequestBody Users users) {
+    public ResponseMessage addUser(@RequestBody Users users){
+
         return usersServices.addUser(users);
     }
 
     @PutMapping("/updateUser")
-    public ResponseMessage updateUser(@RequestParam Long id, @RequestBody Users users) {
-        return usersServices.updateUser(id, users);
-    }
+    public ResponseMessage updateUser(@RequestParam Long id,@RequestBody Users users){
+        return  usersServices.updateUser(id, users);
 
+    }
     @DeleteMapping("/deleteUser")
-    public ResponseMessage deleteUser(@RequestParam Long userId) {
+    public ResponseMessage deleteUser(@RequestParam Long userId){
         return usersServices.deleteUser(userId);
     }
 

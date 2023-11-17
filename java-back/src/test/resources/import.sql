@@ -1,1 +1,0 @@
-INSERT INTO users VALUES ('lordgprs@yandex.ru', 'Максим', 'Вельгач', 'Сергеевич', MD5('12345'),default);

@@ -15,35 +15,29 @@ import java.util.Objects;
 public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email",unique = true)
     private String email;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "patronym")
     private String patronym;
 
-    @Column(name = "password_hash", nullable = false)
+    @Column(name = "password_hash")
     private String passwordHash;
 
-    @Column(name = "created", nullable = false)
+    @Column(name = "created")
     private LocalDateTime created;
     public Users(){
         this.created = LocalDateTime.now();
     }
-
-    @Column(name = "admin", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
-    private Boolean isAdmin;
-
-    @Column(name = "superuser", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
-    private Boolean isSuperUser;
 
 
 

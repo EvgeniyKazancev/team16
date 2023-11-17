@@ -1,12 +1,9 @@
 package com.hello.dbservices.repository;
 
-import com.hello.dbservices.entity.Users;
+import com.hello.dbservices.entity.UserSession;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsersRepository extends JpaRepository<Users,Long> {
-
-  boolean existsByEmail(String email);
-
+public interface UserSessionsRepository extends JpaRepository<UserSession, Long> {
 }
