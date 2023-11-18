@@ -3,6 +3,7 @@ package com.hello.dbservices.services;
 import com.hello.dbservices.entity.Articles;
 import com.hello.dbservices.repository.ArticlesRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class ArticlesServices {
         this.articlesRepository = articlesRepository;
     }
 
+    @Transactional
     public List<Articles> getAllCaption(){
         return articlesRepository.findAll();
     }

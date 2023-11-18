@@ -52,15 +52,17 @@ public class UsersServices {
     }
 
 
+    @Transactional
     public Users getUsers(Long userId) {
         return usersRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
     }
 
+    @Transactional
     public List<Users> getAllUsers() {
         return usersRepository.findAll();
     }
 
-
+    @Transactional
     public ResponseMessage addUser(Users user) throws NoSuchAlgorithmException {
         ResponseMessage validationResponse = addValidation(user);
         if (validationResponse != null) {
@@ -72,14 +74,17 @@ public class UsersServices {
         return new ResponseMessage("Пользователь успешно создан", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
+    @Transactional
     public Users getByEmail(String email) {
         return usersRepository.findFirstByEmail(email);
     }
 
+    @Transactional
     public UserSessions getUserSessionByUuid(String uuid) {
         return userSessionsRepository.findFirstByUuid(uuid);
     }
 
+    @Transactional
     public ResponseMessage updateUser(Users updateUser) {
         ResponseMessage validationResponse = updateValidation(updateUser);
         if (validationResponse != null) {

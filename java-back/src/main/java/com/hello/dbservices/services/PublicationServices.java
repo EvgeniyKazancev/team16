@@ -16,6 +16,7 @@ import com.hello.dbservices.response.ResponseMessage;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BeanPropertyBindingResult;
 
 
@@ -39,21 +40,25 @@ public class PublicationServices {
         this.publicationRepository = publicationRepository;
     }
 
+    @Transactional
     public ResponseMessage addPublication(Publications publications) {
        // publicationValidator.validate(publications, new BeanPropertyBindingResult(publications, "url"));
         publicationRepository.save(publications);
         return new ResponseMessage("Публикация добавлена", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
+    @Transactional
     public String getNewsText(Long publicationId) {
         return publicationTextRepository.findByPublicationId_Id(publicationId).getText();
     }
 
+    @Transactional
     public List<Publications> getAllPublicationsFromSource(Long sourcesId) {
 
         return publicationRepository.findAllById(sourcesId);
     }
 
+    @Transactional
     public List<Publications> getPublicationsFromSourceBetweenDate(Long sourcesId, LocalDateTime startDate, LocalDateTime endDate) {
         List<Publications> publicationsList = publicationRepository.findPublicationsByIdAndCreatedBetween(sourcesId, startDate, endDate);
         if (startDate == null) {
@@ -65,6 +70,7 @@ public class PublicationServices {
         return publicationsList;
     }
 
+    @Transactional
     public ResponseMessage deletePublication(Long publicationId) {
         categoriesRepository.deleteById(publicationId);
         publicationTextRepository.deleteById(publicationId);

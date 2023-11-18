@@ -10,6 +10,7 @@ import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class UsersServicesHSI {
         this.userSessionsRepository = userSessionsRepository;
     }
 
-
+    @Transactional
     public UsersHSI getUser(Long userId, String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
@@ -45,6 +46,7 @@ public class UsersServicesHSI {
                 new UsersHSI();
     }
 
+    @Transactional
     public List<UsersHSI> getAllUsers(String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
@@ -55,6 +57,7 @@ public class UsersServicesHSI {
         return userSessionVerification.isSessionPresent() ? usersHSIRepository.findAll() : new ArrayList<>();
     }
 
+    @Transactional
     public ResponseMessage addUser(UsersHSI user, String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,

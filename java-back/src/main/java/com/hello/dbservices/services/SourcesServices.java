@@ -25,10 +25,12 @@ public class SourcesServices {
 
     }
 
+    @Transactional
     public Sources getSources(Long sourcesId) {
         return sourcesRepository.findById(sourcesId).orElseThrow(() -> new EntityNotFoundException("Источник не найден" + ResponseType.NOT_FOUND.getCode()));
     }
 
+    @Transactional
     public ResponseMessage addSources(Sources sources) {
         if (publicationRepository.existsByUrl(sources.getUrl())) {
             return new ResponseMessage("Такой URL уже существует", ResponseType.UNAUTHORIZED.getCode());
