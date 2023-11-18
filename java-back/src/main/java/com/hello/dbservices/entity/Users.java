@@ -2,19 +2,20 @@ package com.hello.dbservices.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "users", schema = "test")
 public class Users {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -35,12 +36,33 @@ public class Users {
 
     @Column(name = "created")
     private LocalDateTime created;
-    public Users(){
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<UserSessions> userSessions;
+
+    @Column(name = "admin", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
+    private boolean isAdmin;
+
+    @Column(name = "superuser", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
+    private boolean isSuperUser;
+
+    public Users(String email,
+                 String firstName,
+                 String lastName,
+                 String patronym,
+                 String passwordHash,
+                 Boolean isAdmin,
+                 Boolean isSuperUser) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronym = patronym;
+        this.passwordHash = passwordHash;
         this.created = LocalDateTime.now();
+        this.isAdmin = isAdmin;
+        this.isSuperUser = isSuperUser;
     }
-
-
-
 //    @Override
 //    public final boolean equals(Object o) {
 //        if (this == o) return true;

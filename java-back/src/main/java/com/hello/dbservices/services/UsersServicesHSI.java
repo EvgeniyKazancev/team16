@@ -6,8 +6,9 @@ import com.hello.dbservices.repository.UserSessionsRepository;
 import com.hello.dbservices.repository.UsersHSIRepository;
 import com.hello.dbservices.repository.UsersRepository;
 import com.hello.dbservices.response.ResponseMessage;
-import com.hello.dbservices.util.UserSessionVerification;
+import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,8 +16,9 @@ import java.util.List;
 
 @Service
 public class UsersServicesHSI {
+    @Autowired
     private final UsersHSIRepository usersHSIRepository;
-    private final UsersRepository usersRepository;
+    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
     public UsersServicesHSI(
@@ -25,12 +27,11 @@ public class UsersServicesHSI {
             UserSessionsRepository userSessionsRepository
     ) {
         this.usersHSIRepository = usersHSIRepository;
-        this.usersRepository = usersRepository;
         this.userSessionsRepository = userSessionsRepository;
     }
 
 
-    public UsersHSI getUsers(Long userId, String uuid) {
+    public UsersHSI getUser(Long userId, String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
                 userSessionsRepository,

@@ -1,11 +1,9 @@
-package com.hello.dbservices.util;
+package com.hello.util;
 
-import com.hello.dbservices.entity.UserSession;
+import com.hello.dbservices.entity.UserSessions;
 import com.hello.dbservices.entity.UsersHSI;
 import com.hello.dbservices.repository.UserSessionsRepository;
 import com.hello.dbservices.repository.UsersHSIRepository;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -27,9 +25,9 @@ public class UserSessionVerification {
 
         Long userId = null;
 
-        for (UserSession session : userSessionsRepository.findAll()) {
+        for (UserSessions session : userSessionsRepository.findAll()) {
             if (session.getUuid().equals(uuid)) {
-                userId = session.getUserId().getId();
+                userId = session.getUserId();
             }
         }
 
@@ -40,8 +38,8 @@ public class UserSessionVerification {
     }
 
     public Boolean isSessionPresent() {
-        for (UserSession session : userSessionsRepository.findAll()) {
-            if (session.getUuid().equals(uuid))
+        for (UserSessions session : user.get().getUserSessions()) {
+            if (session.getUuid().equals(uuid) && session.getIsAuthorized())
                 if (ChronoUnit.MINUTES.between(LocalDateTime.now(), session.getLastUpdate()) < TIMEOUT) {
                     session.setLastUpdate(LocalDateTime.now());
                     return true;
@@ -53,10 +51,10 @@ public class UserSessionVerification {
     }
 
     public Boolean isUserAdmin() {
-        return user.isPresent() ? user.get().getIsAdmin() : false;
+        return user.isPresent() ? user.get().isAdmin() : false;
     }
 
     public Boolean isUserSuper() {
-        return user.isPresent() ? user.get().getIsSuperUser() : false;
+        return user.isPresent() ? user.get().isSuperUser() : false;
     }
 }

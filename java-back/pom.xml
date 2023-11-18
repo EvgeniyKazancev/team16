@@ -6,7 +6,7 @@
 
     <groupId>com.hello</groupId>
     <artifactId>REST</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -82,6 +82,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>3.1.5</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
         </dependency>
 
     </dependencies>

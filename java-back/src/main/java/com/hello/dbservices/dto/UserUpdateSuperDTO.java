@@ -1,21 +1,19 @@
 package com.hello.dbservices.dto;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class UsersEntityDTO implements Serializable {
+public class UserUpdateSuperDTO implements Serializable {
+    private String currentUUID;
     private Long id;
-    private String email;
     private String firstName;
     private String lastName;
     private String patronym;
     private String password;
-    private LocalDateTime created;
+    private boolean isAdmin;
+    private boolean isSuperUser;
 }

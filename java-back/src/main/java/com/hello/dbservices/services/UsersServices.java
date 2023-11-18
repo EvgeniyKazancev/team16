@@ -1,29 +1,36 @@
 package com.hello.dbservices.services;
 
+import com.hello.dbservices.entity.UserSessions;
 import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.enums.ResponseType;
+import com.hello.dbservices.repository.UserSessionsRepository;
 import com.hello.dbservices.repository.UsersFavoritesRepository;
 import com.hello.dbservices.repository.UsersRepository;
 import com.hello.dbservices.response.ResponseMessage;
+import com.hello.util.MD5Calculation;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @Service
 public class UsersServices {
-    private final UsersFavoritesRepository usersFavoritesRepository;
+    @Autowired
     private final UsersRepository usersRepository;
+    @Autowired
+    private final UserSessionsRepository userSessionsRepository;
 
-
-    public UsersServices(UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository) {
-        this.usersFavoritesRepository = usersFavoritesRepository;
+    public UsersServices(UsersFavoritesRepository usersFavoritesRepository,
+                         UsersRepository usersRepository,
+                         UserSessionsRepository userSessionsRepository) {
         this.usersRepository = usersRepository;
+        this.userSessionsRepository = userSessionsRepository;
     }
 
-    private ResponseMessage validation(Users user) {
+    private ResponseMessage addValidation(Users user) {
         if (usersRepository.existsByEmail(user.getEmail())) {
             return new ResponseMessage("Такой email уже существует", ResponseType.UNAUTHORIZED.getCode());
         } else if (!Character.isUpperCase(user.getFirstName().charAt(0))) {
@@ -35,6 +42,16 @@ public class UsersServices {
         return null;
     }
 
+    private ResponseMessage updateValidation(Users user) {
+       if (!Character.isUpperCase(user.getFirstName().charAt(0))) {
+            return new ResponseMessage("Имя должно начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
+        } else if (!Character.isUpperCase(user.getLastName().charAt(0))) {
+            return new ResponseMessage("Фамилия должна начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
+        }
+        return null;
+    }
+
+
     public Users getUsers(Long userId) {
         return usersRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("Пользователь не найден" + ResponseType.NOT_FOUND.getCode()));
     }
@@ -44,8 +61,8 @@ public class UsersServices {
     }
 
 
-    public ResponseMessage addUser(Users user) {
-        ResponseMessage validationResponse = validation(user);
+    public ResponseMessage addUser(Users user) throws NoSuchAlgorithmException {
+        ResponseMessage validationResponse = addValidation(user);
         if (validationResponse != null) {
             return validationResponse;
         }
@@ -55,28 +72,21 @@ public class UsersServices {
         return new ResponseMessage("Пользователь успешно создан", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    public ResponseMessage updateUser(Long id, Users updateUser) {
-        Users user = getUsers(id);
-        user.setEmail(updateUser.getEmail());
-        user.setFirstName(updateUser.getFirstName());
-        user.setLastName(updateUser.getLastName());
-        user.setPatronym(updateUser.getPatronym());
-        user.setPasswordHash(updateUser.getPasswordHash());
-        user.setCreated(LocalDateTime.now());
+    public Users getByEmail(String email) {
+        return usersRepository.findFirstByEmail(email);
+    }
 
-        ResponseMessage validationResponse = validation(updateUser);
+    public UserSessions getUserSessionByUuid(String uuid) {
+        return userSessionsRepository.findFirstByUuid(uuid);
+    }
+
+    public ResponseMessage updateUser(Users updateUser) {
+        ResponseMessage validationResponse = updateValidation(updateUser);
         if (validationResponse != null) {
             return validationResponse;
         }
-        usersRepository.save(user);
+        usersRepository.save(updateUser);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
-
-    @Transactional
-    public ResponseMessage deleteUser(Long userId) {
-        usersRepository.deleteById(userId);
-        return new ResponseMessage("Пользователь успешно удален", ResponseType.OPERATION_SUCCESSFUL.getCode());
-    }
-
 
 }

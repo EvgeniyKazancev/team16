@@ -5,14 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "users", schema = "test")
 public class UsersHSI {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -28,6 +29,10 @@ public class UsersHSI {
     @Column(name = "patronym")
     private String patronym;
 
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<UserSessions> userSessions;
+
     @Column(name = "created", nullable = false)
     private LocalDateTime created;
     public UsersHSI(){
@@ -35,10 +40,10 @@ public class UsersHSI {
     }
 
     @Column(name = "admin", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
-    private Boolean isAdmin;
+    private boolean isAdmin;
 
     @Column(name = "superuser", columnDefinition = "TINYINT(1)", nullable = false, length = 1)
-    private Boolean isSuperUser;
+    private boolean isSuperUser;
 
 
 
