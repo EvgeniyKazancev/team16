@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Service
 public class UserSessionServices {
 
-    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
     public UserSessionServices(UserSessionsRepository userSessionsRepository) {

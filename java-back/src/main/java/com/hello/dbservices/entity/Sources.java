@@ -25,9 +25,9 @@ public class Sources {
     @Column(name = "source_type")
     private String sourceType;
 
-    @Column(name = "parse_depth",columnDefinition = "INTEGER DEFAULT 2",nullable = false)
+    @Column(name = "parse_depth",columnDefinition = "INTEGER DEFAULT 2")
     @Size(min = 1,max = 4)
-    private int parseDepth;
+    private Integer parseDepth;
 
     @Column(name = "created",nullable = false)
     private LocalDateTime created;

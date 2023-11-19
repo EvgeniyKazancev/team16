@@ -24,10 +24,9 @@ import java.util.UUID;
 @RequestMapping("/login")
 public class LoginController {
 
-    private final UsersServices usersServices;
-    private final UserSessionServices userSessionServices;
+    @Autowired private final UsersServices usersServices;
+    @Autowired private final UserSessionServices userSessionServices;
 
-    @Autowired
     public LoginController(UsersServices usersServices, UserSessionServices userSessionServices) {
         this.usersServices = usersServices;
         this.userSessionServices = userSessionServices;

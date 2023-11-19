@@ -18,9 +18,8 @@ import java.util.List;
 
 @Service
 public class UsersServices {
-    @Autowired
+
     private final UsersRepository usersRepository;
-    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
     public UsersServices(UsersFavoritesRepository usersFavoritesRepository,

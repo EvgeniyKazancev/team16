@@ -3,38 +3,40 @@ package com.hello.dbservices.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "publications", schema = "test", catalog = "")
+@Table(name = "publications")
 public class Publications {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne(optional = false,cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "sources_id",nullable = false)
-    private Sources sourcesId;
-
     @Column(name = "url")
     private String url;
 
-    @Column(name = "copies_count",columnDefinition = "DEFAULT 1")
+    @Column(name = "copies_count", columnDefinition = "DEFAULT 1")
     private int copiesCount;
 
-    @Column(name = "hash")
-    private String hash;
 
     @Column(name = "created")
     private LocalDateTime created;
 
-    public Publications(){
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "source_id")
+    private Sources source;
+
+    // Ждём изменений в структуре таблиц со стороны БД!!!
+
+//    @OneToMany(mappedBy = "publication")
+//    private List<PublicationsText> publicationsTexts;
+
+    public Publications() {
         this.created = LocalDateTime.now();
     }
 

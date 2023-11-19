@@ -10,7 +10,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "publication_data")
+@Table(name = "publications_data")
 public class PublicationsData {
 
     @Id

@@ -1,7 +1,6 @@
 package com.hello.dbservices.services;
 
 
-import com.hello.dbservices.entity.PublicationsText;
 import com.hello.dbservices.repository.UsersRepository;
 
 import com.hello.dbservices.entity.Publications;
@@ -15,13 +14,13 @@ import com.hello.dbservices.response.ResponseMessage;
 
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.BeanPropertyBindingResult;
 
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -40,6 +39,10 @@ public class PublicationServices {
         this.publicationRepository = publicationRepository;
     }
 
+    public Page<Publications> getPublicationsBetweenDates(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable) {
+        return publicationRepository.findPublicationsByCreatedBetween(startDate, endDate, pageable);
+    }
+
     @Transactional
     public ResponseMessage addPublication(Publications publications) {
        // publicationValidator.validate(publications, new BeanPropertyBindingResult(publications, "url"));
@@ -47,18 +50,14 @@ public class PublicationServices {
         return new ResponseMessage("Публикация добавлена", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    @Transactional
     public String getNewsText(Long publicationId) {
         return publicationTextRepository.findByPublicationId_Id(publicationId).getText();
     }
 
-    @Transactional
     public List<Publications> getAllPublicationsFromSource(Long sourcesId) {
-
         return publicationRepository.findAllById(sourcesId);
     }
 
-    @Transactional
     public List<Publications> getPublicationsFromSourceBetweenDate(Long sourcesId, LocalDateTime startDate, LocalDateTime endDate) {
         List<Publications> publicationsList = publicationRepository.findPublicationsByIdAndCreatedBetween(sourcesId, startDate, endDate);
         if (startDate == null) {

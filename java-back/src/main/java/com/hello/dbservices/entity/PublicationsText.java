@@ -10,14 +10,20 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "publications_text", schema = "test")
+@Table(name = "publications_text")
 public class PublicationsText {
+
+
+    // Ждём изменений в структуре таблиц со стороны БД!!!
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(optional = false)
+
+    @ManyToOne
     @JoinColumn(name = "publication_id")
-    private Publications publicationId;
+    private Publications publication;
 
     @Column(name = "is_header")
     private boolean isHeader;

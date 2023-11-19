@@ -22,11 +22,10 @@ import java.util.Objects;
 @RequestMapping("/users")
 public class UsersController {
 
-    private final UsersServices usersServices;
-    private final UsersServicesHSI usersServicesHSI;
-    private final UserMapper userMapper;
+    @Autowired private final UsersServices usersServices;
+    @Autowired private final UsersServicesHSI usersServicesHSI;
+    @Autowired private final UserMapper userMapper;
 
-    @Autowired
     public UsersController(UsersServices usersServices, UsersServicesHSI usersServicesHSI, UserMapper userMapper) {
         this.usersServices = usersServices;
         this.usersServicesHSI = usersServicesHSI;
