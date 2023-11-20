@@ -5,6 +5,7 @@ import com.hello.dbservices.dto.UserUpdateRegularDTO;
 import com.hello.dbservices.dto.UserUpdateSuperDTO;
 import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.entity.UsersHSI;
+import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.services.UsersServices;
 import com.hello.dbservices.services.UsersServicesHSI;
@@ -55,7 +56,7 @@ public class UsersController {
 
             return usersServices.addUser(userMapper.userCreation2User(userCreation));
         }
-        return new ResponseMessage("Недостаточно прав или пользователь не залогинен", 403);
+        return new ResponseMessage("Недостаточно прав или пользователь не залогинен", ResponseType.FORBIDDEN.getCode());
     }
 
     @PutMapping("/updateUserRegular")
@@ -63,7 +64,7 @@ public class UsersController {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()))
             return  usersServices.updateUser(userMapper.userUpdateRegular2User(user, userUpdate));
-        return new ResponseMessage("Попытка изменить чужую учётную запись", 403);
+        return new ResponseMessage("Попытка изменить чужую учётную запись", ResponseType.FORBIDDEN.getCode());
     }
 
     @PutMapping("/updateUserSuper")
@@ -71,6 +72,6 @@ public class UsersController {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()) && user.isSuperUser())
             return  usersServices.updateUser(userMapper.userUpdateSuper2User(user, userUpdate));
-        return new ResponseMessage("Попытка изменить чужую учётную запись или недостаточно прав", 403);
+        return new ResponseMessage("Попытка изменить чужую учётную запись или недостаточно прав", ResponseType.FORBIDDEN.getCode());
     }
 }

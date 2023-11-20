@@ -45,7 +45,9 @@ public class PublicationServices {
 
     @Transactional
     public ResponseMessage addPublication(Publications publications) {
-       // publicationValidator.validate(publications, new BeanPropertyBindingResult(publications, "url"));
+     if(publicationRepository.existsByUrl(publications.getUrl()) ){
+         return new ResponseMessage("Такой URL уже существует", ResponseType.UNAUTHORIZED.getCode());
+     }
         publicationRepository.save(publications);
         return new ResponseMessage("Публикация добавлена", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }

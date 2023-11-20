@@ -6,7 +6,8 @@ import lombok.Getter;
 public enum ResponseType {
     OPERATION_SUCCESSFUL(200),
     NOT_FOUND(404),
-    UNAUTHORIZED(401);
+    UNAUTHORIZED(401),
+    FORBIDDEN(403);
 
     ResponseType(int code) {
         this.code = code;

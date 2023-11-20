@@ -22,6 +22,8 @@ import static org.mockito.Mockito.*;
 
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
@@ -53,6 +55,18 @@ class UsersServicesTest {
         LocalDateTime ld = LocalDateTime.of(2023, 11, 15, 16, 15, 20);
         users.setCreated(ld);
         return users;
+    }
+    @Test
+    public void getAllUserTest(){
+        List<Users> expectedUsers = new ArrayList<>();
+        expectedUsers.add(new Users());
+        expectedUsers.add(new Users());
+
+        when(usersRepository.findAll()).thenReturn(expectedUsers);
+        List<Users> actualUsers = usersServices.getAllUsers();
+
+        assertEquals(expectedUsers,actualUsers);
+
     }
 
     @Test

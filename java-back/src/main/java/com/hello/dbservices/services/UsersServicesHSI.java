@@ -65,9 +65,9 @@ public class UsersServicesHSI {
         );
 
         if (!userSessionVerification.isSessionPresent()) {
-            return new ResponseMessage("Нет авторизации.", 401);
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
         } else if (!userSessionVerification.isUserSuper()) {
-            return new ResponseMessage("Недостаточно прав.", 403);
+            return new ResponseMessage("Недостаточно прав.", ResponseType.FORBIDDEN.getCode());
         } else {
             usersHSIRepository.save(user);
             return new ResponseMessage("Пользователь успешно создан.", ResponseType.OPERATION_SUCCESSFUL.getCode());
