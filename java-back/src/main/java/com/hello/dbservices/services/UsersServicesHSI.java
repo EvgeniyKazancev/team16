@@ -18,7 +18,9 @@ import java.util.List;
 @Service
 public class UsersServicesHSI {
 
+    @Autowired
     private final UsersHSIRepository usersHSIRepository;
+    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
     public UsersServicesHSI(
@@ -30,7 +32,6 @@ public class UsersServicesHSI {
         this.userSessionsRepository = userSessionsRepository;
     }
 
-    @Transactional
     public UsersHSI getUser(Long userId, String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,

@@ -102,7 +102,6 @@ class UsersServicesTest {
     }
 
     @Test
-
     void testAddUserFirstNameNotCapitalized() throws NoSuchAlgorithmException {
 
         Users user = new Users();
@@ -133,6 +132,7 @@ class UsersServicesTest {
         assertEquals("Фамилия должна начинаться с заглавной буквы", response.getMessage());
         assertEquals(ResponseType.UNAUTHORIZED.getCode(), response.getCode());
     }
+
 
 //    @Test
 //    public void deleteUser() {
