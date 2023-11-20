@@ -1,4 +1,5 @@
 -- Schema for news parser
+DROP TABLE IF EXISTS `users_sessions`;
 DROP TABLE IF EXISTS `users_favorites`;
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `publications_text`;
@@ -43,7 +44,22 @@ CREATE TABLE `users` (
 	`patronym` VARCHAR(30),
 	`password_hash` TEXT NOT NULL,
 	`created` TIMESTAMP NOT NULL DEFAULT now(),
+	`admin` BOOLEAN NOT NULL DEFAULT FALSE,
+	`superuser` BOOLEAN NOT NULL DEFAULT FALSE,
 	UNIQUE(`email`)
+);
+
+CREATE TABLE users_sessions (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`user_id` BIGINT NOT NULL,
+	`uuid` VARCHAR(200) NOT NULL,
+	`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	UNIQUE(`uuid`),
+	FOREIGN KEY (`user_id`)
+		REFERENCES `users`(`id`)
+			ON DELETE CASCADE
+			ON UPDATE CASCADE
 );
 
 INSERT INTO `users` VALUES (DEFAULT, 'lordgprs@yandex.ru', 'Максим', 'Вельгач', 'Сергеевич', MD5('12345'), DEFAULT);
@@ -62,6 +78,7 @@ CREATE TABLE `publications` (
 );
 
 CREATE TABLE `publications_text` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`publication_id` BIGINT NOT NULL,
 	`is_header` BOOLEAN NOT NULL DEFAULT FALSE,
 	`text` TEXT NOT NULL,
@@ -72,6 +89,7 @@ CREATE TABLE `publications_text` (
 );
 
 CREATE TABLE `publications_data` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`publication_id` BIGINT NOT NULL,
 	`property` VARCHAR(200) NOT NULL,
 	`content` VARCHAR(500) NOT NULL,
@@ -82,6 +100,7 @@ CREATE TABLE `publications_data` (
 );
 
 CREATE TABLE `users_favorites` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`user_id` BIGINT NOT NULL,
 	`publication_id` BIGINT NOT NULL,
 	UNIQUE(`user_id`, `publication_id`),
@@ -102,6 +121,7 @@ CREATE TABLE `categories` (
 );
 
 CREATE TABLE `publications_categories` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`publication_id` BIGINT NOT NULL,
 	`category_id` BIGINT NOT NULL,
 	UNIQUE(`category_id`, `publication_id`),
@@ -116,6 +136,7 @@ CREATE TABLE `publications_categories` (
 );
 
 CREATE TABLE `category_allowed_keywords` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`category_id` BIGINT NOT NULL,
 	`keyword` VARCHAR(30) NOT NULL,
 	UNIQUE(`category_id`, `keyword`),
@@ -126,6 +147,7 @@ CREATE TABLE `category_allowed_keywords` (
 );
 
 CREATE TABLE `category_restricted_keywords` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`category_id` BIGINT NOT NULL,
 	`keyword` VARCHAR(30) NOT NULL,
 	UNIQUE(`category_id`, `keyword`),
@@ -136,6 +158,7 @@ CREATE TABLE `category_restricted_keywords` (
 );
 
 CREATE TABLE `source_restricted_keywords` (
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`source_id` BIGINT NOT NULL,
 	`keyword` VARCHAR(30) NOT NULL,
 	UNIQUE(`source_id`, `keyword`),
