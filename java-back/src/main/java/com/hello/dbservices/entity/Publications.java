@@ -4,17 +4,22 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "publications")
-public class Publications {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Publications implements Serializable {
+
     @Id
-    @Column(name = "id")
+    @GeneratedValue
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     @Column(name = "url")
@@ -23,7 +28,6 @@ public class Publications {
     @Column(name = "copies_count", columnDefinition = "DEFAULT 1")
     private int copiesCount;
 
-
     @Column(name = "created")
     private LocalDateTime created;
 
@@ -31,13 +35,18 @@ public class Publications {
     @JoinColumn(name = "source_id")
     private Sources source;
 
-    // Ждём изменений в структуре таблиц со стороны БД!!!
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="publication_id")
+    private List<PublicationsText> publicationsText;
 
-//    @OneToMany(mappedBy = "publication")
-//    private List<PublicationsText> publicationsTexts;
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="publication_id")
+    private List<PublicationsData> publicationsData;
 
     public Publications() {
         this.created = LocalDateTime.now();
+//        this.publicationsTextList = new ArrayList<>();
+//        this.publicationsDataList = new ArrayList<>();
     }
 
 

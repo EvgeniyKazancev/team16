@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PublicationTextRepository extends JpaRepository<PublicationsText, Long> {
 
-    PublicationsText findByPublicationId_Id(Long id);
+    PublicationsText findByPublicationId(Long id);
 
 }

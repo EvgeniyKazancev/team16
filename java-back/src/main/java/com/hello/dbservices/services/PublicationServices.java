@@ -53,7 +53,7 @@ public class PublicationServices {
     }
 
     public String getNewsText(Long publicationId) {
-        return publicationTextRepository.findByPublicationId_Id(publicationId).getText();
+        return publicationTextRepository.findByPublicationId(publicationId).getText();
     }
 
     public List<Publications> getAllPublicationsFromSource(Long sourcesId) {

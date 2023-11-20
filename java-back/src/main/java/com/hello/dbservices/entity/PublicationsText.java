@@ -13,17 +13,12 @@ import java.util.Objects;
 @Table(name = "publications_text")
 public class PublicationsText {
 
-
-    // Ждём изменений в структуре таблиц со стороны БД!!!
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "publication_id")
-    private Publications publication;
+    @Column(name = "publication_id")
+    private Long publicationId;
 
     @Column(name = "is_header")
     private boolean isHeader;

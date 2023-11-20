@@ -17,9 +17,8 @@ public class PublicationsData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(optional = false,fetch = FetchType.LAZY)
-    @JoinColumn(name = "publication_id", nullable = false)
-    private Publications publicationId;
+    @Column(name = "publication_id")
+    private Long publicationId;
 
     @Column(nullable = false)
     private String property;

@@ -38,23 +38,25 @@ public class UserSessionVerification {
     }
 
     public Boolean isSessionPresent() {
-        for (UserSessions session : user.get().getUserSessions()) {
-            if (session.getUuid().equals(uuid) && session.getIsAuthorized())
-                if (ChronoUnit.MINUTES.between(LocalDateTime.now(), session.getLastUpdate()) < TIMEOUT) {
-                    session.setLastUpdate(LocalDateTime.now());
-                    return true;
-                } else {
-                    userSessionsRepository.delete(session);
-                }
-        }
+        if (user.isPresent())
+            for (UserSessions session : user.get().getUserSessions()) {
+                if (session.getUuid().equals(uuid) && session.getIsAuthorized())
+                    if (ChronoUnit.MINUTES.between(LocalDateTime.now(), session.getLastUpdate()) < TIMEOUT) {
+                        session.setLastUpdate(LocalDateTime.now());
+                        userSessionsRepository.save(session);
+                        return true;
+                    } else {
+                        userSessionsRepository.delete(session);
+                    }
+            }
         return false;
     }
 
     public Boolean isUserAdmin() {
-        return user.isPresent() ? user.get().isAdmin() : false;
+        return user.map(UsersHSI::isAdmin).orElse(false);
     }
 
     public Boolean isUserSuper() {
-        return user.isPresent() ? user.get().isSuperUser() : false;
+        return user.map(UsersHSI::isSuperUser).orElse(false);
     }
 }
