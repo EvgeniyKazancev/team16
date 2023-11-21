@@ -1,26 +1,23 @@
 package com.hello.dbservices.services;
 
 
-import com.hello.dbservices.repository.UsersRepository;
+import com.hello.dbservices.entity.Categories;
+import com.hello.dbservices.repository.*;
 
 import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.enums.ResponseType;
-import com.hello.dbservices.repository.CategoriesRepository;
-import com.hello.dbservices.repository.PublicationRepository;
-import com.hello.dbservices.repository.PublicationTextRepository;
 import com.hello.dbservices.response.ResponseMessage;
 
 
-
-
+import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,18 +26,60 @@ public class PublicationServices {
     private final CategoriesRepository categoriesRepository;
     private final PublicationTextRepository publicationTextRepository;
     private final PublicationRepository publicationRepository;
+    private final UserSessionsRepository userSessionsRepository;
+    private final UsersHSIRepository usersHSIRepository;
 
     public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository,
-                               PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository) {
+                               PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository, PublicationRepositoryImpl publicationRepositoryImpl, SourcesRepository sourcesRepository, UserSessionsRepository userSessionsRepository, UsersHSIRepository usersHSIRepository) {
         this.usersRepository = usersRepository;
         this.categoriesRepository = categoriesRepository;
 
         this.publicationTextRepository = publicationTextRepository;
         this.publicationRepository = publicationRepository;
+        this.userSessionsRepository = userSessionsRepository;
+        this.usersHSIRepository = usersHSIRepository;
     }
 
-    public Page<Publications> getPublicationsBetweenDates(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable) {
-        return publicationRepository.findPublicationsByCreatedBetween(startDate, endDate, pageable);
+    public Page<Publications> getPublicationsBetweenDatesInCategoriesInSources(String uuid,
+                                                                                LocalDateTime startDate,
+                                                                               LocalDateTime endDate,
+                                                                               List<Long> catIDs,
+                                                                               List<Long> sourceIDs,
+                                                                               Pageable pageable) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+        if (!userSessionVerification.isSessionPresent())
+            return new PageImpl<>(new ArrayList<Publications>(), PageRequest.of(0,0), 0);
+        if (catIDs == null && sourceIDs == null) {
+            return publicationRepository.findPublicationsByCreatedBetween(startDate, endDate, pageable);
+        } else if (sourceIDs == null) {
+            List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
+            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesIn(
+                    startDate,
+                    endDate,
+                    categories,
+                    pageable
+            );
+        } else if (catIDs == null) {
+            return publicationRepository.findPublicationsByCreatedBetweenAndSourceIdIn(
+                    startDate,
+                    endDate,
+                    sourceIDs,
+                    pageable
+            );
+        } else {
+            List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
+            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdIn(
+                    startDate,
+                    endDate,
+                    categories,
+                    sourceIDs,
+                    pageable
+            );
+        }
     }
 
     @Transactional

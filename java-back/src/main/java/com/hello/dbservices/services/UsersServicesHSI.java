@@ -46,7 +46,6 @@ public class UsersServicesHSI {
                 new UsersHSI();
     }
 
-    @Transactional
     public List<UsersHSI> getAllUsers(String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
@@ -57,7 +56,6 @@ public class UsersServicesHSI {
         return userSessionVerification.isSessionPresent() ? usersHSIRepository.findAll() : new ArrayList<>();
     }
 
-    @Transactional
     public ResponseMessage addUser(UsersHSI user, String uuid) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,

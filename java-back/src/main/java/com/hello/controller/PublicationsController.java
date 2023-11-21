@@ -2,6 +2,7 @@ package com.hello.controller;
 
 import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.services.PublicationServices;
+import com.hello.util.UserSessionVerification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -29,7 +30,17 @@ public class PublicationsController {
                                                           LocalDateTime startDate,
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                                           LocalDateTime endDate,
+                                                          @RequestParam(value = "catIDs[]", required = false)
+                                                          List<Long> catIDs,
+                                                          @RequestParam(value = "sourceIDs[]", required = false)
+                                                          List<Long> sourceIDs,
                                                           Pageable pageable) {
-        return publicationServices.getPublicationsBetweenDates(startDate, endDate, pageable);
+        return publicationServices.getPublicationsBetweenDatesInCategoriesInSources(
+                uuid,
+                startDate,
+                endDate,
+                catIDs,
+                sourceIDs,
+                pageable);
     }
 }
