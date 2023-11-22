@@ -19,11 +19,10 @@ import java.util.List;
 @Service
 public class UsersServices {
 
-    @Autowired
     private final UsersRepository usersRepository;
-    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
+    @Autowired
     public UsersServices(UsersFavoritesRepository usersFavoritesRepository,
                          UsersRepository usersRepository,
                          UserSessionsRepository userSessionsRepository) {

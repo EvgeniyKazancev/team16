@@ -20,20 +20,28 @@ public interface PublicationRepository extends JpaRepository<Publications, Long>
     boolean existsByUrl(String url);
     List<Publications> findAllById(Long sourcesId);
     List<Publications> findPublicationsByCreatedBetween(LocalDateTime startDate, LocalDateTime endDate);
-    Page<Publications> findPublicationsByCreatedBetween(LocalDateTime startDate, LocalDateTime endDate, Pageable pageable);
-    Page<Publications> findPublicationsByCreatedBetweenAndCategoriesIn(LocalDateTime startDate,
+    Page<Publications> findPublicationsByCreatedBetweenAndPublicationsText_TextLike(LocalDateTime startDate,
+                                                                                    LocalDateTime endDate,
+                                                                                    String searchText,
+                                                                                    Pageable pageable);
+
+    Page<Publications> findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLike(LocalDateTime startDate,
                                                                        LocalDateTime endDate,
                                                                        List<Categories> categories,
+                                                                       String searchText,
                                                                        Pageable pageable);
-    Page<Publications> findPublicationsByCreatedBetweenAndSourceIdIn(LocalDateTime startDate,
+    Page<Publications> findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLike(LocalDateTime startDate,
                                                                        LocalDateTime endDate,
                                                                        List<Long> sources,
+                                                                       String searchText,
                                                                        Pageable pageable);
-    Page<Publications> findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdIn(LocalDateTime startDate,
+    Page<Publications> findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLike(LocalDateTime startDate,
                                                                    LocalDateTime endDate,
                                                                    List<Categories> categories,
                                                                    List<Long> sources,
+                                                                   String searchText,
                                                                    Pageable pageable);
+
     List<Publications> findPublicationsByIdAndCreatedBetween(Long publicationId, LocalDateTime startDate, LocalDateTime endDate);
 
 }

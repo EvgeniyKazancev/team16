@@ -11,6 +11,7 @@ import com.hello.dbservices.response.ResponseMessage;
 
 import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,8 +30,15 @@ public class PublicationServices {
     private final UserSessionsRepository userSessionsRepository;
     private final UsersHSIRepository usersHSIRepository;
 
-    public PublicationServices(UsersRepository usersRepository, CategoriesRepository categoriesRepository,
-                               PublicationTextRepository publicationTextRepository, PublicationRepository publicationRepository, PublicationRepositoryImpl publicationRepositoryImpl, SourcesRepository sourcesRepository, UserSessionsRepository userSessionsRepository, UsersHSIRepository usersHSIRepository) {
+    @Autowired
+    public PublicationServices(UsersRepository usersRepository,
+                               CategoriesRepository categoriesRepository,
+                               PublicationTextRepository publicationTextRepository,
+                               PublicationRepository publicationRepository,
+                               PublicationRepositoryImpl publicationRepositoryImpl,
+                               SourcesRepository sourcesRepository,
+                               UserSessionsRepository userSessionsRepository,
+                               UsersHSIRepository usersHSIRepository) {
         this.usersRepository = usersRepository;
         this.categoriesRepository = categoriesRepository;
 
@@ -45,6 +53,7 @@ public class PublicationServices {
                                                                                LocalDateTime endDate,
                                                                                List<Long> catIDs,
                                                                                List<Long> sourceIDs,
+                                                                               String searchText,
                                                                                Pageable pageable) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
@@ -53,30 +62,44 @@ public class PublicationServices {
         );
         if (!userSessionVerification.isSessionPresent())
             return new PageImpl<>(new ArrayList<Publications>(), PageRequest.of(0,0), 0);
+
+        if (searchText == null)
+            searchText = "%";
+
+        searchText = "%" + searchText.replaceAll("\\s","%") + "%";
+
         if (catIDs == null && sourceIDs == null) {
-            return publicationRepository.findPublicationsByCreatedBetween(startDate, endDate, pageable);
+            return publicationRepository.findPublicationsByCreatedBetweenAndPublicationsText_TextLike(
+                    startDate,
+                    endDate,
+                    searchText,
+                    pageable
+            );
         } else if (sourceIDs == null) {
             List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesIn(
+            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLike(
                     startDate,
                     endDate,
                     categories,
+                    searchText,
                     pageable
             );
         } else if (catIDs == null) {
-            return publicationRepository.findPublicationsByCreatedBetweenAndSourceIdIn(
+            return publicationRepository.findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLike(
                     startDate,
                     endDate,
                     sourceIDs,
+                    searchText,
                     pageable
             );
         } else {
             List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdIn(
+            return publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLike(
                     startDate,
                     endDate,
                     categories,
                     sourceIDs,
+                    searchText,
                     pageable
             );
         }

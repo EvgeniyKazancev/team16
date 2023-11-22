@@ -11,8 +11,10 @@ import com.hello.dbservices.services.UsersServices;
 import com.hello.util.MD5Calculation;
 import com.hello.util.SendEmail;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -33,8 +35,8 @@ public class LoginController {
         this.userSessionServices = userSessionServices;
     }
 
-    @PutMapping("/auth")
-    public ResponseMessage login(@RequestBody LoginDTO login) throws NoSuchAlgorithmException {
+    @PostMapping(value = "/auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseMessage login(LoginDTO login) throws NoSuchAlgorithmException {
         String passHash = MD5Calculation.getMD5(login.getPassword());
         Users usr = usersServices.getByEmail(login.getEmail());
         if (Objects.equals(usr.getPasswordHash(), passHash)) {
@@ -53,8 +55,8 @@ public class LoginController {
         }
     }
 
-    @PutMapping("/2auth")
-    public ResponseMessage confirm2auth(@RequestBody Login2AuthDTO confirm2auth) {
+    @PostMapping(value = "/2auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseMessage confirm2auth(Login2AuthDTO confirm2auth) {
 
         UserSessions userSession = usersServices.getUserSessionByUuid(confirm2auth.getUuid());
         if (userSession.getOneTimeToken().equals(confirm2auth.getConfirm2auth()))

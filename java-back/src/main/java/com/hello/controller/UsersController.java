@@ -12,6 +12,7 @@ import com.hello.dbservices.services.UsersServicesHSI;
 import com.hello.util.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -50,8 +51,8 @@ public class UsersController {
         return usersHSIList;
     }
 
-    @PutMapping("/addUser")
-    public ResponseMessage addUser(@RequestBody UserCrearionDTO userCreation) throws NoSuchAlgorithmException {
+    @PostMapping(value = "/addUser", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseMessage addUser(UserCrearionDTO userCreation) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userCreation.getCurrentUUID()).getUserId());
         if (user.isSuperUser() && user.getUserSessions().stream().anyMatch(s -> s.getUuid().equals(userCreation.getCurrentUUID()))) {
 
@@ -60,16 +61,16 @@ public class UsersController {
         return new ResponseMessage("Недостаточно прав или пользователь не залогинен", ResponseType.FORBIDDEN.getCode());
     }
 
-    @PutMapping("/updateUserRegular")
-    public ResponseMessage updateUser(@RequestBody UserUpdateRegularDTO userUpdate) throws NoSuchAlgorithmException {
+    @PostMapping(value = "/updateUserRegular", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseMessage updateUser(UserUpdateRegularDTO userUpdate) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()))
             return  usersServices.updateUser(userMapper.userUpdateRegular2User(user, userUpdate));
         return new ResponseMessage("Попытка изменить чужую учётную запись", ResponseType.FORBIDDEN.getCode());
     }
 
-    @PutMapping("/updateUserSuper")
-    public ResponseMessage updateUserSuper(@RequestBody UserUpdateSuperDTO userUpdate) throws NoSuchAlgorithmException {
+    @PostMapping(value = "/updateUserSuper", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseMessage updateUserSuper(UserUpdateSuperDTO userUpdate) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()) && user.isSuperUser())
             return  usersServices.updateUser(userMapper.userUpdateSuper2User(user, userUpdate));

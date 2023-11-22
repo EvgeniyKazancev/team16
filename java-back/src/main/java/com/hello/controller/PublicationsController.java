@@ -24,7 +24,7 @@ public class PublicationsController {
         this.publicationServices = publicationServices;
     }
 
-    @GetMapping("/get")
+    @GetMapping(value = "/get")
     public Page<Publications> getPublicationsBetweenDates(@RequestParam String uuid,
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                                           LocalDateTime startDate,
@@ -34,6 +34,8 @@ public class PublicationsController {
                                                           List<Long> catIDs,
                                                           @RequestParam(value = "sourceIDs[]", required = false)
                                                           List<Long> sourceIDs,
+                                                          @RequestParam(value = "searchString", required = false)
+                                                          String searchString,
                                                           Pageable pageable) {
         return publicationServices.getPublicationsBetweenDatesInCategoriesInSources(
                 uuid,
@@ -41,6 +43,7 @@ public class PublicationsController {
                 endDate,
                 catIDs,
                 sourceIDs,
+                searchString,
                 pageable);
     }
 }

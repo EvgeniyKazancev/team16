@@ -28,6 +28,7 @@ public class UserSessionVerification {
         for (UserSessions session : userSessionsRepository.findAll()) {
             if (session.getUuid().equals(uuid)) {
                 userId = session.getUserId();
+                break;
             }
         }
 

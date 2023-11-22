@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @Service
 public class UserSessionServices {
 
-    @Autowired
     private final UserSessionsRepository userSessionsRepository;
 
+    @Autowired
     public UserSessionServices(UserSessionsRepository userSessionsRepository) {
         this.userSessionsRepository = userSessionsRepository;
     }

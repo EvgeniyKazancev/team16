@@ -6,6 +6,7 @@ import com.hello.dbservices.repository.PublicationRepository;
 import com.hello.dbservices.repository.SourcesRepository;
 import com.hello.dbservices.response.ResponseMessage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BeanPropertyBindingResult;
@@ -17,7 +18,7 @@ public class SourcesServices {
     private final PublicationRepository publicationRepository;
     private final SourcesRepository sourcesRepository;
 
-
+    @Autowired
     public SourcesServices(PublicationRepository publicationRepository, SourcesRepository sourcesRepository) {
         this.publicationRepository = publicationRepository;
 
