@@ -70,6 +70,7 @@ CREATE TABLE `publications` (
 	`url` VARCHAR(500) NOT NULL,
 	`copies_count` INTEGER NOT NULL DEFAULT 1,
 	`created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`removed` BOOLEAN NOT NULL DEFAULT FALSE,
 	UNIQUE(`url`),
 	FOREIGN KEY (`source_id`)
 		REFERENCES `sources`(`id`)
