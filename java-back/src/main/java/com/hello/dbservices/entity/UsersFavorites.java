@@ -19,7 +19,7 @@ public class UsersFavorites {
 
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id",nullable = false)
-    private Users userId;
+    private UsersHSI userId;
 
     @ManyToOne(optional = false,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "publication_id",nullable = false)

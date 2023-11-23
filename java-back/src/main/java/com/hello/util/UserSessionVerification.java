@@ -60,4 +60,6 @@ public class UserSessionVerification {
     public Boolean isUserSuper() {
         return user.map(UsersHSI::isSuperUser).orElse(false);
     }
+
+    public Long getUserId() { return user.map(UsersHSI::getId).orElse(0L); }
 }
