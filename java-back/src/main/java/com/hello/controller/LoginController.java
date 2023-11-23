@@ -35,7 +35,7 @@ public class LoginController {
         this.userSessionServices = userSessionServices;
     }
 
-    @PostMapping(value = "/auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/auth")
     public ResponseMessage login(LoginDTO login) throws NoSuchAlgorithmException {
         String passHash = MD5Calculation.getMD5(login.getPassword());
         Users usr = usersServices.getByEmail(login.getEmail());
@@ -55,7 +55,7 @@ public class LoginController {
         }
     }
 
-    @PostMapping(value = "/2auth", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/2auth")
     public ResponseMessage confirm2auth(Login2AuthDTO confirm2auth) {
 
         UserSessions userSession = usersServices.getUserSessionByUuid(confirm2auth.getUuid());

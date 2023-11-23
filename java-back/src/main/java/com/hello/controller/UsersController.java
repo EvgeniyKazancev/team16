@@ -51,7 +51,7 @@ public class UsersController {
         return usersHSIList;
     }
 
-    @PostMapping(value = "/addUser", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/addUser")
     public ResponseMessage addUser(UserCrearionDTO userCreation) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userCreation.getCurrentUUID()).getUserId());
         if (user.isSuperUser() && user.getUserSessions().stream().anyMatch(s -> s.getUuid().equals(userCreation.getCurrentUUID()))) {
@@ -61,7 +61,7 @@ public class UsersController {
         return new ResponseMessage("Недостаточно прав или пользователь не залогинен", ResponseType.FORBIDDEN.getCode());
     }
 
-    @PostMapping(value = "/updateUserRegular", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/updateUserRegular")
     public ResponseMessage updateUser(UserUpdateRegularDTO userUpdate) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()))
@@ -69,7 +69,7 @@ public class UsersController {
         return new ResponseMessage("Попытка изменить чужую учётную запись", ResponseType.FORBIDDEN.getCode());
     }
 
-    @PostMapping(value = "/updateUserSuper", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @PostMapping(value = "/updateUserSuper")
     public ResponseMessage updateUserSuper(UserUpdateSuperDTO userUpdate) throws NoSuchAlgorithmException {
         Users user = usersServices.getUsers(usersServices.getUserSessionByUuid(userUpdate.getCurrentUUID()).getUserId());
         if (Objects.equals(user.getId(), userUpdate.getId()) && user.isSuperUser())
