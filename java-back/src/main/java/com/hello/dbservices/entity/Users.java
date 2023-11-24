@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Table(name = "users", schema = "test")
-public class Users {
+public class Users extends UsersHSI {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

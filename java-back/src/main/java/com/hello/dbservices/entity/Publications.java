@@ -28,10 +28,10 @@ public class Publications implements Serializable {
     @Column(name = "created")
     private LocalDateTime created;
 
-    @Column(name = "removed")
+    @Column(name = "removed",columnDefinition = "TINYINT(1)",nullable = false,length = 1)
     private boolean removed;
 
-    @Column(name = "like")
+    @Column(name = "like",columnDefinition = "TINYINT(1)",nullable = false,length = 1)
     private boolean like;
 
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST)

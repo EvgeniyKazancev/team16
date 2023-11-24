@@ -6,7 +6,6 @@ import com.hello.dbservices.repository.*;
 import com.hello.dbservices.response.ResponseMessage;
 import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +16,10 @@ import java.util.List;
 public class UsersServices {
     private final UsersFavoritesRepository usersFavoritesRepository;
     private final UsersRepository usersRepository;
-    private  final PublicationRepository publicationRepository;
+    private final PublicationRepository publicationRepository;
     private final UserSessionsRepository userSessionsRepository;
 
-    private  final UsersHSIRepository usersHSIRepository;
+    private final UsersHSIRepository usersHSIRepository;
 
     @Autowired
     public UsersServices(
@@ -48,7 +47,7 @@ public class UsersServices {
     }
 
     private ResponseMessage updateValidation(Users user) {
-       if (!Character.isUpperCase(user.getFirstName().charAt(0))) {
+        if (!Character.isUpperCase(user.getFirstName().charAt(0))) {
             return new ResponseMessage("Имя должно начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
         } else if (!Character.isUpperCase(user.getLastName().charAt(0))) {
             return new ResponseMessage("Фамилия должна начинаться с заглавной буквы", ResponseType.UNAUTHORIZED.getCode());
@@ -94,15 +93,17 @@ public class UsersServices {
         usersRepository.save(updateUser);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
-    public ResponseMessage addUserFavoritesPublication(String uuid,Publications publications){
+
+    public ResponseMessage addUserFavoritesPublication(String uuid, Publications publications) {
         UserSessionVerification userSessionVerification = new UserSessionVerification(
                 uuid,
                 userSessionsRepository,
                 usersHSIRepository
         );
 
-        if (!userSessionVerification.isSessionPresent() && publications.isLike() && !publications.isRemoved())
-        {
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else if (publications.isLike() && !publications.isRemoved()) {
             Users users = usersRepository.findByUUID(uuid);
             UsersFavorites usersFavorites = new UsersFavorites();
             usersFavorites.setUserId(users);
@@ -110,8 +111,10 @@ public class UsersServices {
             usersFavoritesRepository.save(usersFavorites);
 
             return new ResponseMessage("Публикация сохранена", ResponseType.OPERATION_SUCCESSFUL.getCode());
-        }else
+        } else
             return null;
-        }
+
+
+    }
 
 }
