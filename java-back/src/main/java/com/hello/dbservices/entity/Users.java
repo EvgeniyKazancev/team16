@@ -63,7 +63,7 @@ public class Users {
         this.isAdmin = isAdmin;
         this.isSuperUser = isSuperUser;
     }
-//    @Override
+   //    @Override
 //    public final boolean equals(Object o) {
 //        if (this == o) return true;
 //        if (o == null ) return false;

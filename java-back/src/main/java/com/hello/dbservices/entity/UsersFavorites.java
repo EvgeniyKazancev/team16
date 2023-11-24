@@ -26,4 +26,5 @@ public class UsersFavorites {
     private Publications publicationId;
 
 
+
 }

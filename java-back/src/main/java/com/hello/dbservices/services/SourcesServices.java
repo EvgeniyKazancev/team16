@@ -33,7 +33,7 @@ public class SourcesServices {
 
     @Transactional
     public ResponseMessage addSources(Sources sources) {
-        if (publicationRepository.existsByUrl(sources.getUrl())) {
+        if (sourcesRepository.existsByUrl(sources.getUrl())) {
             return new ResponseMessage("Такой URL уже существует", ResponseType.UNAUTHORIZED.getCode());
         }
         sourcesRepository.save(sources);

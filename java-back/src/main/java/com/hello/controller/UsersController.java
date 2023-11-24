@@ -3,7 +3,9 @@ package com.hello.controller;
 import com.hello.dbservices.dto.UserCrearionDTO;
 import com.hello.dbservices.dto.UserUpdateRegularDTO;
 import com.hello.dbservices.dto.UserUpdateSuperDTO;
+import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.entity.Users;
+import com.hello.dbservices.entity.UsersFavorites;
 import com.hello.dbservices.entity.UsersHSI;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.response.ResponseMessage;
@@ -75,5 +77,9 @@ public class UsersController {
         if (Objects.equals(user.getId(), userUpdate.getId()) && user.isSuperUser())
             return  usersServices.updateUser(userMapper.userUpdateSuper2User(user, userUpdate));
         return new ResponseMessage("Попытка изменить чужую учётную запись или недостаточно прав", ResponseType.FORBIDDEN.getCode());
+    }
+    @PostMapping("/addFavoritesPublication")
+    public ResponseMessage addFavoritesPublications(@RequestParam String uuid,@RequestBody Publications publications){
+        return usersServices.addUserFavoritesPublication(uuid,publications);
     }
 }

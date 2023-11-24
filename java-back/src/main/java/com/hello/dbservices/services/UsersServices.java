@@ -1,33 +1,38 @@
 package com.hello.dbservices.services;
 
-import com.hello.dbservices.entity.UserSessions;
-import com.hello.dbservices.entity.Users;
+import com.hello.dbservices.entity.*;
 import com.hello.dbservices.enums.ResponseType;
-import com.hello.dbservices.repository.UserSessionsRepository;
-import com.hello.dbservices.repository.UsersFavoritesRepository;
-import com.hello.dbservices.repository.UsersRepository;
+import com.hello.dbservices.repository.*;
 import com.hello.dbservices.response.ResponseMessage;
-import com.hello.util.MD5Calculation;
+import com.hello.util.UserSessionVerification;
 import jakarta.persistence.EntityNotFoundException;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @Service
 public class UsersServices {
-
+    private final UsersFavoritesRepository usersFavoritesRepository;
     private final UsersRepository usersRepository;
+    private  final PublicationRepository publicationRepository;
     private final UserSessionsRepository userSessionsRepository;
 
+    private  final UsersHSIRepository usersHSIRepository;
+
     @Autowired
-    public UsersServices(UsersFavoritesRepository usersFavoritesRepository,
-                         UsersRepository usersRepository,
-                         UserSessionsRepository userSessionsRepository) {
+    public UsersServices(
+            UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository,
+            PublicationRepository publicationRepository, UserSessionsRepository userSessionsRepository, UsersHSIRepository usersHSIRepository) {
+        this.usersFavoritesRepository = usersFavoritesRepository;
+
         this.usersRepository = usersRepository;
+        this.publicationRepository = publicationRepository;
         this.userSessionsRepository = userSessionsRepository;
+
+        this.usersHSIRepository = usersHSIRepository;
     }
 
     private ResponseMessage addValidation(Users user) {
@@ -89,4 +94,24 @@ public class UsersServices {
         usersRepository.save(updateUser);
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
+    public ResponseMessage addUserFavoritesPublication(String uuid,Publications publications){
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent() && publications.isLike() && !publications.isRemoved())
+        {
+            Users users = usersRepository.findByUUID(uuid);
+            UsersFavorites usersFavorites = new UsersFavorites();
+            usersFavorites.setUserId(users);
+            usersFavorites.setPublicationId(publications);
+            usersFavoritesRepository.save(usersFavorites);
+
+            return new ResponseMessage("Публикация сохранена", ResponseType.OPERATION_SUCCESSFUL.getCode());
+        }else
+            return null;
+        }
+
 }

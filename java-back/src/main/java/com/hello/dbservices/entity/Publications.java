@@ -28,6 +28,12 @@ public class Publications implements Serializable {
     @Column(name = "created")
     private LocalDateTime created;
 
+    @Column(name = "removed")
+    private boolean removed;
+
+    @Column(name = "like")
+    private boolean like;
+
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "source_id")
     private Sources source;

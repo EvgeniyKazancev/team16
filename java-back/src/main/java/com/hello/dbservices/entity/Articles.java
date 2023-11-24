@@ -26,7 +26,4 @@ public class Articles {
     @Column(name = "link")
     private String link;
 
-
-
-
 }

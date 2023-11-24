@@ -2,9 +2,7 @@ package com.hello.dbservices.services;
 
 import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.enums.ResponseType;
-import com.hello.dbservices.repository.UserSessionsRepository;
-import com.hello.dbservices.repository.UsersFavoritesRepository;
-import com.hello.dbservices.repository.UsersRepository;
+import com.hello.dbservices.repository.*;
 import com.hello.dbservices.response.ResponseMessage;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -28,20 +26,25 @@ import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
 class UsersServicesTest {
-
-    @Mock
-    public UsersRepository usersRepository;
     @Mock
     public UsersFavoritesRepository usersFavoritesRepository;
     @Mock
+    public UsersRepository usersRepository;
+
+    @Mock
     public UserSessionsRepository userSessionsRepository;
+    @Mock
+    public PublicationRepository publicationRepository;
+
+    @Mock
+    public UsersHSIRepository usersHSIRepository;
 
     @InjectMocks
     public UsersServices usersServices;
 
     @BeforeEach
     public void setUp() {
-        usersServices = new UsersServices(usersFavoritesRepository, usersRepository, userSessionsRepository);
+        usersServices = new UsersServices(usersFavoritesRepository, usersRepository, publicationRepository, userSessionsRepository, usersHSIRepository);
     }
 
     public Users getUsersTest() {
