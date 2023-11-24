@@ -80,21 +80,24 @@ public class PublicationServices {
 
         if (!favoritesOnly) {
             if (catIDs == null && sourceIDs == null) {
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndPublicationsText_TextLike(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndPublicationsText_TextLikeAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         searchText
                 );
             } else if (sourceIDs == null) {
                 List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLike(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLikeAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         categories,
                         searchText
                 );
             } else if (catIDs == null) {
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLike(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLikeAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         sourceIDs,
@@ -102,7 +105,8 @@ public class PublicationServices {
                 );
             } else {
                 List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLike(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLikeAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         categories,
@@ -112,7 +116,8 @@ public class PublicationServices {
             }
         } else {
             if (catIDs == null && sourceIDs == null) {
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_Id(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_IdAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         searchText,
@@ -120,7 +125,8 @@ public class PublicationServices {
                 );
             } else if (sourceIDs == null) {
                 List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_Id(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndCategoriesInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_IdAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         categories,
@@ -128,7 +134,8 @@ public class PublicationServices {
                         favoriteUserId
                 );
             } else if (catIDs == null) {
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_Id(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndSourceIdInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_IdAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         sourceIDs,
@@ -137,7 +144,8 @@ public class PublicationServices {
                 );
             } else {
                 List<Categories> categories = new ArrayList<>(categoriesRepository.findByIdIn(catIDs));
-                publications = publicationRepository.findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_Id(
+                publications = publicationRepository
+                        .findPublicationsByCreatedBetweenAndCategoriesInAndSourceIdInAndPublicationsText_TextLikeAndUsersWhoHaveFavorited_IdAndRemovedFalseOrderByCreatedDesc(
                         startDate,
                         endDate,
                         categories,
