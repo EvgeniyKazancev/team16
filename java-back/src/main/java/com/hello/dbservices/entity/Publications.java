@@ -54,6 +54,14 @@ public class Publications implements Serializable {
     )
     private Set<Categories> categories;
 
+    @ManyToMany
+    @JoinTable(
+            name = "users_favorites",
+            joinColumns = @JoinColumn(name = "publication_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<UsersHSISessionsOff> usersWhoHaveFavorited;
+
     public Publications() {
         this.created = LocalDateTime.now();
 //        this.publicationsTextList = new ArrayList<>();

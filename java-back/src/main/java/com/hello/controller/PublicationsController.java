@@ -36,6 +36,8 @@ public class PublicationsController {
                                                           List<Long> sourceIDs,
                                                           @RequestParam(value = "searchString", required = false)
                                                           String searchString,
+                                                          @RequestParam(value = "favoritesOnly", required = false)
+                                                          Boolean favoritesOnly,
                                                           Pageable pageable) {
         return publicationServices.getPublicationsBetweenDatesInCategoriesInSources(
                 uuid,
@@ -44,6 +46,7 @@ public class PublicationsController {
                 catIDs,
                 sourceIDs,
                 searchString,
+                favoritesOnly,
                 pageable);
     }
 }
