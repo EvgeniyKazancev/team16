@@ -78,8 +78,5 @@ public class UsersController {
             return  usersServices.updateUser(userMapper.userUpdateSuper2User(user, userUpdate));
         return new ResponseMessage("Попытка изменить чужую учётную запись или недостаточно прав", ResponseType.FORBIDDEN.getCode());
     }
-    @PostMapping("/addFavoritesPublication")
-    public ResponseMessage addFavoritesPublications(@RequestParam String uuid,@RequestBody Publications publications){
-        return usersServices.addUserFavoritesPublication(uuid,publications);
-    }
+
 }

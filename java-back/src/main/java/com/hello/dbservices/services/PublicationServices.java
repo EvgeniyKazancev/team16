@@ -1,11 +1,9 @@
 package com.hello.dbservices.services;
 
 
-import com.hello.dbservices.entity.Categories;
-import com.hello.dbservices.entity.UsersHSI;
+import com.hello.dbservices.entity.*;
 import com.hello.dbservices.repository.*;
 
-import com.hello.dbservices.entity.Publications;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.response.ResponseMessage;
 
@@ -20,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PublicationServices {
@@ -31,6 +29,8 @@ public class PublicationServices {
     private final PublicationRepository publicationRepository;
     private final UserSessionsRepository userSessionsRepository;
     private final UsersHSIRepository usersHSIRepository;
+    private final UsersFavoritesRepository usersFavoritesRepository;
+    private final PublicationsCategoriesRepository publicationsCategoriesRepository;
 
     @Autowired
     public PublicationServices(UsersRepository usersRepository,
@@ -40,7 +40,9 @@ public class PublicationServices {
                                PublicationRepositoryImpl publicationRepositoryImpl,
                                SourcesRepository sourcesRepository,
                                UserSessionsRepository userSessionsRepository,
-                               UsersHSIRepository usersHSIRepository) {
+                               UsersHSIRepository usersHSIRepository,
+                               UsersFavoritesRepository usersFavoritesRepository,
+                               PublicationsCategoriesRepository publicationsCategoriesRepository) {
         this.usersRepository = usersRepository;
         this.categoriesRepository = categoriesRepository;
 
@@ -48,9 +50,11 @@ public class PublicationServices {
         this.publicationRepository = publicationRepository;
         this.userSessionsRepository = userSessionsRepository;
         this.usersHSIRepository = usersHSIRepository;
+        this.usersFavoritesRepository = usersFavoritesRepository;
+        this.publicationsCategoriesRepository = publicationsCategoriesRepository;
     }
 
-    public Page<Publications> getPublicationsBetweenDatesInCategoriesInSources(String uuid,
+    public Object getPublicationsBetweenDatesInCategoriesInSources(String uuid,
                                                                                 LocalDateTime startDate,
                                                                                LocalDateTime endDate,
                                                                                List<Long> catIDs,
@@ -64,7 +68,7 @@ public class PublicationServices {
                 usersHSIRepository
         );
         if (!userSessionVerification.isSessionPresent())
-            return new PageImpl<>(new ArrayList<Publications>(), PageRequest.of(0,1), 0);
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
 
         if (searchText == null)
             searchText = "%";
@@ -167,6 +171,86 @@ public class PublicationServices {
                 publications.size());
     }
 
+    public ResponseMessage addUserFavoritesPublication(String uuid, Long publicationId) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else {
+            Users users = usersRepository.findByUserSessions_Uuid(uuid);
+            UsersFavorites usersFavorites = new UsersFavorites();
+            usersFavorites.setUserId(users.getId());
+            usersFavorites.setPublicationId(publicationRepository.getReferenceById(publicationId));
+            usersFavoritesRepository.save(usersFavorites);
+
+            return new ResponseMessage("Публикация добавлена в избранное", ResponseType.OPERATION_SUCCESSFUL.getCode());
+        }
+    }
+    public ResponseMessage removeUserFavoritesPublication(String uuid, Long publicationId) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else {
+            UsersFavorites usersFavorite = usersFavoritesRepository.
+                    findFirstByPublicationId(publicationRepository.getReferenceById(publicationId));
+            if (usersFavorite != null) {
+                usersFavoritesRepository.delete(usersFavorite);
+                return new ResponseMessage("Публикация удалена из избранного", ResponseType.OPERATION_SUCCESSFUL.getCode());
+            } else {
+                return new ResponseMessage("Публикация не найдена", ResponseType.NOT_FOUND.getCode());
+            }
+        }
+    }
+
+    public ResponseMessage addPublicationCategory(String uuid, Long publicationId, Long categoryId) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else {
+            PublicationsCategories publicationsCategory = new PublicationsCategories();
+            publicationsCategory.setCategoryId(categoryId);
+            publicationsCategory.setPublicationId(publicationId);
+            publicationsCategoriesRepository.save(publicationsCategory);
+            return new ResponseMessage("Категория добавлена к публикации", ResponseType.OPERATION_SUCCESSFUL.getCode());
+        }
+    }
+
+    public ResponseMessage removePublicationCategory(String uuid, Long publicationId, Long categoryId) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else {
+            PublicationsCategories publicationsCategory = publicationsCategoriesRepository
+                    .findFirstByPublicationIdAndCategoryId(publicationId, categoryId);
+            if (publicationsCategory != null) {
+                publicationsCategoriesRepository.delete(publicationsCategory);
+                return new ResponseMessage("Категория удалена из публикации", ResponseType.OPERATION_SUCCESSFUL.getCode());
+            } else {
+                return new ResponseMessage("Не найдено соответствия категории и публикации",
+                        ResponseType.NOT_FOUND.getCode());
+            }
+        }
+    }
+
     @Transactional
     public ResponseMessage addPublication(Publications publications) {
      if(publicationRepository.existsByUrl(publications.getUrl()) ){
@@ -196,11 +280,24 @@ public class PublicationServices {
     }
 
     @Transactional
-    public ResponseMessage deletePublication(Long publicationId) {
-        categoriesRepository.deleteById(publicationId);
-        publicationTextRepository.deleteById(publicationId);
-        publicationRepository.deleteById(publicationId);
-        usersRepository.deleteById(publicationId);
-        return new ResponseMessage("Публикация удалена", ResponseType.OPERATION_SUCCESSFUL.getCode());
+    public ResponseMessage deletePublication(String uuid, Long publicationId) {
+        UserSessionVerification userSessionVerification = new UserSessionVerification(
+                uuid,
+                userSessionsRepository,
+                usersHSIRepository
+        );
+
+        if (!userSessionVerification.isSessionPresent()) {
+            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
+        } else {
+            Optional<Publications> publication = publicationRepository.findById(publicationId);
+            if (publication.isPresent()) {
+                publication.get().setRemoved(true);
+                publicationRepository.save(publication.get());
+                return new ResponseMessage("Публикация удалена", ResponseType.OPERATION_SUCCESSFUL.getCode());
+            } else {
+                return new ResponseMessage("Публикация не найдена", ResponseType.NOT_FOUND.getCode());
+            }
+        }
     }
 }

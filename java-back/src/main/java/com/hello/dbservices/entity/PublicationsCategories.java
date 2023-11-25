@@ -14,15 +14,14 @@ import java.util.Objects;
 public class PublicationsCategories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "publication_id", nullable = false)
-    private Publications publicationId;
+    @Column(name = "publication_id")
+    private Long publicationId;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", nullable = false)
-    private Categories categoryId;
+    @Column(name = "category_id")
+    private Long categoryId;
 
 
 //    @Override

@@ -94,27 +94,4 @@ public class UsersServices {
         return new ResponseMessage("Пользователь успешно изменен", ResponseType.OPERATION_SUCCESSFUL.getCode());
     }
 
-    public ResponseMessage addUserFavoritesPublication(String uuid, Publications publications) {
-        UserSessionVerification userSessionVerification = new UserSessionVerification(
-                uuid,
-                userSessionsRepository,
-                usersHSIRepository
-        );
-
-        if (!userSessionVerification.isSessionPresent()) {
-            return new ResponseMessage("Нет авторизации.", ResponseType.UNAUTHORIZED.getCode());
-        } else if (publications.isLike() && !publications.isRemoved()) {
-            Users users = usersRepository.findByUUID(uuid);
-            UsersFavorites usersFavorites = new UsersFavorites();
-            usersFavorites.setUserId(users);
-            usersFavorites.setPublicationId(publications);
-            usersFavoritesRepository.save(usersFavorites);
-
-            return new ResponseMessage("Публикация сохранена", ResponseType.OPERATION_SUCCESSFUL.getCode());
-        } else
-            return null;
-
-
-    }
-
 }

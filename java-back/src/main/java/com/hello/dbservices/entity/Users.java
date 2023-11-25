@@ -12,8 +12,8 @@ import java.util.List;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "users", schema = "test")
-public class Users extends UsersHSI {
+@Table(name = "users")
+public class Users{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

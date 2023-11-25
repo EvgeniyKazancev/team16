@@ -14,14 +14,14 @@ import java.util.Objects;
 public class UsersFavorites {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "user_id",nullable = false)
-    private UsersHSI userId;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
-    @ManyToOne(optional = false,cascade = CascadeType.PERSIST)
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "publication_id",nullable = false)
     private Publications publicationId;
 

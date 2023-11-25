@@ -15,6 +15,7 @@ public class PublicationsText {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "publication_id")

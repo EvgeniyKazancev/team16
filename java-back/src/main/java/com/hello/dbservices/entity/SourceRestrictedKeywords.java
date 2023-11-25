@@ -14,6 +14,7 @@ import java.util.Objects;
 public class SourceRestrictedKeywords {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
     @Column(name = "source_id")
     private long sourceId;

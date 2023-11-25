@@ -11,4 +11,6 @@ public interface CategoriesRepository extends JpaRepository<Categories,Long> {
 
     List<Categories> findByIdIn(List<Long> catIDs);
 
+    List<Categories> findByNameIgnoreCase(String name);
+
 }

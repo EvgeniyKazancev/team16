@@ -1,15 +1,13 @@
 package com.hello.controller;
 
 import com.hello.dbservices.entity.Publications;
+import com.hello.dbservices.response.ResponseMessage;
 import com.hello.dbservices.services.PublicationServices;
-import com.hello.util.UserSessionVerification;
+import com.hello.dbservices.services.CategoriesServices;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,13 +17,15 @@ import java.util.List;
 public class PublicationsController {
 
     private final PublicationServices publicationServices;
+    private final CategoriesServices categoriesServices;
 
-    public PublicationsController(PublicationServices publicationServices) {
+    public PublicationsController(PublicationServices publicationServices, CategoriesServices categoriesServices) {
         this.publicationServices = publicationServices;
+        this.categoriesServices = categoriesServices;
     }
 
     @GetMapping(value = "/get")
-    public Page<Publications> getPublicationsBetweenDates(@RequestParam String uuid,
+    public Object getPublicationsBetweenDates(@RequestParam String uuid,
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                                           LocalDateTime startDate,
                                                           @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -48,5 +48,30 @@ public class PublicationsController {
                 searchString,
                 favoritesOnly,
                 pageable);
+    }
+
+    @PostMapping("/removeFavoritesPublication")
+    public ResponseMessage removeFavoritesPublications(String uuid, Long publicationId){
+        return publicationServices.removeUserFavoritesPublication(uuid, publicationId);
+    }
+
+    @PostMapping("/addFavoritesPublication")
+    public ResponseMessage addFavoritesPublications(String uuid, Long publicationId){
+        return publicationServices.addUserFavoritesPublication(uuid, publicationId);
+    }
+
+    @PostMapping("/addPublicationCategory")
+    public ResponseMessage addPublicationCategory(String uuid, Long publicationId, Long categoryId) {
+        return publicationServices.addPublicationCategory(uuid, publicationId, categoryId);
+    }
+
+    @PostMapping("/removePublicationCategory")
+    public ResponseMessage removePublicationCategory(String uuid, Long publicationID, Long categoryId) {
+        return publicationServices.removePublicationCategory(uuid, publicationID, categoryId);
+    }
+
+    @PostMapping("removeById")
+    public ResponseMessage removePublication(String uuid, Long publicationId) {
+        return publicationServices.deletePublication(uuid, publicationId);
     }
 }

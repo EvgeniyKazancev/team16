@@ -2,6 +2,7 @@ package com.hello.dbservices.repository;
 
 import com.hello.dbservices.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,5 +14,6 @@ public interface UsersRepository extends JpaRepository<Users,Long> {
 
   boolean existsByEmail(String email);
 
-    Users findByUUID(String uuid);
+  @Query("select u from Users u inner join u.userSessions userSessions where userSessions.uuid = ?1")
+  Users findByUserSessions_Uuid(String uuid);
 }
