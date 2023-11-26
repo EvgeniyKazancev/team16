@@ -18,7 +18,6 @@ public:
 
 protected:	
 	std::string extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const;
-	void removeTags(std::string &str) const;
 
 	unsigned parse_depth_;
 	std::string url_;

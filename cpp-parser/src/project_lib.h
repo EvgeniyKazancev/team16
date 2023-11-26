@@ -11,9 +11,9 @@ namespace Lib {
 	void ltrim(std::string &s);
 	void rtrim(std::string &s);
 	void trim(std::string &s);
-	void encodeHtml(std::string &content_str);
+	//void encodeHtml(std::string &content_str);
 	void removeFromString(std::string &str, const std::string pattern);
-	void removeMultipleSpaces(std::string &str);
+	//void removeMultipleSpaces(std::string &str);
 
 	struct dataSource {
 		unsigned id;
