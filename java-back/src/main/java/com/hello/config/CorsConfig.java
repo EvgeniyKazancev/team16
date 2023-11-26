@@ -1,17 +1,21 @@
 package com.hello.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
-    public void addCorsMapping(CorsRegistry corsRegistry){
-        corsRegistry.addMapping("/**")
-                    .allowedOrigins("https://www.newsishorosho.ru")
-                    .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
-                    .allowedHeaders("Content-Type","Authorized")
-                    .allowCredentials(true)
-                    .maxAge(3600);
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        WebMvcConfigurer.super.addCorsMappings(registry);
+      registry.addMapping("/**")
+                .allowedOrigins("https://www.newsishorosho.ru")
+                .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
+                .allowedHeaders("Content-Type","Authorized", "text/plain")
+                .allowCredentials(false)
+                .maxAge(3600);
     }
 }
