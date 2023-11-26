@@ -18,7 +18,6 @@ public class UsersServices {
     private final UsersRepository usersRepository;
     private final PublicationRepository publicationRepository;
     private final UserSessionsRepository userSessionsRepository;
-
     private final UsersHSIRepository usersHSIRepository;
 
     @Autowired
@@ -26,11 +25,9 @@ public class UsersServices {
             UsersFavoritesRepository usersFavoritesRepository, UsersRepository usersRepository,
             PublicationRepository publicationRepository, UserSessionsRepository userSessionsRepository, UsersHSIRepository usersHSIRepository) {
         this.usersFavoritesRepository = usersFavoritesRepository;
-
         this.usersRepository = usersRepository;
         this.publicationRepository = publicationRepository;
         this.userSessionsRepository = userSessionsRepository;
-
         this.usersHSIRepository = usersHSIRepository;
     }
 
