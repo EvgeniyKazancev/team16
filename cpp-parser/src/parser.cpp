@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include <regex>
+#include <algorithm>
 
 Parser::Parser(const Lib::dataSource &src, const std::string &working_dir, volatile bool &terminate_signal) :
 working_dir_ { working_dir },
@@ -10,16 +12,6 @@ url_{ src.url },
 parse_depth_{ src.parse_depth },
 source_id_{ src.id },
 terminate_signal_caught_ { terminate_signal } {}
-
-void Parser::removeTags(std::string &str) const {
-	for (auto lt_pos = str.find('<'); lt_pos != std::string::npos; lt_pos = str.find('<')) {
-		auto gt_pos = str.find('>', lt_pos);
-		if (gt_pos == std::string::npos) {
-			return;
-		}
-		str.erase(lt_pos, gt_pos - lt_pos + 1);
-	}
-}
 
 std::string Parser::extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const {
 	xmlBufferPtr buffer = xmlBufferCreate();
@@ -30,19 +22,14 @@ std::string Parser::extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const {
 	}
 	std::string buffer_content{ reinterpret_cast<const char *>(buffer->content) };
 	xmlBufferFree(buffer);
-	removeTags(buffer_content);
+	buffer_content = std::regex_replace(buffer_content, std::regex{ "<\\s*br.*?>" }, "\n"); // removing <br>
+	buffer_content = std::regex_replace(buffer_content, std::regex{ "<.*?>" }, " "); // removing other tags
+	std::erase(buffer_content, '\r'); // removing CR - the LF is enough for us
+	buffer_content = std::regex_replace(buffer_content, std::regex{ "\\s{2,}" }, " "); // removing multiple spaces
+	buffer_content = std::regex_replace(buffer_content, std::regex{ "\\'" }, "&apos;"); // removing apostrophs
+	buffer_content = std::regex_replace(buffer_content, std::regex{ "\\\\" }, "&bsol;"); // removing backslashes
 
-//	if (node == nullptr || node->xmlChildrenNode == nullptr) {
-//		return std::string{};
-//	}
-//	auto content = xmlNodeListGetString(doc, node->xmlChildrenNode, 1);
-//	if (content == nullptr) {
-//		return std::string{};
-//	}
-//	std::string buffer_content { reinterpret_cast<char *>(content) };
 	Lib::trim(buffer_content);
-	Lib::removeMultipleSpaces(buffer_content);
-	Lib::encodeHtml(buffer_content);
 	return buffer_content;
 }
 

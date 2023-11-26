@@ -69,22 +69,6 @@ void Lib::trim(std::string &s) {
 	rtrim(s);
 }
 
-void Lib::encodeHtml(std::string &content_str) {
-	std::map<char, std::string> html_entities = {
-		{ '\'', "&apos;" },
-		{ '\\', "&bsol;" }
-	};
-	for (auto it: html_entities) {
-		for (
-			auto apos = content_str.find(it.first);
-			apos != std::string::npos;
-			apos = content_str.find(it.first)
-		) {
-			content_str = content_str.substr(0, apos) + it.second + content_str.substr(apos + 1, content_str.length() - (apos + 1));
-		}
-	}
-}
-
 void Lib::removeFromString(std::string &str, const std::string pattern) {
 	auto start = pattern.length();
 	for (auto pos = str.find(pattern); pos != std::string::npos; pos = str.find(pattern)) {
@@ -92,18 +76,3 @@ void Lib::removeFromString(std::string &str, const std::string pattern) {
 	}
 }
 
-void Lib::removeMultipleSpaces(std::string &str) {
-    size_t str_begin = 0;
-    while (str_begin < str.length()) {
-        if (std::isspace(str[str_begin])) {
-            size_t str_end = str_begin + 1;
-            while (std::isspace(str[str_end])) {
-                ++str_end;
-            }
-            if (str_end - str_begin > 1) {
-                str.erase(str_begin + 1, str_end - str_begin - 1);
-            }
-        }
-        ++str_begin;
-    }
-}
