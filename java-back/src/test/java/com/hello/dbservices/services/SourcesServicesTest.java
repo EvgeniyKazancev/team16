@@ -1,13 +1,11 @@
 package com.hello.dbservices.services;
 
 import com.hello.dbservices.entity.Sources;
-import com.hello.dbservices.entity.Users;
 import com.hello.dbservices.enums.ResponseType;
 import com.hello.dbservices.repository.PublicationRepository;
 import com.hello.dbservices.repository.SourcesRepository;
 
 import com.hello.dbservices.response.ResponseMessage;
-import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +13,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -37,7 +34,7 @@ class SourcesServicesTest {
 
     @BeforeEach
     public void setUp(){
-        sourcesServices = new SourcesServices(publicationRepository,sourcesRepository);
+        sourcesServices = new SourcesServices(publicationRepository,sourcesRepository, userSessionsRepository, usersHSIRepository);
     }
 
     public Sources getSourcesTest(){
@@ -56,7 +53,7 @@ class SourcesServicesTest {
 
         Mockito.when(sourcesRepository.findById(actualSources.getId())).thenReturn(Optional.of(actualSources));
 
-        Sources expectedSources = sourcesServices.getSources(actualSources.getId());
+        Sources expectedSources = sourcesServices.getSource(actualSources.getId());
       //  System.out.println(expectedSources.getSourceType());
         assertEquals(expectedSources,actualSources);
 
@@ -74,7 +71,7 @@ class SourcesServicesTest {
         when(sourcesRepository.save(any(Sources.class))).thenReturn(sources);
 
 
-        ResponseMessage response = sourcesServices.addSources(sources);
+        ResponseMessage response = sourcesServices.addSource(sources);
 
         assertEquals("Источник успешно добавлен", response.getMessage());
         assertEquals(ResponseType.OPERATION_SUCCESSFUL.getCode(), response.getCode());
@@ -87,7 +84,7 @@ class SourcesServicesTest {
         sources.setUrl(url);
 
         when(publicationRepository.existsByUrl(url)).thenReturn(true);
-        ResponseMessage responseMessage = sourcesServices.addSources(sources);
+        ResponseMessage responseMessage = sourcesServices.addSource(sources);
 
         assertEquals("Такой URL уже существует",responseMessage.getMessage());
         assertEquals(ResponseType.UNAUTHORIZED.getCode(),responseMessage.getCode());
@@ -98,7 +95,7 @@ class SourcesServicesTest {
         sources.setId(1L);
 
        doNothing().when(sourcesRepository).deleteById(sources.getId());
-       ResponseMessage responseMessage = sourcesServices.deleteSources(sources.getId());
+       ResponseMessage responseMessage = sourcesServices.deleteSource(sources.getId());
 
        assertEquals("Источник успешно удален",responseMessage.getMessage());
        assertEquals(ResponseType.OPERATION_SUCCESSFUL.getCode(),responseMessage.getCode());
