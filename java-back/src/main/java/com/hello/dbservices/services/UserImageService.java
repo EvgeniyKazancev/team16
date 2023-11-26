@@ -18,12 +18,18 @@ import java.util.Optional;
 @Service
 public class UserImageService {
 
+    private final UserImageRepository userImageRepository;
+    private final UserSessionsRepository userSessionsRepository;
+    private final UsersHSIRepository usersHSIRepository;
+
     @Autowired
-    UserImageRepository userImageRepository;
-    @Autowired
-    UserSessionsRepository userSessionsRepository;
-    @Autowired
-    UsersHSIRepository usersHSIRepository;
+    public UserImageService(UserImageRepository userImageRepository,
+                            UserSessionsRepository userSessionsRepository,
+                            UsersHSIRepository usersHSIRepository) {
+        this.userImageRepository = userImageRepository;
+        this.userSessionsRepository = userSessionsRepository;
+        this.usersHSIRepository = usersHSIRepository;
+    }
 
     @Transactional
     public ResponseMessage uploadImage(String uuid, MultipartFile file) throws IOException {

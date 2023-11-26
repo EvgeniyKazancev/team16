@@ -23,17 +23,14 @@ import java.util.List;
 @Service
 public class SourcesServices {
 
-    @Autowired
-    private final PublicationRepository publicationRepository;
-    @Autowired
     private final SourcesRepository sourcesRepository;
-    @Autowired
     private final UserSessionsRepository userSessionsRepository;
-    @Autowired
     private final UsersHSIRepository usersHSIRepository;
 
-    public SourcesServices(PublicationRepository publicationRepository, SourcesRepository sourcesRepository, UserSessionsRepository userSessionsRepository, UsersHSIRepository usersHSIRepository) {
-        this.publicationRepository = publicationRepository;
+    @Autowired
+    public SourcesServices(SourcesRepository sourcesRepository,
+                           UserSessionsRepository userSessionsRepository,
+                           UsersHSIRepository usersHSIRepository) {
         this.sourcesRepository = sourcesRepository;
         this.userSessionsRepository = userSessionsRepository;
         this.usersHSIRepository = usersHSIRepository;
