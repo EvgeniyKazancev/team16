@@ -24,7 +24,6 @@ public class UsersServicesHSI {
     @Autowired
     public UsersServicesHSI(
             UsersHSIRepository usersHSIRepository,
-            UsersRepository usersRepository,
             UserSessionsRepository userSessionsRepository
     ) {
         this.usersHSIRepository = usersHSIRepository;

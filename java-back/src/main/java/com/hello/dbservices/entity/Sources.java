@@ -32,6 +32,9 @@ public class Sources {
     @Column(name = "created",nullable = false)
     private LocalDateTime created;
 
+    @Column(name = "name")
+    private String name;
+
     public Sources() {
     }
 
