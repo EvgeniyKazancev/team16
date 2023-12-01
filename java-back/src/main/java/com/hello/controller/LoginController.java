@@ -11,10 +11,8 @@ import com.hello.dbservices.services.UsersServices;
 import com.hello.util.MD5Calculation;
 import com.hello.util.SendEmail;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -28,11 +26,13 @@ public class LoginController {
 
     private final UsersServices usersServices;
     private final UserSessionServices userSessionServices;
+    private final SendEmail sendEmail;
 
     @Autowired
-    public LoginController(UsersServices usersServices, UserSessionServices userSessionServices) {
+    public LoginController(UsersServices usersServices, UserSessionServices userSessionServices, SendEmail sendEmail) {
         this.usersServices = usersServices;
         this.userSessionServices = userSessionServices;
+        this.sendEmail = sendEmail;
     }
 
     @PostMapping(value = "/auth")
@@ -44,7 +44,7 @@ public class LoginController {
             UUID uuid = UUID.randomUUID();
             Integer oneTimeToken = new Random().nextInt(900000) + 100000;
 
-            if (SendEmail.sendToken(usr.getEmail(), oneTimeToken.toString()))
+            if (sendEmail.sendToken(usr.getEmail(), oneTimeToken.toString()))
                 userSessionServices.addUserSession(usr.getId(), uuid.toString(), oneTimeToken.toString());
             else
                 return new ResponseMessage("Send one-time token has failed", 500);

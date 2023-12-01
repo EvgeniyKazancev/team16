@@ -4,6 +4,7 @@ import com.hello.dbservices.entity.UserSessions;
 import com.hello.dbservices.entity.UsersHSI;
 import com.hello.dbservices.repository.UserSessionsRepository;
 import com.hello.dbservices.repository.UsersHSIRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 public class UserSessionVerification {
 
-    private final int TIMEOUT = 600;
+    private final Long TIMEOUT = 600L;
     private final String uuid;
     private final UserSessionsRepository userSessionsRepository;
     private final Optional<UsersHSI> user;
@@ -38,18 +39,25 @@ public class UserSessionVerification {
         this.user = usersHSIRepository.findById(userId);
     }
 
+    @Transactional
     public Boolean isSessionPresent() {
-        if (user.isPresent())
+        if (user.isPresent()) {
             for (UserSessions session : user.get().getUserSessions()) {
-                if (session.getUuid().equals(uuid) && session.getIsAuthorized())
-                    if (ChronoUnit.MINUTES.between(LocalDateTime.now(), session.getLastUpdate()) < TIMEOUT) {
+                if (session.getLastUpdate().until(LocalDateTime.now(), ChronoUnit.MINUTES) > TIMEOUT)
+                    userSessionsRepository.delete(session);
+            }
+            for (UserSessions session : user.get().getUserSessions()) {
+                if (session.getUuid().equals(uuid)) {
+                    if (ChronoUnit.MINUTES.between(LocalDateTime.now(), session.getLastUpdate()) < TIMEOUT || session.getIsAuthorized()) {
                         session.setLastUpdate(LocalDateTime.now());
                         userSessionsRepository.save(session);
                         return true;
                     } else {
                         userSessionsRepository.delete(session);
                     }
+                }
             }
+        }
         return false;
     }
 
