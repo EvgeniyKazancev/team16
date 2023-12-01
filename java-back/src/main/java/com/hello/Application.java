@@ -13,7 +13,6 @@ import java.security.Security;
 
 @OpenAPIDefinition(servers = {@Server(url = "/", description = "Default Server URL")})
 @SpringBootApplication
-@EnableWebMvc
 @EntityScan(basePackages = {"com.hello.dbservices.entity"})
 //@PropertySources({
 //        @PropertySource("classpath:application.properties")
