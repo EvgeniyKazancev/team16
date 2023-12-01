@@ -12,7 +12,6 @@ import java.security.Security;
 
 @OpenAPIDefinition(servers = {@Server(url = "/", description = "Default Server URL")})
 @SpringBootApplication
-@EnableWebMvc
 @EntityScan(basePackages = {"com.hello.dbservices.entity"})
 public class Application {
     public static void main(String[] args) {
