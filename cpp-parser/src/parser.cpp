@@ -22,6 +22,12 @@ std::string Parser::extractTextFromNode(xmlDocPtr doc, xmlNodePtr node) const {
 	}
 	std::string buffer_content{ reinterpret_cast<const char *>(buffer->content) };
 	xmlBufferFree(buffer);
+	if (buffer_content.length() > 0xFFFF) {
+		return std::string{};
+	}
+	if (buffer_content.find("<![CDATA[") != std::string::npos) {
+		buffer_content = std::regex_replace(buffer_content, std::regex{"<!\\[CDATA\\[(.*)\\]\\]>"}, "$1"); // removing CDATA brackets
+	}
 	buffer_content = std::regex_replace(buffer_content, std::regex{ "<\\s*br.*?>" }, "\n"); // removing <br>
 	buffer_content = std::regex_replace(buffer_content, std::regex{ "<.*?>" }, " "); // removing other tags
 	std::erase(buffer_content, '\r'); // removing CR - the LF is enough for us
