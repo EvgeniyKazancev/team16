@@ -1,0 +1,68 @@
+/* @import url('https://fonts.cdnfonts.com/css/euclid-circular-a'); */
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('./fonts/EuclidCircularA-Regular.ttf'), url('./fonts/EuclidCircularA-SemiBold.ttf'), url('./fonts/EuclidCircularA-Medium.ttf'), url('./fonts/EuclidCircularA-Bold.ttf'),
+        url('./fonts/EuclidCircularA-Light.ttf');
+}
+
+body {
+    height: 100%;
+}
+
+* {
+    font-family: 'Euclid Circular A', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+select {
+    cursor: pointer;
+}
+
+:root {
+    --accent-color: #02b0ed;
+}
+
+.rdrDefinedRangesWrapper {
+    display: none;
+}
+
+/* .rdrDateRangePickerWrapper {
+    width: 100%;
+}
+
+.rdrCalendarWrapper {
+    width: 100%;
+} */
+
+.CalendarDay__selected_span {
+    background: #82e0aa; /*background */
+    color: white;
+    border: 1px solid red;
+}
+
+/* // Will edit selected date or the endpoints of a range of dates */
+.CalendarDay__selected {
+    background: darkred;
+    color: white;
+}
+
+/* // Will edit when hovered over. _span style also has this property */
+.CalendarDay__selected:hover {
+    background: orange;
+    color: white;
+}
+
+/* // Will edit when the second date (end date) in a range of dates
+// is not yet selected. Edits the dates between your mouse and said date */
+.CalendarDay__hovered_span:hover,
+.CalendarDay__hovered_span {
+    background: brown;
+}

@@ -1,0 +1,211 @@
+.container {
+    /* padding: 24px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.03); */
+}
+
+.heading_container {
+    padding: 24px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.heading {
+    color: var(--accent-color);
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 34px;
+    background-image: url('/imgs/icons/filters.svg');
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+
+.btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    background: #f8f8f8;
+    background-image: url('/imgs/icons/arrow-blue.svg');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
+    transition: all 0.35s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    background-image: url('/imgs/icons/arrow-white.svg');
+}
+
+/* filters */
+
+.filters_container {
+    padding: 20px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.05);
+}
+
+.filters_list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.filter_container {
+    width: calc((100% - 80px) / 5);
+    padding: 16px;
+    border-radius: 4px;
+    background: #f8f8f8;
+}
+
+.filter_label {
+    display: inline-block;
+    padding-bottom: 17px;
+    color: #686e7c;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.filter_line {
+    margin-left: -16px;
+    margin-right: -16px;
+    border: none;
+    border-top: 1px solid #d3d3d3;
+    overflow: visible;
+    text-align: center;
+}
+
+.filter_options_container {
+    height: 159px;
+    overflow: scroll;
+    padding: 24px 32px 24px 8px;
+    /* background-color: green; */
+}
+
+/* radio */
+
+.radio_container,
+.check_container {
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    /* background-color: red; */
+}
+
+.radio_container:not(:last-of-type),
+.check_container:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.radio_label,
+.check_label {
+    width: 135px;
+    font-size: 18px;
+    line-height: 24px;
+    /* white-space: wrap; */
+    display: block;
+    margin-left: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.radio_fake,
+.check_fake {
+    display: inline-block;
+    min-width: 18px;
+    height: 18px;
+    border: 1px solid var(--accent-color);
+    background-color: #fff;
+    position: relative;
+    border-radius: 50%;
+}
+
+.check_fake {
+    border-radius: 2px;
+}
+
+.radio_fake::before,
+.check_fake::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.radio_fake::before {
+    background-image: url('/imgs/icons/radio-check.svg');
+    transform: translate(-52%, -50%);
+    border-radius: 50%;
+}
+
+.check_fake::before {
+    background-image: url('/imgs/icons/check.svg');
+    transform: translate(-54%, -53%);
+    border-radius: 2px;
+}
+
+/* .check_fake::before {
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    background-image: url('/imgs/icons/check.svg');
+    background-position: 50%;
+} */
+
+.radio_input:checked + .radio_fake::before,
+.check_input:checked + .check_fake::before {
+    opacity: 1;
+}
+
+/* .radio_input:hover + .radio_fake,
+.radio_input:checked + .radio_fake,
+.check_input:checked + .check_fake {
+    border: 2px solid var(--accent-color-full);
+} */
+
+.radio_input:disabled + .radio_fake {
+    opacity: 0.5;
+}
+
+/* date */
+
+.date_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.date_label {
+    margin-bottom: 5px;
+}
+
+/* reset btn */
+
+.reset_btn_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset_btn_line {
+    width: calc((100% - 198px - 40px) / 2);
+    height: 1px;
+    background-color: #d3d3d3;
+}

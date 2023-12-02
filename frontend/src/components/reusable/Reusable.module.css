@@ -1,0 +1,69 @@
+/* checkbox */
+
+.check_container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* .check_container:first-of-type {
+    margin-top: 20px;
+} */
+
+.check_text {
+    width: 100%;
+    display: inline-block;
+    margin-left: 12px;
+    line-height: 16px;
+}
+
+.check_fake {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    position: relative;
+}
+
+.check_fake::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    /* background-color: var(--accent-color); */
+    background-image: url('/imgs/icons/tix-check.svg');
+    top: 50%;
+    left: 50%;
+    transform: translate(-47%, -50%);
+    opacity: 0;
+    transition: 0.2s;
+    border-radius: 2px;
+}
+
+.check_fake::after {
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+}
+
+.check_input:checked + .check_fake::before {
+    opacity: 1;
+}
+
+.check_input:checked + .check_fake {
+    border: 2px solid var(--accent-color);
+}
+
+/* buttons */
+
+.btn {
+    background-color: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.btn:disabled {
+    background-color: #d3d3d3;
+}

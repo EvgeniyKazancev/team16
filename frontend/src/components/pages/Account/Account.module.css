@@ -1,0 +1,45 @@
+.main {
+    padding: 128px 320px;
+    padding-bottom: 52px;
+    background-color: #f8f8f8;
+    height: calc(100vh - 74px);
+}
+
+.folders_list {
+    display: flex;
+}
+
+.folder {
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 12px 24px;
+    padding-left: 58px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.05);
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+}
+
+.active {
+    background-color: #02b0ed;
+    color: #fff;
+}
+
+.favorite {
+    background-image: url('/imgs/icons/favorite.svg');
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+}
+
+.black_list {
+    background-image: url('/imgs/icons/black_list.svg');
+}
+
+.sources {
+    background-image: url('/imgs/icons/sources.svg');
+}
+
+.liked_news {
+    margin-top: 20px;
+}
